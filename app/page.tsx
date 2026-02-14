@@ -1,11 +1,27 @@
-import Image from "next/image";
+import { allPages } from "contentlayer/generated";
+import { MDXContent } from "@/components/mdx/MDXContent";
 
-export default function Home() {
+export default function HomePage() {
+  const page = allPages.find((p) => p.slug === "home");
+
+  if (!page) return null;
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-       <h1>Respect Digital Market Agency</h1>
-      </main>
-    </div>
+    <main className="container-95">
+      <h1 className="text-3xl font-semibold">{page.title}</h1>
+      <div className="prose mt-6 max-w-none">
+        <h1 className="text-5xl font-bold">Roobert Test</h1>
+        <p className="text-lg mt-4">This is body text</p>
+        <div className="bg-primary text-secondary p-10">
+            Primary Background
+            </div>
+
+            <div className="bg-secondary text-primary p-10">
+            Secondary Background
+            </div>
+
+        <MDXContent code={page.body.code} />
+      </div>
+    </main>
   );
 }

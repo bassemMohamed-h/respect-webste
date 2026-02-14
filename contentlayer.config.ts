@@ -13,6 +13,10 @@ export const Page = defineDocumentType(() => ({
       type: "string",
       resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
     },
+    body: {
+    type: "mdx",
+    resolve: (doc) => doc.body.raw,
+  },
   },
 }));
 

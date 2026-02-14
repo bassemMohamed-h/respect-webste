@@ -18,6 +18,7 @@ export type Page = {
   /** MDX file body */
   body: MDX
   slug: string
+  body: mdx
 }  
 
 /** Nested types */

@@ -1,0 +1,15 @@
+{
+  "title": "Home",
+  "description": "Respect Coding — web & Odoo solutions.\r",
+  "body": "\r\n# Build reliable web & Odoo systems\r\n\r\nWe ship fast, clean, and maintainable solutions for companies.\r\n\r\n## Services\r\n- Odoo implementation & custom modules\r\n- Next.js websites (SSG/ISR)\r\n- Integrations & automation\r\n\r\n## Featured work\r\n- Project A — short line\r\n- Project B — short line\r\n\r\n## Contact\r\nEmail us and we’ll reply within 24 hours.\r\n",
+  "_id": "pages/home.mdx",
+  "_raw": {
+    "sourceFilePath": "pages/home.mdx",
+    "sourceFileName": "home.mdx",
+    "sourceFileDir": "pages",
+    "contentType": "mdx",
+    "flattenedPath": "pages/home"
+  },
+  "type": "Page",
+  "slug": "home"
+}

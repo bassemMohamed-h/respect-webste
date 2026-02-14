@@ -12,6 +12,10 @@ var Page = defineDocumentType(() => ({
     slug: {
       type: "string",
       resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, "")
+    },
+    body: {
+      type: "mdx",
+      resolve: (doc) => doc.body.raw
     }
   }
 }));
@@ -23,4 +27,4 @@ export {
   Page,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-ML65YSYS.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-RVOEUPE3.mjs.map

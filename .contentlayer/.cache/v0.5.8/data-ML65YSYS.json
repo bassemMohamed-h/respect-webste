@@ -22,6 +22,29 @@
       "documentHash": "1771001158463",
       "hasWarnings": false,
       "documentTypeName": "Page"
+    },
+    "pages/home.mdx": {
+      "document": {
+        "title": "Home",
+        "description": "Respect Coding — web & Odoo solutions.\r",
+        "body": {
+          "raw": "\r\n# Build reliable web & Odoo systems\r\n\r\nWe ship fast, clean, and maintainable solutions for companies.\r\n\r\n## Services\r\n- Odoo implementation & custom modules\r\n- Next.js websites (SSG/ISR)\r\n- Integrations & automation\r\n\r\n## Featured work\r\n- Project A — short line\r\n- Project B — short line\r\n\r\n## Contact\r\nEmail us and we’ll reply within 24 hours.\r\n",
+          "code": "var Component=(()=>{var u=Object.create;var l=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,j=Object.prototype.hasOwnProperty;var f=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),w=(e,n)=>{for(var i in n)l(e,i,{get:n[i],enumerable:!0})},s=(e,n,i,r)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of p(n))!j.call(e,o)&&o!==i&&l(e,o,{get:()=>n[o],enumerable:!(r=m(n,o))||r.enumerable});return e};var _=(e,n,i)=>(i=e!=null?u(x(e)):{},s(n||!e||!e.__esModule?l(i,\"default\",{value:e,enumerable:!0}):i,e)),b=e=>s(l({},\"__esModule\",{value:!0}),e);var h=f((y,c)=>{c.exports=_jsx_runtime});var C={};w(C,{default:()=>a,frontmatter:()=>g});var t=_(h()),g={title:\"Home\",description:\"Respect Coding \\u2014 web & Odoo solutions.\"};function d(e){let n={h1:\"h1\",h2:\"h2\",li:\"li\",p:\"p\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(n.h1,{children:\"Build reliable web & Odoo systems\"}),`\n`,(0,t.jsx)(n.p,{children:\"We ship fast, clean, and maintainable solutions for companies.\"}),`\n`,(0,t.jsx)(n.h2,{children:\"Services\"}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:\"Odoo implementation & custom modules\"}),`\n`,(0,t.jsx)(n.li,{children:\"Next.js websites (SSG/ISR)\"}),`\n`,(0,t.jsx)(n.li,{children:\"Integrations & automation\"}),`\n`]}),`\n`,(0,t.jsx)(n.h2,{children:\"Featured work\"}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:\"Project A \\u2014 short line\"}),`\n`,(0,t.jsx)(n.li,{children:\"Project B \\u2014 short line\"}),`\n`]}),`\n`,(0,t.jsx)(n.h2,{children:\"Contact\"}),`\n`,(0,t.jsx)(n.p,{children:\"Email us and we\\u2019ll reply within 24 hours.\"})]})}function a(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(d,{...e})}):d(e)}return b(C);})();\n;return Component;"
+        },
+        "_id": "pages/home.mdx",
+        "_raw": {
+          "sourceFilePath": "pages/home.mdx",
+          "sourceFileName": "home.mdx",
+          "sourceFileDir": "pages",
+          "contentType": "mdx",
+          "flattenedPath": "pages/home"
+        },
+        "type": "Page",
+        "slug": "home"
+      },
+      "documentHash": "1771072158728",
+      "hasWarnings": false,
+      "documentTypeName": "Page"
     }
   }
 }

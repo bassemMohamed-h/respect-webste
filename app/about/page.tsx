@@ -11,6 +11,7 @@ export default function AboutPage() {
             <article>
                  <MDXContent code={page.body.code} />
             </article>
+            
         </main>
     )
 }

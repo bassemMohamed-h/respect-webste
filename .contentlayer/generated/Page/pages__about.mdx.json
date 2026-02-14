@@ -1,10 +1,7 @@
 {
   "title": "About",
   "description": "Learn More About Us\r",
-  "body": {
-    "raw": "\r\n# About\r\n\r\nThis Page is Come From MDX",
-    "code": "var Component=(()=>{var h=Object.create;var s=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var _=Object.getPrototypeOf,l=Object.prototype.hasOwnProperty;var f=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),j=(t,n)=>{for(var o in n)s(t,o,{get:n[o],enumerable:!0})},i=(t,n,o,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of p(n))!l.call(t,r)&&r!==o&&s(t,r,{get:()=>n[r],enumerable:!(c=d(n,r))||c.enumerable});return t};var M=(t,n,o)=>(o=t!=null?h(_(t)):{},i(n||!t||!t.__esModule?s(o,\"default\",{value:t,enumerable:!0}):o,t)),b=t=>i(s({},\"__esModule\",{value:!0}),t);var m=f((D,a)=>{a.exports=_jsx_runtime});var A={};j(A,{default:()=>x,frontmatter:()=>g});var e=M(m()),g={title:\"About\",description:\"Learn More About Us\"};function u(t){let n={h1:\"h1\",p:\"p\",...t.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.h1,{children:\"About\"}),`\n`,(0,e.jsx)(n.p,{children:\"This Page is Come From MDX\"})]})}function x(t={}){let{wrapper:n}=t.components||{};return n?(0,e.jsx)(n,{...t,children:(0,e.jsx)(u,{...t})}):u(t)}return b(A);})();\n;return Component;"
-  },
+  "body": "\r\n# About\r\n\r\nThis Page is Come From MDX",
   "_id": "pages/about.mdx",
   "_raw": {
     "sourceFilePath": "pages/about.mdx",
