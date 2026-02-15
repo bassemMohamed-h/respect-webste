@@ -16,8 +16,8 @@ const rightLinks: NavLink[] = [
 
 export default function Navbar() {
   return (
-    <nav className="container-80 py-10">
-      <div className="flex items-center justify-between gap-4">
+    <nav className="container-80 h-[var(--nav-h)]  flex items-center justify-center">
+      <div className="flex items-center justify-between gap-8 w-full">
         {/* Left */}
         <div className="flex-1">
           <div className="relative hidden md:flex items-center justify-center gap-14 border-y-2 border-l-2 border-secondary  py-6 px-10 overflow-hidden rounded-bl-[128px]">
