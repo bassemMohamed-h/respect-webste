@@ -13,20 +13,5 @@
     },
     "type": "Page",
     "slug": "about"
-  },
-  {
-    "title": "Home",
-    "description": "Respect Coding — web & Odoo solutions.\r",
-    "body": "",
-    "_id": "pages/home.mdx",
-    "_raw": {
-      "sourceFilePath": "pages/home.mdx",
-      "sourceFileName": "home.mdx",
-      "sourceFileDir": "pages",
-      "contentType": "mdx",
-      "flattenedPath": "pages/home"
-    },
-    "type": "Page",
-    "slug": "home"
   }
 ]

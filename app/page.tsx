@@ -1,13 +1,13 @@
-import { allPages } from "contentlayer/generated";
-import { MDXContent } from "@/components/mdx/MDXContent";
-import Hero from "@/components/sections/Hero";
+import { Hero } from "@/components/sections/home/Hero";
+import { Slogan } from "@/components/sections/home/Slogan";
+
 
 export default function HomePage() {
-  const page = allPages.find((p) => p.slug === "home");
-
-  if (!page) return null;
-
   return (
-    <Hero/>
+    <div>
+      <Hero/>
+      <Slogan/>
+    </div>
+
   );
 }

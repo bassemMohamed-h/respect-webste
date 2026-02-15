@@ -16,11 +16,11 @@ const rightLinks: NavLink[] = [
 
 export default function Navbar() {
   return (
-    <nav className="container-80 h-[var(--nav-h)]  flex items-center justify-center">
-      <div className="flex items-center justify-between gap-8 w-full">
+    <nav className="container-80 h-[var(--nav-h)] flex items-center justify-center fixed top-0 left-0 right-0 z-50 ">
+      <div className="flex items-center justify-between gap-8 w-full backdrop-blur-md bg-white/60  ">
         {/* Left */}
-        <div className="flex-1">
-          <div className="relative hidden md:flex items-center justify-center gap-14 border-y-2 border-l-2 border-secondary  py-6 px-10 overflow-hidden rounded-bl-[128px]">
+        <div className="flex-1 ">
+          <div className="relative hidden md:flex items-center justify-center gap-14 border-y-2 border-l-2 border-secondary  py-6 px-10 overflow-hidden rounded-bl-[128px] ">
             {leftLinks.map((l) => (
               <Link
                 key={l.href}

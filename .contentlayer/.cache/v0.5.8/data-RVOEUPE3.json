@@ -19,26 +19,6 @@
       "documentHash": "1771001158463",
       "hasWarnings": false,
       "documentTypeName": "Page"
-    },
-    "pages/home.mdx": {
-      "document": {
-        "title": "Home",
-        "description": "Respect Coding — web & Odoo solutions.\r",
-        "body": "",
-        "_id": "pages/home.mdx",
-        "_raw": {
-          "sourceFilePath": "pages/home.mdx",
-          "sourceFileName": "home.mdx",
-          "sourceFileDir": "pages",
-          "contentType": "mdx",
-          "flattenedPath": "pages/home"
-        },
-        "type": "Page",
-        "slug": "home"
-      },
-      "documentHash": "1771089859898",
-      "hasWarnings": false,
-      "documentTypeName": "Page"
     }
   }
 }
