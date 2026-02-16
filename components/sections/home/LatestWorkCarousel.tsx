@@ -1,82 +1,66 @@
 "use client";
-// import useEmblaCarousel from "embla-carousel-react";
-// import Autoplay from "embla-carousel-autoplay";
-// import { useRef } from "react";
+type LatestWorkCarouselProps = {
+  projects: {
+    title: string;
+    description: string;
+    coverImage: string;
+    slug: string;
+  }[];
+};
 
-// export function LatestWorkCarousel() {
-//   const autoplay = useRef(
-//     Autoplay({
-//       delay: 4000,
-//       stopOnMouseEnter: false,
-//       stopOnInteraction: false,
-//     })
-//   );
-//   const [emblaRef, emblaApi] = useEmblaCarousel(
-//     { loop: true },
-//     [autoplay.current]
-//   );
-//     const scrollPrev = () => emblaApi?.scrollPrev();
-//     const scrollNext = () => emblaApi?.scrollNext();
-
-//   return (
-//     // <div className="group relative overflow-hidden bg-primary min-h-[100svh]" ref={emblaRef}>
-//     //     <div className="flex " >
-//     //         {[1, 2, 3, 4, 5].map((i) => (
-//     //             <div key={i} className="w-[100%] flex">
-//     //                 <div className="relative min-h-[calc(100svh-var(--nav-h))] overflow-hidden rounded-[32px]">
-//     //                     <div className="absolute inset-0 bg-black/20" >hello</div>
-//     //                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-
-//     //                     <div className="absolute bottom-6 left-6">
-//     //                     <p className="text-2xl font-semibold text-white">Project {i}</p>
-//     //                     <p className="mt-2 max-w-sm text-sm text-white/80">
-//     //                         This product was designed from scratch to application.
-//     //                     </p>
-//     //                     </div>
-//     //                 </div>
-//     //             </div>
-//     //         ))}
-//     //     </div>
-//     //     {/* Left Arrow */}
-//     //     <button
-//     //     onClick={scrollPrev}
-//     //     className="absolute left-6 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/20 p-3 opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100 hover:bg-white/30"
-//     //     >
-//     //     ←
-//     //     </button>
-
-//     //     {/* Right Arrow */}
-//     //     <button
-//     //     onClick={scrollNext}
-//     //     className="absolute right-6 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/20 p-3 opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100 hover:bg-white/30"
-//     //     >
-//     //     →
-//     //     </button>
-//     // </div>
-// );
-// }
-import React, { useEffect } from 'react'
+import { useRef } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+import Image from "next/image";
+export function LatestWorkCarousel({projects}: LatestWorkCarouselProps) {
+  console.log(projects);
+  const autoplay = useRef(
+  Autoplay({
+    delay: 4000,
+    stopOnMouseEnter: true,
+    stopOnInteraction: false,
+  })
+)
 
-export function LatestWorkCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [Autoplay()])
+const [emblaRef, emblaApi] = useEmblaCarousel(
+  { loop: true },
+  [autoplay.current]
+)
 
   const goToPrev = () => emblaApi?.scrollPrev()
   const goToNext = () => emblaApi?.scrollNext()
-
-  useEffect(() => {
-    if (!emblaApi) return
-    emblaApi.plugins().autoplay?.play()
-  }, [emblaApi])
-
   return (
-    <div className="embla bg-primary min-h-[100svh] flex relative">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          <div className="embla__slide">Slide 1</div>
-          <div className="embla__slide">Slide 2</div>
-          <div className="embla__slide">Slide 3</div>
+    <div className="relative">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+         <div className="flex">
+        {projects.map((project) => (
+          <div key={project.slug} className="flex-[0_0_100%] min-w-0">
+            <div className="relative h-[420px] overflow-hidden rounded-[32px]">
+              <Image
+                alt={project.title}
+                src={project.coverImage}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 60vw"
+                priority={false}
+              />
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+              {/* Text */}
+              <div className="absolute bottom-6 left-6 z-10">
+                <h3 className="text-2xl font-semibold text-white">
+                  {project.title}
+                </h3>
+                <p className="mt-2 max-w-sm text-sm text-white/80">
+                  {project.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+</div>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 export function Hero() {
   return (
-    <section className="container-80 min-h-[100svh]">
+    <section className="container-80 min-h-[calc(100svh-var(--nav-h))] mt-[var(--nav-h)]">
           {/* Left: Title */}
           <div className="">
             <h1 className="text-primary font-semibold leading-[0.95] tracking-tight text-5xl sm:text-7xl lg:text-[120px]">

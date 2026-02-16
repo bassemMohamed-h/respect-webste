@@ -48,21 +48,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
-
-.embla__viewport {
-  overflow: hidden;
-}
-
-.embla__container {
-  display: flex;
-  touch-action: pan-y pinch-zoom;
-}
-
-.embla__slide {
-  flex: 0 0 100%;
-  min-width: 0;
-}
-
 @layer utilities {
   @keyframes wingHideLeft {
     0% {
