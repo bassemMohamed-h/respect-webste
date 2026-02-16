@@ -11,7 +11,7 @@ export function Hero() {
           </div>
 
           {/* Right: Paragraph */}
-          <div className="mt-6 max-w-xl ml-auto mb-10">
+          <div className="mt-10 max-w-xl ml-auto mb-10">
             <p className="text-xl leading-6 text-black/70 ">
               PlayZone is a youth-focused football platform designed to connect
               young players with local matches, teams, and opportunities to play

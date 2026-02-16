@@ -16,22 +16,29 @@ const rightLinks: NavLink[] = [
 
 export default function Navbar() {
   return (
-    <nav className="container-80 h-[var(--nav-h)] flex items-center justify-center fixed top-0 left-0 right-0 z-50 ">
-      <div className="flex items-center justify-between gap-8 w-full backdrop-blur-md bg-white/60  ">
+    <nav className="container-80 h-[var(--nav-h)] flex items-center justify-center fixed top-0 left-0 right-0 z-50  group">
+      <div className="flex items-center justify-between gap-8 w-full bg-background/60 backdrop-blur-sm  ">
         {/* Left */}
-        <div className="flex-1 ">
-          <div className="relative hidden md:flex items-center justify-center gap-14 border-y-2 border-l-2 border-secondary  py-6 px-10 overflow-hidden rounded-bl-[128px] ">
-            {leftLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-primary font-semibold tracking-wide hover:opacity-80 transition"
-              >
-                {l.label}
-              </Link>
-            ))}
+        <div className="overflow-hidden flex-1">
+          <div className=" motion-safe:animate-[wingHideLeft_1s_ease_2s_forwards]
+                          group-hover:animate-none
+                          group-hover:opacity-100
+                          group-hover:translate-x-0
+                          group-hover:skew-x-0">
+            <div className="relative hidden md:flex items-center justify-center gap-14 border-y-2 border-l-2 border-secondary  py-6 px-10 overflow-hidden rounded-bl-[128px] ">
+              {leftLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="text-primary font-semibold tracking-wide hover:opacity-80 transition"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
+        
 
         {/* Center Logo */}
         <div className="shrink-0">
@@ -48,19 +55,26 @@ export default function Navbar() {
         </div>
 
         {/* Right */}
-        <div className="flex-1">
-          <div className="relative hidden md:flex items-center justify-center gap-14 border-y-2 border-r-2 border-secondary  py-6 px-10 overflow-hidden  rounded-br-[128px]">
-            {rightLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-primary font-semibold tracking-wide hover:opacity-80 transition"
-              >
-                {l.label}
-              </Link>
-            ))}
+        <div className="flex-1 overflow-hidden">
+          <div className=" motion-safe:animate-[wingHideRight_1s_ease_2s_forwards] 
+                        group-hover:animate-none
+                        group-hover:opacity-100
+                        group-hover:translate-x-0
+                        group-hover:skew-x-0">
+            <div className="relative hidden md:flex items-center justify-center gap-14 border-y-2 border-r-2 border-secondary  py-6 px-10 overflow-hidden  rounded-br-[128px]">
+              {rightLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="text-primary font-semibold tracking-wide hover:opacity-80 transition"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
+        
 
         {/* Mobile (simple) */}
         <div className="md:hidden">

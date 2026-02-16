@@ -1,5 +1,7 @@
 import { Hero } from "@/components/sections/home/Hero";
+import { LatestWorkCarousel } from "@/components/sections/home/LatestWorkCarousel";
 import { Slogan } from "@/components/sections/home/Slogan";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 
 export default function HomePage() {
@@ -7,6 +9,8 @@ export default function HomePage() {
     <div>
       <Hero/>
       <Slogan/>
+      <SectionHeader title="Latest Work"/>
+      <LatestWorkCarousel/>
     </div>
 
   );
