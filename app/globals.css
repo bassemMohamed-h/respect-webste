@@ -66,31 +66,26 @@ body {
 @layer utilities {
   @keyframes wingHideLeft {
     0% {
-      transform: translateX(0) skewX(0);
-      opacity: 1;
+      transform: translateX(0)
     }
     40% {
-      transform: translateX(15%) skewX(6deg);
-      opacity: 1;
+      transform: translateX(15%)
     }
     100% {
-      transform: translateX(90%) skewX(-12deg);
-      opacity: 1;
+      transform: translateX(90%) 
     }
   }
 
   @keyframes wingHideRight {
     0% {
-      transform: translateX(0) skewX(0);
-      opacity: 1;
+      transform: translateX(0)
+      
     }
     40% {
-      transform: translateX(-15%) skewX(-6deg);
-      opacity: 1;
+      transform: translateX(-15%) 
     }
     100% {
-      transform: translateX(-90%) skewX(12deg);
-      opacity: 1;
+      transform: translateX(-90%) 
     }
   }
 }

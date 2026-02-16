@@ -17,7 +17,7 @@ const rightLinks: NavLink[] = [
 export default function Navbar() {
   return (
     <nav className="container-80 h-[var(--nav-h)] flex items-center justify-center fixed top-0 left-0 right-0 z-50  group">
-      <div className="flex items-center justify-between gap-8 w-full bg-background/60 backdrop-blur-sm  ">
+      <div className="flex items-center justify-between w-full">
         {/* Left */}
         <div className="overflow-hidden flex-1">
           <div className=" motion-safe:animate-[wingHideLeft_1s_ease_2s_forwards]
@@ -25,7 +25,7 @@ export default function Navbar() {
                           group-hover:opacity-100
                           group-hover:translate-x-0
                           group-hover:skew-x-0">
-            <div className="relative hidden md:flex items-center justify-center gap-14 border-y-2 border-l-2 border-secondary  py-6 px-10 overflow-hidden rounded-bl-[128px] ">
+            <div className="relative hidden md:flex items-center justify-center gap-14 border-y-4 border-l-4 border-secondary  py-6 px-10 overflow-hidden rounded-bl-[128px]  bg-background/60 backdrop-blur-sm">
               {leftLinks.map((l) => (
                 <Link
                   key={l.href}
@@ -41,7 +41,7 @@ export default function Navbar() {
         
 
         {/* Center Logo */}
-        <div className="shrink-0">
+        <div className="shrink-0 bg-background/60 backdrop-blur-sm p-1">
           <Link href="/" aria-label="Home" className="inline-flex items-center">
             <Image
               src="/images/Vector.png"
@@ -56,12 +56,12 @@ export default function Navbar() {
 
         {/* Right */}
         <div className="flex-1 overflow-hidden">
-          <div className=" motion-safe:animate-[wingHideRight_1s_ease_2s_forwards] 
+          <div className=" motion-safe:animate-[wingHideRight_1s_ease_2s_forwards]
                         group-hover:animate-none
                         group-hover:opacity-100
                         group-hover:translate-x-0
                         group-hover:skew-x-0">
-            <div className="relative hidden md:flex items-center justify-center gap-14 border-y-2 border-r-2 border-secondary  py-6 px-10 overflow-hidden  rounded-br-[128px]">
+            <div className="relative hidden md:flex items-center justify-center gap-14 border-y-4 border-r-4 border-secondary  py-6 px-10 overflow-hidden  rounded-br-[128px] bg-background/60 backdrop-blur-sm">
               {rightLinks.map((l) => (
                 <Link
                   key={l.href}
