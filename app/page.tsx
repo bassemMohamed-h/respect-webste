@@ -3,6 +3,7 @@ import { LatestWorkCarousel } from "@/components/sections/home/LatestWorkCarouse
 import { Slogan } from "@/components/sections/home/Slogan";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getFeaturedCaseStudies } from "@/components/lib/case-studies";
+import { Services } from "@/components/sections/home/Services";
 const projects = getFeaturedCaseStudies(5);
 export default function HomePage() {
   return (
@@ -12,6 +13,8 @@ export default function HomePage() {
       <SectionHeader title="Latest Work"/>
       <LatestWorkCarousel projects={projects} />
       <SectionHeader title="Services"/>
+      <Services/>
+      <SectionHeader title="Clients"/>
     </div>
 
   );

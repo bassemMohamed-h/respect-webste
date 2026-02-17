@@ -2,7 +2,7 @@ import { SloganMark } from "@/components/brand/RespectWordmark";
 
 export function Slogan() {
   return (
-    <section className="min-h-[100svh] bg-primary  text-primary-foreground">
+    <section className="Slogan min-h-[100svh] bg-primary  text-primary-foreground">
       <div className="mx-auto flex min-h-[calc(100svh-var(--nav-h))] max-w-6xl flex-col justify-center px-6">
         
         {/* SEO heading (hidden visually) */}

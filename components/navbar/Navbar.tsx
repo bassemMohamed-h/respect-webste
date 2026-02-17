@@ -16,8 +16,8 @@ const rightLinks: NavLink[] = [
 
 export default function Navbar() {
   return (
-    <nav className="container-80 h-[var(--nav-h)] flex items-center justify-center fixed top-0 left-0 right-0 z-50 group ">
-      <div className="flex items-center justify-between w-full relative">
+    <nav className="fixed top-0 left-0 right-0 z-50 container-80 h-[var(--nav-h)] flex items-center justify-center group ">
+      <div className="flex items-center justify-between w-full relative gap-8">
         {/* Left */}
         <div className="flex-1 overflow-hidden">
           <div className="translate-x-[0%]
@@ -43,8 +43,8 @@ export default function Navbar() {
         
 
         {/* Center Logo */}
-        <div className="shrink-0 bg-background border rounded-[50%] absolute left-1/2 -translate-x-1/2 p-4 z-1 border-background">
-          <Link href="/" aria-label="Home" className="inline-flex items-center">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-background rounded-[50%] p-6 z-1">
+          <Link href="/" aria-label="Home">
             <Image
               src="/images/Vector.png"
               alt="Respect"

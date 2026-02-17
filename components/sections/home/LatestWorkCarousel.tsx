@@ -29,7 +29,7 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
   const goToPrev = () => emblaApi?.scrollPrev()
   const goToNext = () => emblaApi?.scrollNext()
   return (
-    <section className="relative  min-h-[100svh] bg-primary rounded-br-lg">
+    <section className="LatestWork relative  min-h-[100svh] bg-primary rounded-br-lg">
       <div className="overflow-hidden" ref={emblaRef}>
          <div className="flex ">
         {projects.map((project) => (
