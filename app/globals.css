@@ -48,29 +48,3 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
-@layer utilities {
-  @keyframes wingHideLeft {
-    0% {
-      transform: translateX(0)
-    }
-    40% {
-      transform: translateX(15%)
-    }
-    100% {
-      transform: translateX(90%) 
-    }
-  }
-
-  @keyframes wingHideRight {
-    0% {
-      transform: translateX(0)
-      
-    }
-    40% {
-      transform: translateX(-15%) 
-    }
-    100% {
-      transform: translateX(-90%) 
-    }
-  }
-}

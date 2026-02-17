@@ -13,7 +13,6 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import Image from "next/image";
 export function LatestWorkCarousel({projects}: LatestWorkCarouselProps) {
-  console.log(projects);
   const autoplay = useRef(
   Autoplay({
     delay: 4000,
@@ -30,18 +29,17 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
   const goToPrev = () => emblaApi?.scrollPrev()
   const goToNext = () => emblaApi?.scrollNext()
   return (
-    <div className="relative">
+    <section className="relative  min-h-[100svh] bg-primary rounded-br-lg">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-         <div className="flex">
+         <div className="flex ">
         {projects.map((project) => (
-          <div key={project.slug} className="flex-[0_0_100%] min-w-0">
-            <div className="relative h-[420px] overflow-hidden rounded-[32px]">
+          <div key={project.slug} className="flex-[0_0_100%] min-w-0 ">
+            <div className="relative min-h-[100svh] rounded-br-lg">
               <Image
                 alt={project.title}
                 src={project.coverImage}
                 fill
-                className="object-cover"
+                className="object-cover rounded-br-lg"
                 sizes="(max-width: 768px) 100vw, 60vw"
                 priority={false}
               />
@@ -60,7 +58,6 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
             </div>
           </div>
         ))}
-</div>
         </div>
       </div>
 
@@ -71,6 +68,6 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
       <button className="embla__next absolute top-1/2 right-6 z-10 -translate-y-1/2 rounded-full bg-white/20 p-3" onClick={goToNext}>
         Scroll to next
       </button>
-    </div>
+    </section>
   )
 }

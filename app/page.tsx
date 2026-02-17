@@ -11,6 +11,7 @@ export default function HomePage() {
       <Slogan/>
       <SectionHeader title="Latest Work"/>
       <LatestWorkCarousel projects={projects} />
+      <SectionHeader title="Services"/>
     </div>
 
   );
