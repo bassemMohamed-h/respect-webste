@@ -16,7 +16,7 @@ export function LatestWorkCarousel({projects}: LatestWorkCarouselProps) {
   const autoplay = useRef(
   Autoplay({
     delay: 4000,
-    stopOnMouseEnter: true,
+    stopOnMouseEnter: false,
     stopOnInteraction: false,
   })
 )
