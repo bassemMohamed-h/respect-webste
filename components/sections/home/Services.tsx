@@ -18,7 +18,7 @@ export function Services() {
               }`}
             >
               {/* image */}
-              <div className="absolute top-0 left-0 bg-cover bg-center w-full h-[60%]">
+              <div className="absolute top-0 left-5 bg-cover bg-center w-full h-[50%] opacity-50">
                 <img
                   src={service.img}
                   alt={service.name}
