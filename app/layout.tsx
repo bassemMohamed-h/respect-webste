@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import NavbarShell from "@/components/navbar/NavbarShell";
 
 const roobert = localFont({
   src: [
@@ -29,8 +31,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${roobert.variable} ${geistMono.variable} antialiased ` }>
+       <NavbarShell>
         <Navbar />
+      </NavbarShell>
         {children}
+        <Footer/>
       </body>
     </html>
   );

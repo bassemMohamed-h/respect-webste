@@ -16,7 +16,7 @@ const rightLinks: NavLink[] = [
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 container-80 h-[var(--nav-h)] flex items-center justify-center group ">
+    <nav className=" container-80 h-[var(--nav-h)] flex items-center justify-center group ">
       <div className="flex items-center justify-between w-full relative gap-8">
         {/* Left */}
         <div className="flex-1 overflow-hidden">

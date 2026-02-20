@@ -7,7 +7,6 @@ import { Services } from "@/components/sections/home/Services";
 import { Clients } from "@/components/sections/home/Clients";
 import { LetsConnectHeader } from "@/components/ui/LetsConnectHeader";
 import { Contact } from "@/components/sections/home/Contact";
-import Footer from "@/components/footer";
 const projects = getFeaturedCaseStudies(5);
 export default function HomePage() {
   return (
@@ -22,7 +21,6 @@ export default function HomePage() {
       <Clients/>
       <LetsConnectHeader/>
       <Contact/>
-      <Footer/>
     </div>
 
   );
