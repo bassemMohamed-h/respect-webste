@@ -10,7 +10,7 @@ import { Contact } from "@/components/sections/home/Contact";
 const projects = getFeaturedCaseStudies(5);
 export default function HomePage() {
   return (
-    <div>
+    <>
       <Hero/>
       <Slogan/>
       <SectionHeader title="Latest Work"/>
@@ -21,7 +21,7 @@ export default function HomePage() {
       <Clients/>
       <LetsConnectHeader/>
       <Contact/>
-    </div>
+    </>
 
   );
 }
