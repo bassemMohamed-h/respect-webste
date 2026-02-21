@@ -2,7 +2,7 @@ import { SloganMark } from "@/components/brand/RespectWordmark";
 
 export function Slogan() {
   return (
-    <section className="Slogan min-h-[100svh] bg-primary  text-primary-foreground">
+    <section className="Slogan min-h-[100svh] bg-primary  text-third">
       <div className="mx-auto flex min-h-[calc(100svh-var(--nav-h))] max-w-6xl flex-col justify-center px-6">
         
         {/* SEO heading (hidden visually) */}
@@ -21,7 +21,7 @@ export function Slogan() {
         </p>
 
         {/* Description */}
-        <p className=" text-xl leading-relaxed text-primary-foreground">
+        <p className=" text-xl leading-relaxed text-third">
             PlayZone is a youth-focused football platform designed to connect young players with local matches,
             teams, and opportunities to play regularly. The goal of the project was to create a clear marketing strategy 
             that positions PlayZone not just as an app, but as a gateway to real play, 

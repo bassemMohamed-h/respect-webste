@@ -32,7 +32,7 @@ export function Clients() {
   const next = () => emblaApi?.scrollNext();
 
   return (
-    <section className="min-h-[calc(100svh-var(--nav-h))] px-6">
+    <section className="min-h-[calc(100svh-var(--nav-h))] px-6 text-third">
       <div className="mx-auto flex min-h-[calc(100svh-var(--nav-h))] max-w-6xl flex-col items-center justify-center gap-20">
         {/* carousel */}
         <div className="w-full overflow-hidden" ref={emblaRef}>

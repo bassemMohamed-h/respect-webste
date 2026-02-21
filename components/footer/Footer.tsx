@@ -3,8 +3,8 @@ import { SloganMark } from "@/components/brand/RespectWordmark" // change to you
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="mx-auto w-full max-w-7xl px-6 py-16">
+    <footer className="bg-primary text-third">
+      <div className="mx-auto w-full max-w-7xl px-6 pt-16 pb-6">
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand */}
           <div className="space-y-6">

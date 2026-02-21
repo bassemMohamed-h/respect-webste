@@ -26,13 +26,13 @@ export function Services() {
                 />
               </div>
               {/* number */}
-              <div className="absolute bottom-10 right-6 text-9xl font-semibold text-primary-foreground/90">
+              <div className="absolute bottom-10 right-6 text-9xl font-semibold text-third/90">
                 {index + 1}
               </div>
 
               {/* vertical label */}
               <div className="absolute bottom-10 left-20 origin-bottom-left -rotate-90">
-                <p className="text-7xl font-semibold text-primary-foreground w-[100svh]">
+                <p className="text-7xl font-semibold text-third w-[100svh]">
                   {service.name}
                 </p>
               </div>

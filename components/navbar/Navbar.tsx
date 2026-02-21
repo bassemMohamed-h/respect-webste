@@ -27,7 +27,7 @@ export default function Navbar() {
                           ease-out
                           group-hover:translate-x-0
                           md:translate-x-[100%]">
-            <div className="  md:flex items-center justify-center gap-14 border-y-4 border-l-4 border-secondary py-6 rounded-bl-[128px] bg-primary">
+            <div className="  md:flex items-center justify-center gap-14 border-y-4 border-l-4 border-secondary py-6 rounded-bl-[128px] bg-primary text-third">
               {leftLinks.map((l) => (
                 <Link
                   key={l.href}
@@ -65,7 +65,7 @@ export default function Navbar() {
                           ease-out
                           group-hover:translate-x-0
                           md:translate-x-[-100%]">
-            <div className="relative hidden md:flex items-center justify-center gap-14 border-y-4 border-r-4 border-secondary  py-6 px-10 overflow-hidden  rounded-br-[128px]  bg-primary">
+            <div className="relative hidden md:flex items-center justify-center gap-14 border-y-4 border-r-4 border-secondary  py-6 px-10 overflow-hidden  rounded-br-[128px]  bg-primary text-third">
               {rightLinks.map((l) => (
                 <Link
                   key={l.href}
