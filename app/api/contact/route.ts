@@ -5,10 +5,12 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { name, email, projectType, phone, message } = body;
 
+    const port= Number(process.env.SMTP_PORT);
+    const secure =  true; // true if using 465
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: true, // true if using 465
+      port,
+      secure,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -25,7 +27,7 @@ export async function POST(req: Request) {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Project Type:</strong> ${projectType}</p>
-        <p><strong>Email:</strong> ${phone}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,
