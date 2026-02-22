@@ -1,6 +1,6 @@
 import { SloganMark } from "@/components/brand/RespectWordmark";
 
-export function Slogan() {
+export function WhoWeAre() {
   return (
     <section className="Slogan min-h-[100svh] bg-primary  text-third">
       <div className="mx-auto flex min-h-[calc(100svh-var(--nav-h))] max-w-6xl flex-col justify-center px-6">

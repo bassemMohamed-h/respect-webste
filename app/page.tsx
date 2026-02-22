@@ -1,6 +1,6 @@
 import { Hero } from "@/components/sections/home/Hero";
 import { LatestWorkCarousel } from "@/components/sections/home/LatestWorkCarousel";
-import { Slogan } from "@/components/sections/home/Slogan";
+import { WhoWeAre } from "@/components/sections/home/WhoWeAre";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getFeaturedCaseStudies } from "@/components/lib/case-studies";
 import { Services } from "@/components/sections/home/Services";
@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <>
       <Hero/>
-      <Slogan/>
+      <WhoWeAre/>
       <SectionHeader title="Latest Work"/>
       <LatestWorkCarousel projects={projects} />
       <SectionHeader title="Services"/>
