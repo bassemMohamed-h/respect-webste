@@ -22,10 +22,11 @@ export function WhoWeAre() {
 
         {/* Description */}
         <p className=" text-xl leading-relaxed text-third">
-            PlayZone is a youth-focused football platform designed to connect young players with local matches,
-            teams, and opportunities to play regularly. The goal of the project was to create a clear marketing strategy 
-            that positions PlayZone not just as an app, but as a gateway to real play, 
-            The goal of the project was to create a clear marketing strategy that positions PlayZone not 
+           RESPECT is a Brand Strategy & Digital Marketing agency. 
+        </p>
+        <p className="font-thin tracking-widest">   
+          It operates as a system, not as separate campaigns.We help medium and large companies
+          build clear, authentic, and sustainable brands for the long term through strategy, design, and smart implementation.
         </p>
       </div>
     </section>

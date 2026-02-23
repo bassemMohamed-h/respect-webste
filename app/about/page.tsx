@@ -13,15 +13,16 @@ export default function AboutPage() {
             <AboutValuesBlock
                 Icon={Five}
                 title="Values"
-                description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis "
-                className="min-h-[100svh] relative bg-third text-primary"
+                description="We don’t just market brands we build measurable growth through strategy,
+                    creativity, and data driven decisions that deliver real, lasting business impact. "
+                className="min-h-[100svh] relative bg-third text-primary text-center"
             />
 
             <AboutValuesBlock
                 Icon={Heart}
                 title="Love"
-                description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis "
-                className="min-h-[100svh] relative bg-primary text-third"
+                description="Design with heart and mind  "
+                className="min-h-[100svh] relative bg-primary text-third text-center"
             />
             <Slogan 
                 className="bg-third text-primary"

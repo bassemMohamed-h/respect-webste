@@ -7,14 +7,14 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-third">
       <div className="mx-auto w-full max-w-7xl px-6 pt-16 pb-6">
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-5">
           {/* Brand */}
-          <div className="space-y-6">
-            <div className="">
+          <div className="space-y-6 col-span-2">
+            <div className="w-3/4">
              <RespectBrand/>
             </div>
 
-            <div className="w-[90%]">
+            <div className="w-[75%]">
               <SloganMark />
             </div>
 
