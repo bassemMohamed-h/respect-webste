@@ -2,6 +2,12 @@ import Link from "next/link";
 import Image from"next/image";  
 import { SloganMark } from "@/components/brand/RespectWordmark" // change to your real svg component name
 import { RespectBrand } from "@/components/brand/RespectBrand";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (
@@ -61,42 +67,36 @@ export default function Footer() {
             <p className="text-lg font-semibold">Social media</p>
 
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/80">
-              <a href="#" className="flex items-center gap-2">
+              <a  href="https://www.facebook.com/share/1DDmj1Rqw3/"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2">
                 <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15" >
-                <div className="relative h-full">
-                  <Image 
-                    src="/images/social/facebook.png"
-                    alt="facebook"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                  <div className="relative h-full">
+                    <FontAwesomeIcon icon={faFacebookF} />
+                  </div>
                 </span>
                 Facebook
               </a>
-              <a href="#" className="flex items-center gap-2">
+              <a  href="https://www.instagram.com/respect.agency.eg"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2">
                 <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15">
                   <div className="relative h-full">
-                  <Image 
-                    src="/images/social/snapchat.png"
-                    alt="snapchat"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                  <FontAwesomeIcon icon={faInstagram} />
+                  </div>
                 </span>
                 Instagram
               </a>
-              <a href="#" className="flex items-center gap-2">
+              <a  href="https://www.linkedin.com/company/respect-marketing-agency/"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2">
                 <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15">
                   <div className="relative h-full">
-                  <Image 
-                    src="/images/social/linkedin.png"
-                    alt="linkedin"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  </div>
                 </span>
                 LinkedIn
               </a>
