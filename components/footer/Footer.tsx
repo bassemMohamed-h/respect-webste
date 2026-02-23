@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from"next/image";  
 import { SloganMark } from "@/components/brand/RespectWordmark" // change to your real svg component name
 import { RespectBrand } from "@/components/brand/RespectBrand";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
