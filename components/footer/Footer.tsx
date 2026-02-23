@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from"next/image";  
 import { SloganMark } from "@/components/brand/RespectWordmark" // change to your real svg component name
+import { RespectBrand } from "@/components/brand/RespectBrand";
 
 export default function Footer() {
   return (
@@ -8,11 +10,9 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand */}
           <div className="space-y-6">
-            <p className="text-lg font-semibold leading-tight">
-              Respect the past
-              <br />
-              Shape the future....
-            </p>
+            <div className="">
+             <RespectBrand/>
+            </div>
 
             <div className="w-[90%]">
               <SloganMark />
@@ -45,7 +45,7 @@ export default function Footer() {
 
           {/* Links */}
           <div className="space-y-4">
-            <p className="text-lg font-semibold">Contacts</p>
+            <p className="text-lg font-semibold">Links </p>
 
             <nav className="flex flex-col gap-2 text-sm text-primary-foreground/80">
               <Link href="/">Home</Link>
@@ -62,15 +62,42 @@ export default function Footer() {
 
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/80">
               <a href="#" className="flex items-center gap-2">
-                <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15" />
+                <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15" >
+                <div className="relative h-full">
+                  <Image 
+                    src="/images/social/facebook.png"
+                    alt="facebook"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                </span>
                 Facebook
               </a>
               <a href="#" className="flex items-center gap-2">
-                <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15" />
+                <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15">
+                  <div className="relative h-full">
+                  <Image 
+                    src="/images/social/snapchat.png"
+                    alt="snapchat"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                </span>
                 Instagram
               </a>
               <a href="#" className="flex items-center gap-2">
-                <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15" />
+                <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15">
+                  <div className="relative h-full">
+                  <Image 
+                    src="/images/social/linkedin.png"
+                    alt="linkedin"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                </span>
                 LinkedIn
               </a>
             </div>

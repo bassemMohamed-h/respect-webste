@@ -2,6 +2,7 @@ import { SloganMark } from "@/components/brand/RespectWordmark";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getAllCaseStudies } from "@/components/lib/case-studies";
 import { CaseStudiesCarousel } from "@/components/sections/case-studies/CaseStudiesCarousel";
+import { CaseStudiesDetails } from "@/components/sections/case-studies/CaseStudiesDetails";
 
 export default function CaseStudies() {
     const items = getAllCaseStudies().map((cs) => ({
@@ -21,6 +22,7 @@ export default function CaseStudies() {
             <div className=" py-16 min-h-[100svh] bg-primary">
                     <CaseStudiesCarousel items={items} />                
             </div>
+            <CaseStudiesDetails/>
         </main>
     )
 }

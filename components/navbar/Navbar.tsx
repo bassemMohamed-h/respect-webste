@@ -27,7 +27,7 @@ export default function Navbar() {
                           ease-out
                           group-hover:translate-x-0
                           md:translate-x-[100%]">
-            <div className="  md:flex items-center justify-center gap-14 border-y-4 border-l-4 border-secondary py-6 rounded-bl-[128px] bg-primary text-third">
+            <div className="  md:flex items-center justify-center gap-30 py-3 rounded-bl-[128px] bg-[#5da047] text-third "> {/**border-y-4 border-l-4 border-secondary py-6*/}
               {leftLinks.map((l) => (
                 <Link
                   key={l.href}
@@ -43,7 +43,7 @@ export default function Navbar() {
         
 
         {/* Center Logo */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-background rounded-[50%] p-6 z-1">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-third rounded-[50%] p-4 z-1">
           <Link href="/" aria-label="Home">
             <Image
               src="/images/Vector.png"
@@ -65,7 +65,7 @@ export default function Navbar() {
                           ease-out
                           group-hover:translate-x-0
                           md:translate-x-[-100%]">
-            <div className="relative hidden md:flex items-center justify-center gap-14 border-y-4 border-r-4 border-secondary  py-6 px-10 overflow-hidden  rounded-br-[128px]  bg-primary text-third">
+            <div className="r md:flex items-center justify-center gap-30 py-3 rounded-br-[128px] bg-[#5da047] text-third">{/** border-y-4 border-r-4 border-secondary  py-6 */}
               {rightLinks.map((l) => (
                 <Link
                   key={l.href}
