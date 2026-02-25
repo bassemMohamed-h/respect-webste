@@ -7,11 +7,13 @@ import Footer from "@/components/footer/Footer";
 import NavbarShell from "@/components/navbar/NavbarShell";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import GsapProvider from "@/components/gsap/GsapProvider";
+
 config.autoAddCss = false;
 
 const roobert = localFont({
   src: [
-    { path: "../public/fonts/local/roobert/RoobertPRO-Bold.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/local/roobert/RoobertPRO-Light.woff2", weight: "400", style: "normal" },
     { path: "../public/fonts/local/roobert/RoobertPRO-Regular.woff2", weight: "500", style: "normal" },
     { path: "../public/fonts/local/roobert/RoobertPRO-Medium.woff2", weight: "600", style: "normal" },
     { path: "../public/fonts/local/roobert/RoobertPRO-Bold.woff2", weight: "700", style: "normal" },
@@ -19,6 +21,18 @@ const roobert = localFont({
   variable: "--font-sans",
   display: "swap",
 });
+
+const RoobertTrial = localFont({
+  src: [
+    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Light.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Regular.otf", weight: "500", style: "normal" },
+    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Medium.otf", weight: "600", style: "normal" },
+    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Bold.otf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-sans-trial",
+  display: "swap",
+});
+
 
 const geistMono = Geist_Mono({
   variable: "--font-mono",
@@ -38,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
        <NavbarShell>
         <Navbar />
       </NavbarShell>
-        {children}
+         <GsapProvider>{children}</GsapProvider>
         <Footer/>
       </body>
     </html>

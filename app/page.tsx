@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <Hero/>
       <WhoWeAre/>
-      <SectionHeader title="Latest Work"/>
+      <SectionHeader title="LATEST WORK"/>
       <LatestWorkCarousel projects={projects} />
       <SectionHeader title="Services"/>
       <Services/>

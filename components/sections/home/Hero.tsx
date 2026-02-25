@@ -3,7 +3,7 @@ export function Hero() {
     <section className="Hero container-80 min-h-[calc(100svh-var(--nav-h))] mt-[var(--nav-h)]">
           {/* Left: Title */}
           <div className="">
-            <h1 className="text-primary font-semibold leading-[0.95] tracking-tight text-5xl sm:text-7xl lg:text-[120px]">
+            <h1 className="text-primary font-semibold leading-[0.95] tracking-tight text-5xl sm:text-7xl lg:text-[148px]">
               <span className="block">Respect...</span>
               <span className="block">Digital</span>
               <span className="block">Market Agency</span>

@@ -2,16 +2,16 @@
 import Link from "next/link";
 import Image from "next/image";
 
-type NavLink = { href: string; label: string };
+type NavLink = { href: string; label: string; prefetch?: boolean; };
 
 const leftLinks: NavLink[] = [
   { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Services"},
 ];
 
 const rightLinks: NavLink[] = [
   { href: "/case-studies", label: "Case Studies" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact", prefetch: false},
 ];
 
 export default function Navbar() {
@@ -70,6 +70,7 @@ export default function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
+                  prefetch={l.prefetch}
                   className="text-primary-foreground font-semibold tracking-wide hover:opacity-80 transition"
                 >
                   {l.label}

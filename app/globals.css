@@ -48,5 +48,5 @@
 body {
   background: var(--third);
   color: var(--primary);
-  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: var(--font-sans-trial), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif,RoobertTrial;
 }

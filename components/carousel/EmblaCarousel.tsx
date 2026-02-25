@@ -4,6 +4,7 @@ import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import type { EmblaOptionsType } from "embla-carousel";
 import type { EmblaPluginType } from "embla-carousel";
+import { EmblaCarouselType } from "embla-carousel";
 
 type EmblaCarouselProps<T> = {
   items: T[];
@@ -21,6 +22,7 @@ type EmblaCarouselProps<T> = {
   prevLabel?: string;
   nextLabel?: string;
   arrowClassName?: string;
+   onApi?: (api: EmblaCarouselType) => void;
 };
 
 export function EmblaCarousel<T>({
@@ -38,8 +40,13 @@ export function EmblaCarousel<T>({
   prevLabel = "Prev",
   nextLabel = "Next",
   arrowClassName,
+ onApi
 }: EmblaCarouselProps<T>) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
+  React.useEffect(() => {
+  if (!emblaApi) return;
+  onApi?.(emblaApi);
+}, [emblaApi]);
 
   const goToPrev = React.useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const goToNext = React.useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
