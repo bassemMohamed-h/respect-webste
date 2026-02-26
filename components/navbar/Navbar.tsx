@@ -20,13 +20,13 @@ export default function Navbar() {
       <div className="flex items-center justify-between w-full relative gap-8">
         {/* Left */}
         <div className="flex-1 overflow-hidden">
-          <div className="translate-x-[0%]
+          {/* <div className="translate-x-[0%]
                           transition-transform
                           duration-1000
                           delay-200
                           ease-out
                           group-hover:translate-x-0
-                          md:translate-x-[100%]">
+                          md:translate-x-[100%]"> */}
             <div className="  md:flex items-center justify-center gap-30 py-3 rounded-bl-[128px] bg-[#5da047] text-third "> {/**border-y-4 border-l-4 border-secondary py-6*/}
               {leftLinks.map((l) => (
                 <Link
@@ -38,7 +38,7 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-          </div>
+          {/* </div> */}
         </div>
         
 
@@ -58,13 +58,13 @@ export default function Navbar() {
 
         {/* Right */}
         <div className="flex-1 overflow-hidden ">
-          <div className="translate-x-[0%]
+          {/* <div className="translate-x-[0%]
                           transition-transform
                           duration-1000
                           delay-200
                           ease-out
                           group-hover:translate-x-0
-                          md:translate-x-[-100%]">
+                          md:translate-x-[-100%]"> */}
             <div className="r md:flex items-center justify-center gap-30 py-3 rounded-br-[128px] bg-[#5da047] text-third">{/** border-y-4 border-r-4 border-secondary  py-6 */}
               {rightLinks.map((l) => (
                 <Link
@@ -77,7 +77,7 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-          </div>
+          {/* </div> */}
         </div>
         
 

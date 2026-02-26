@@ -19,7 +19,7 @@ import {
   faVk,
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
-export default function Contact() {
+export function ContactSoical() {
   return (
     <>
       <div className="links-container min-h-[100svh] mt-[var(--nav-h)] container-80">
