@@ -6,51 +6,26 @@ export function Hero() {
     const overlayRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-  const overlay = overlayRef.current;
-  if (!overlay) return;
+    const overlay = overlayRef.current;
+    if (!overlay) return;
 
-  // Disable on touch devices / coarse pointers
-  const mq = window.matchMedia("(pointer: coarse)");
-  if (mq.matches) return;
+    const onMove = (e: MouseEvent) => {
+      const rect = overlay.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-  let raf = 0;
-  let lastX = 0;
-  let lastY = 0;
+      // “hole” radius (px)
+      const r = 140;
 
-  const setMask = () => {
-    raf = 0;
-    const r = 140;
-    const mask = `radial-gradient(${r}px at ${lastX}px ${lastY}px, transparent 0%, transparent 60%, black 75%)`;
-    overlay.style.webkitMaskImage = mask;
-    (overlay.style as any).maskImage = mask;
-  };
+      // Mask that reveals a circle around the cursor
+      const mask = `radial-gradient(${r}px at ${x}px ${y}px, transparent 0%, transparent 60%, black 75%)`;
+      (overlay.style as any).maskImage = mask;
+      (overlay.style as any).webkitMaskImage = mask;
+    };
 
-  const onMove = (e: MouseEvent) => {
-    const rect = overlay.getBoundingClientRect();
-    lastX = e.clientX - rect.left;
-    lastY = e.clientY - rect.top;
-
-    if (!raf) raf = requestAnimationFrame(setMask);
-  };
-
-  const onLeave = () => {
-    // reset to center when leaving hero
-    const mask =
-      "radial-gradient(140px at 50% 50%, transparent 0%, transparent 60%, black 75%)";
-    overlay.style.webkitMaskImage = mask;
-    (overlay.style as any).maskImage = mask;
-  };
-
-  // Listen on the hero section only (overlay covers it)
-  overlay.addEventListener("mousemove", onMove);
-  overlay.addEventListener("mouseleave", onLeave);
-
-  return () => {
-    overlay.removeEventListener("mousemove", onMove);
-    overlay.removeEventListener("mouseleave", onLeave);
-    if (raf) cancelAnimationFrame(raf);
-  };
-}, []);
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
   return (
     <section className="Hero container-80 min-h-[calc(100svh-var(--nav-h))] mt-[var(--nav-h)]">
       {/* Background image */}
@@ -62,7 +37,7 @@ export function Hero() {
       {/* Blur overlay (with mask hole) */}
       <div
         ref={overlayRef}
-        className="absolute inset-0 backdrop-blur-xl bg-third transition-[backdrop-filter] duration-300"
+        className="absolute inset-0 backdrop-blur-xl bg-third"
         style={{
           // default mask center (before moving mouse)
           WebkitMaskImage:
