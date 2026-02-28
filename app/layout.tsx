@@ -27,7 +27,7 @@ const RoobertTrial = localFont({
     { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Light.otf", weight: "400", style: "normal" },
     { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Regular.otf", weight: "500", style: "normal" },
     { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Medium.otf", weight: "600", style: "normal" },
-    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Bold.otf", weight: "700", style: "normal" },
+    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Bold.otf", weight: "700", style: "normal"},
   ],
   variable: "--font-sans-trial",
   display: "swap",
