@@ -50,3 +50,11 @@ body {
   color: var(--primary);
   font-family: var(--font-sans-trial), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif,RoobertTrial;
 }
+/* makes SVG elements behave more like SplitText chars */
+.svg-char {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
