@@ -38,7 +38,27 @@ export const CaseStudy = defineDocumentType(() => ({
   },
 }));
 
+export const Service = defineDocumentType(() => ({
+  name: "Service",
+  filePathPattern: `services/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    slug: { type: "string", required: true },
+    title: { type: "string", required: true },
+    description: { type: "string", required: false },
+    moreDesc: { type: "string", required: false },
+    heroImg: { type: "string", required: false },
+    order: { type: "number", required: false },
+  },
+  computedFields: {
+    // handy link for your cards (since you use hash)
+    href: {
+      type: "string",
+      resolve: (doc) => `/services#${doc.slug}`,
+    },
+  },
+}));
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Page, CaseStudy],
+  documentTypes: [Page, CaseStudy, Service],
 });

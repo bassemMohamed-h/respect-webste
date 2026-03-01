@@ -7,6 +7,8 @@ import { Clients } from "@/components/sections/home/Clients";
 import { LetsConnectHeader } from "@/components/ui/LetsConnectHeader";
 import { Contact } from "@/components/sections/home/Contact";
 import { LatestWork } from "@/components/sections/home/LatestWork";
+import { allServices } from "contentlayer/generated";
+
 const projects = getFeaturedCaseStudies(5);
 export default function HomePage() {
   return (
@@ -15,7 +17,7 @@ export default function HomePage() {
       <WhoWeAre/>
       <LatestWork projects={projects} />
       <SectionHeader title="Services"/>
-      <Services/>
+      <Services services={allServices.sort((a,b)=>(a.order??999)-(b.order??999)).slice(0,5)}/>
       <SectionHeader title="Clients"/>
       <Clients/>
       <LetsConnectHeader/>
