@@ -6,7 +6,7 @@ import { LetsConnectHeader } from "@/components/ui/LetsConnectHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Slogan } from "@/components/ui/Sloagn";
 import { allServices } from "contentlayer/generated";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ServicesPage(){
     const sortedServices = [...allServices].sort(
@@ -16,6 +16,24 @@ export default function ServicesPage(){
     const [activeSlug, setActiveSlug] = useState(
     sortedServices[0]?.slug ?? ""
     );
+
+    useEffect(() => {
+        const slugFromHash = window.location.hash.replace("#", "");
+        if (!slugFromHash) return;
+
+        const exists = sortedServices.some((s) => s.slug === slugFromHash);
+        if (!exists) return;
+
+        // set active service
+        setActiveSlug(slugFromHash);
+
+        // scroll after React paints the details
+        requestAnimationFrame(() => {
+            document
+            .getElementById("service-details")
+            ?.scrollIntoView({ behavior: "smooth" });
+        });
+    }, [sortedServices]);
     return(
         <main>
             <SectionHeader title="Services" 
@@ -32,7 +50,7 @@ export default function ServicesPage(){
             baseHref="" // because we're already on /services
             />
             <ServicesDetails services={sortedServices} activeSlug={activeSlug} />
-            <LetsConnectHeader/>
+            <LetsConnectHeader title="Connect"/>
             <Contact/>
         </main>
         

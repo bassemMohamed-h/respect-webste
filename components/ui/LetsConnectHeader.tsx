@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import { OurScribble } from "@/components/brand/OurScribble";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,8 +8,11 @@ import { LetsScribble } from "../brand/LetsScribble";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-export function LetsConnectHeader() {
+type SectionHeaderProps = {
+  title: string;
+  description?: string;
+};
+export function LetsConnectHeader({title,description}:SectionHeaderProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const scribbleRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -91,9 +93,14 @@ export function LetsConnectHeader() {
         <LetsScribble/>
       </div>
 
-      <h3 ref={titleRef} className="absolute text-primary text-[155px] bottom-[37%] font-bold">
-        Connect
+      <h3 ref={titleRef} className="absolute text-primary text-[155px] bottom-[25%] font-bold">
+        {title}
       </h3>
+      {description && (
+        <p ref={descRef} className="absolute bottom-20 text-primary text-[32px] container-80 mx-auto">
+          {description}
+        </p>
+      )}
     </div>
   );
 }

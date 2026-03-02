@@ -87,30 +87,29 @@ export function LatestWork({ projects }: LatestWorkProps) {
         <div ref={headerRef} >
             <SectionHeader title="LATEST WORK" />
         </div>
-
         {/* stage moves up to cover header */}
-        <div ref={stageRef} className="relative z-10 bg-primary overflow-hidden min-h-[100svh] flex items-center">
-            <div className="overflow-hidden  ">
-                <div ref={trackRef} className="flex flex-nowrap will-change-transform">
+        <div ref={stageRef} className="relative z-10 overflow-hidden min-h-[100svh] flex items-center">
+            <div className="overflow-hidden">
+                <div ref={trackRef} className=" flex flex-nowrap will-change-transform ">
                     {projects.map((p) => (
                         <article
                             key={p.slug}
-                            className="min-w-0 flex-[0_0_85vw] sm:flex-[0_0_70vw] md:flex-[0_0_45vw] lg:flex-[0_0_33vw] px-6"
+                            className="min-w-0 flex-[0_0_100vw]"
                             >
                             <Link href={`/case-studies/${p.slug}`} className="block">
-                                <div className="relative aspect-square overflow-hidden rounded-2xl">
-                                <Image
-                                    src={p.coverImage}
-                                    alt={p.title}
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 45vw, 33vw"
-                                    priority={false}
-                                />
+                                <div className="relative aspect-square overflow-hidden h-[100svh] w-full  rounded-br-[205px] rounded-t-[6px] rounded-bl-[6px]">
+                                    <Image
+                                        src={p.coverImage}
+                                        alt={p.title}
+                                        fill
+                                        className="object-cover"
+                                        priority={false}
+                                    />
+                                    <div className="absolute bottom-20 left-10 z-10 bg-black/80">
+                                        <h3 className="mt-5 text-2xl font-semibold text-white">{p.title}</h3>
+                                        <p className="mt-2 text-sm text-white/80 line-clamp-3">{p.description}</p>
+                                    </div>
                                 </div>
-
-                                <h3 className="mt-5 text-2xl font-semibold text-white">{p.title}</h3>
-                                <p className="mt-2 text-sm text-white/80 line-clamp-3">{p.description}</p>
                             </Link>
                         </article>
                     ))}
