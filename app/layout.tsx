@@ -11,25 +11,24 @@ import GsapProvider from "@/components/gsap/GsapProvider";
 
 config.autoAddCss = false;
 
-const roobert = localFont({
+const roobertPro = localFont({
   src: [
-    { path: "../public/fonts/local/roobert/RoobertPRO-Light.woff2", weight: "400", style: "normal" },
-    { path: "../public/fonts/local/roobert/RoobertPRO-Regular.woff2", weight: "500", style: "normal" },
-    { path: "../public/fonts/local/roobert/RoobertPRO-Medium.woff2", weight: "600", style: "normal" },
-    { path: "../public/fonts/local/roobert/RoobertPRO-Bold.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/roobert/RoobertPRO-Light.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/roobert/RoobertPRO-Regular.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/roobert/RoobertPRO-Medium.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/roobert/RoobertPRO-Bold.woff2", weight: "700", style: "normal" },
   ],
-  variable: "--font-sans",
+  variable: "--font-roobert-pro",
   display: "swap",
 });
-
-const RoobertTrial = localFont({
+const roobertTrial = localFont({
   src: [
-    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Light.otf", weight: "400", style: "normal" },
-    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Regular.otf", weight: "500", style: "normal" },
-    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Medium.otf", weight: "600", style: "normal" },
-    { path: "../public/fonts/local/RoobertTrial/RoobertTrial-Bold.otf", weight: "700", style: "normal"},
+    { path: "./fonts/RoobertTrial/RoobertTRIAL-Light.otf", weight: "400", style: "normal" },
+    { path: "./fonts/RoobertTrial/RoobertTRIAL-Regular.otf", weight: "500", style: "normal" },
+    { path: "./fonts/RoobertTrial/RoobertTRIAL-Medium.otf", weight: "600", style: "normal" },
+    { path: "./fonts/RoobertTrial/RoobertTRIAL-Bold.otf", weight: "700", style: "normal" },
   ],
-  variable: "--font-sans-trial",
+  variable: "--font-roobert-trial",
   display: "swap",
 });
 
@@ -48,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
 
-      <body className={`${roobert.variable} ${geistMono.variable} antialiased ` }>
+      <body className={`${roobertPro.variable} ${roobertTrial.variable} ${geistMono.variable} antialiased ` }>
        <NavbarShell>
         <Navbar />
       </NavbarShell>
