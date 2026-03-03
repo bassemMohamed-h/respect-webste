@@ -15,12 +15,13 @@ export default function HomePage() {
     <>
       <Hero/>
       <WhoWeAre/>
+      <SectionHeader title="LATEST WORK" />
       <LatestWork projects={projects} />
       <SectionHeader title="Services"/>
       <Services services={allServices.sort((a,b)=>(a.order??999)-(b.order??999)).slice(0,5)}/>
       <SectionHeader title="Clients"/>
       <Clients/>
-      <LetsConnectHeader/>
+      <LetsConnectHeader title="Connect"/>
       <Contact/>
     </>
 

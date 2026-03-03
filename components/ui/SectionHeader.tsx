@@ -94,7 +94,7 @@ export function SectionHeader({ title, description }: SectionHeaderProps) {
         <OurScribble className="text-secondary" />
       </div>
 
-      <h3 ref={titleRef} className="absolute text-primary text-[155px] bottom-[25%] font-bold">
+      <h3 ref={titleRef} className="absolute text-primary text-[155px] bottom-[30%] font-bold">
         {title}
       </h3>
 
