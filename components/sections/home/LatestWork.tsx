@@ -158,7 +158,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
                             key={p.slug}
                             className="min-w-0 flex-[0_0_100vw]"
                             >
-                            <Link href={`/case-studies/${p.slug}`} className="block">
+                            <Link href={`/case-studies#${p.slug}`} className="block">
                                 <div className="relative aspect-square overflow-hidden h-[100svh] w-full  rounded-br-[205px] rounded-t-[6px] rounded-bl-[6px]">
                                     <Image
                                         src={p.coverImage}
@@ -167,9 +167,9 @@ export function LatestWork({ projects }: LatestWorkProps) {
                                         className="object-cover"
                                         priority={false}
                                     />
-                                    <div className="absolute bottom-20 left-10 z-10 bg-black/80">
-                                        <h3 className="mt-5 text-2xl font-semibold text-white">{p.title}</h3>
-                                        <p className="mt-2 text-sm text-white/80 line-clamp-3">{p.description}</p>
+                                    <div className="absolute bottom-20 left-10 z-10  text-white">
+                                        <h3 className="mt-5 text-4xl font-bold">{p.title}</h3>
+                                        <p className="mt-2 text-xl line-clamp-3 font-semibold">{p.description}</p>
                                     </div>
                                 </div>
                             </Link>
