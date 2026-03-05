@@ -6,7 +6,6 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Slogan } from "../../ui/Sloagn";
 
 type LatestWorkProps = {
@@ -156,7 +155,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
                     {projects.map((p) => (
                         <article
                             key={p.slug}
-                            className="min-w-0 flex-[0_0_100vw]"
+                            className="min-w-0 flex-[0_0_100vw] pr-10"
                             >
                             <Link href={`/case-studies#${p.slug}`} className="block">
                                 <div className="relative aspect-square overflow-hidden h-[100svh] w-full  rounded-br-[205px] rounded-t-[6px] rounded-bl-[6px]">

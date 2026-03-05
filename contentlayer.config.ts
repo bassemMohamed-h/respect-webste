@@ -23,13 +23,21 @@ export const CaseStudy = defineDocumentType(() => ({
   name: "CaseStudy",
   filePathPattern: "case-studies/*.mdx",
   contentType: "mdx",
+
   fields: {
     title: { type: "string", required: true },
     description: { type: "string", required: true },
     coverImage: { type: "string", required: true },
-    featured: { type: "boolean", required: false, default: false },
-    order: { type: "number", required: false },
+
+    featured: { type: "boolean", default: false },
+    order: { type: "number" },
+
+    client: { type: "string" },
+    service: { type: "string" },
+    studyType: { type: "string" },
+    year: { type: "number" },
   },
+
   computedFields: {
     slug: {
       type: "string",
