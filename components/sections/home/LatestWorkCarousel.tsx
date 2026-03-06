@@ -26,8 +26,6 @@
   )
   const pinRef = useRef<HTMLElement>(null);
   const emblaApiRef = useRef<EmblaCarouselType | null>(null);
-  const goToPrev = () => emblaApiRef.current?.scrollPrev();
-  const goToNext = () => emblaApiRef.current?.scrollNext();
   const lastIndexRef = useRef(0);
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
@@ -68,8 +66,6 @@
           className="LatestWork relative min-h-[100svh] bg-primary text-third rounded-br-lg"
           slideClassName="min-w-0 flex-[0_0_100%]"
           showArrows
-          prevLabel="Scroll to prev"
-          nextLabel="Scroll to next"
           renderItem={(project) => (
             <div className="relative min-h-[100svh] rounded-br-lg">
               <Image
@@ -89,16 +85,7 @@
               </div>
             </div>
           )}
-          onApi={(api) => (emblaApiRef.current = api)}
         />
-
-        <button   className="embla__prev absolute top-1/2 left-6 z-10 -translate-y-1/2 rounded-full bg-white/20 p-3" 
-                  onClick={goToPrev}>
-          Scroll to prev
-        </button>
-        <button className="embla__next absolute top-1/2 right-6 z-10 -translate-y-1/2 rounded-full bg-white/20 p-3" onClick={goToNext}>
-          Scroll to next
-        </button>
       </section>
     )
   }
