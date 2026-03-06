@@ -35,21 +35,21 @@ export function Slogan({ title, description, className, animated }: SloganProps)
         const tl = gsap.timeline({
         scrollTrigger: {
             trigger: section,
-            start: "top 100%",
-            end: "bottom 0",
+            start: "top 50%",
+            end: "bottom 30%",
             scrub: true,
         },
         });
 
         tl.fromTo(
         titleEl,
-        { xPercent: 75 },
+        { xPercent: 0   },
         { xPercent: -50, ease: "none" }
         )
         .to(
             descEl,
             { clipPath: "inset(0 0% 0 0)", ease: "power2.out" },
-            ">" // start AFTER previous finishes
+            ".35" // start AFTER previous finishes
         );
     },
     { scope: sectionRef }

@@ -5,6 +5,7 @@ import { useMDXComponent } from "next-contentlayer2/hooks";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import { useRef } from "react";
 import { gsap } from "gsap";
+import Link from "next/link";
 
 type ServiceDoc = {
   slug: string;
@@ -63,7 +64,12 @@ export function ServicesDetails({ services, activeSlug }: Props) {
                      <MDXContent components={mdxComponents}/>
                 </article>
                 <div className="mt-8 flex justify-end">
-                    <button className="px-8 py-4 bg-primary text-white rounded-br-[50px] mt-8 w-[200px]">Start Your Project</button>
+                    <Link
+                        href="/contact"
+                        className="mt-8 inline-flex w-[200px] items-center justify-center rounded-br-[50px] bg-primary px-8 py-4 text-white"
+                    >
+                        Start Your Project
+                    </Link>
                 </div>
                 
             </div>

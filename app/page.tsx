@@ -8,6 +8,7 @@ import { LetsConnectHeader } from "@/components/ui/LetsConnectHeader";
 import { Contact } from "@/components/sections/home/Contact";
 import { LatestWork } from "@/components/sections/home/LatestWork";
 import { allServices } from "contentlayer/generated";
+import { OurScribble } from "@/components/brand/OurScribble";
 
 const projects = getFeaturedCaseStudies(5);
 export default function HomePage() {
@@ -15,11 +16,26 @@ export default function HomePage() {
     <>
       <Hero/>
       <WhoWeAre/>
-      <SectionHeader title="LATEST WORK" />
+      <SectionHeader 
+        title={{
+          name:"LATEST WORK", className:""
+        }}
+        Svg={<OurScribble className="text-secondary" />}
+      />
       <LatestWork projects={projects} />
-      <SectionHeader title="Services"/>
+      <SectionHeader 
+        title={{
+          name:"Services", className:""
+        }}
+        Svg={<OurScribble className="text-secondary" />}
+      />
       <Services services={allServices.sort((a,b)=>(a.order??999)-(b.order??999)).slice(0,5)}/>
-      <SectionHeader title="Clients"/>
+      <SectionHeader 
+        title={{
+          name:"Clients", className:""
+        }}
+        Svg={<OurScribble className="text-secondary" />}
+        />
       <Clients/>
       <LetsConnectHeader title="Connect"/>
       <Contact/>

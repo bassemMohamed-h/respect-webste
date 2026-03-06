@@ -116,7 +116,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
 
             tl.to(
             sloganDesc,
-            { clipPath: "inset(0 0% 0 0)", ease: "power2.out", duration: 400 },
+            { clipPath: "inset(0 0% 0 0)", ease: "power2.out", duration: 200 },
             ">" // after title
             );
 
@@ -155,7 +155,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
                     {projects.map((p) => (
                         <article
                             key={p.slug}
-                            className="min-w-0 flex-[0_0_100vw] pr-10"
+                            className="min-w-0 flex-[0_0_100vw]"
                             >
                             <Link href={`/case-studies#${p.slug}`} className="block">
                                 <div className="relative aspect-square overflow-hidden h-[100svh] w-full  rounded-br-[205px] rounded-t-[6px] rounded-bl-[6px]">

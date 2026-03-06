@@ -29,11 +29,11 @@ export function TeamCarousel({ items }: Props) {
     <section className="w-full min-w-0">
       <div className="overflow-hidden w-full select-none touch-pan-y cursor-grab active:cursor-grabbing"
             ref={emblaRef}>
-        <div className="flex gap-6">
+        <div className="flex">
           {items.map((m,index) => (
             <div
               key={index}
-               className="flex-[0_0_80%] sm:flex-[0_0_45%] md:flex-[0_0_28%] lg:flex-[0_0_22%]"
+               className="flex-[0_0_80%] sm:flex-[0_0_45%] md:flex-[0_0_28%] lg:flex-[0_0_22%] pr-10"
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border">
                 <Image

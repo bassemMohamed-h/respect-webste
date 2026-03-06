@@ -6,7 +6,10 @@ import { LetsConnectHeader } from "@/components/ui/LetsConnectHeader";
 export default function ContactPage() {
     return(
         <section className="ContactPage">
-            <LetsConnectHeader title="Connect" description="We believe good work starts with an honest conversation. If you have a project, a question, or just an idea you’d like to explore, we’re here to listen."/>
+            <LetsConnectHeader 
+                title="Connect" 
+                description="We believe good work starts with an honest conversation. If you have a project, a question, or just an idea you’d like to explore, we’re here to listen."
+            />
             <ContactSoical/>
             {/* <div className="container-80 mx-auto flex flex-col md:flex-row gap-12 mt-20">
                 <div className="Left flex-1 ">

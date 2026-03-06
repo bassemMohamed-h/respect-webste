@@ -97,7 +97,7 @@ export function LetsConnectHeader({title,description}:SectionHeaderProps) {
         {title}
       </h3>
       {description && (
-        <p ref={descRef} className="absolute bottom-20 text-primary text-[32px] container-80 mx-auto">
+        <p ref={descRef} className="absolute bottom-20 text-black text-[32px] text-center font-semibold container-80 mx-auto">
           {description}
         </p>
       )}

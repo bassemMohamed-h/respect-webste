@@ -1,4 +1,5 @@
 "use client";
+import { OurScribble } from "@/components/brand/OurScribble";
 import { Contact } from "@/components/sections/home/Contact";
 import { Services } from "@/components/sections/home/Services";
 import { ServicesDetails } from "@/components/sections/services/ServicesDetails";
@@ -36,13 +37,24 @@ export default function ServicesPage(){
     }, [sortedServices]);
     return(
         <main>
-            <SectionHeader title="Services" 
-            description="We offer integrated solutions that cover the brand's journey from the inside out."
+            <SectionHeader 
+            title={{
+                name:"Services", className:""
+            }} 
+            description={{
+                name:"We offer integrated solutions that cover the brand's journey from the inside out.",
+                className:"text-black text-[32px]"
+            }}
+            Svg={<OurScribble className="text-secondary" />}
             />
             <Slogan 
-                className="bg-primary"
-                title={{ text: "Design is not decoration It is a way of thinking", className: "text-center text-secondary" }}
-                description={{ text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", className: "text-center text-third" }}
+                animated = {true}
+                className="bg-primary text-primary overflow-hidden"
+                title={{ 
+                    text: "Design is not decoration It is a way of thinking", className: "text-center text-secondary" }}
+                description={{ 
+                    text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", 
+                    className: "text-center text-third text-[27px] font-semibold" }}
             />
             <Services services={sortedServices}
             activeSlug={activeSlug}

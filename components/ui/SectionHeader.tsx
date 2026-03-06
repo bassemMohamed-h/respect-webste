@@ -1,87 +1,133 @@
 "use client";
 
 import { useRef } from "react";
-import { OurScribble } from "@/components/brand/OurScribble";
+import type { ReactNode,  } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+type SectionHeaderText = {
+  name:string,
+  className?:string
+}
+
 type SectionHeaderProps = {
-  title: string;
-  description?: string;
+  title:SectionHeaderText;
+  description?: SectionHeaderText;
+  Svg: ReactNode;
+  drawSelector?: string; // default: path
+  className?: string;
 };
 
-export function SectionHeader({ title, description }: SectionHeaderProps) {
+export function SectionHeader({
+  title,
+  description,
+  Svg,
+  drawSelector = "path",
+  className
+}: SectionHeaderProps) {
   const rootRef = useRef<HTMLDivElement>(null);
-  const scribbleRef = useRef<HTMLDivElement>(null);
+  const svgWrapperRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
 
   useGSAP(
     () => {
-      if (!rootRef.current) return;
+      const root = rootRef.current;
+      const svgWrapper = svgWrapperRef.current;
+      const titleEl = titleRef.current;
+      const descEl = descRef.current;
 
-      // 1) Prepare initial states
-      gsap.set(titleRef.current, { y: 40, opacity: 0 });
-      if (descRef.current) gsap.set(descRef.current, { y: 20, opacity: 0 });
+      if (!root || !svgWrapper || !titleEl) return;
 
-      // 2) (Optional) "Draw" the scribble if it is stroke-based paths
-      // We’ll try to find svg paths inside the scribble.
-      const paths = scribbleRef.current?.querySelectorAll("path");
-      if (paths && paths.length) {
-        paths.forEach((p) => {
-          const len = (p as SVGPathElement).getTotalLength?.();
-          if (!len) return;
-          gsap.set(p, {
-            strokeDasharray: len,
-            strokeDashoffset: len,
-            opacity: 1,
-          });
-        });
+      // initial states
+      gsap.set(svgWrapper, {
+        opacity: 0,
+        clipPath: "inset(0 0 100% 0)",
+        scale: 0.98,
+        transformOrigin: "50% 50%",
+      });
+
+      gsap.set(titleEl, { y: 40, opacity: 0 });
+
+      if (descEl) {
+        gsap.set(descEl, { y: 20, opacity: 0 });
       }
 
-      // 3) Timeline with ScrollTrigger (reusable pattern)
+      // optional inner stroke draw animation
+      const drawableElements = svgWrapper.querySelectorAll(drawSelector);
+
+      drawableElements.forEach((el) => {
+        const shape = el as SVGGeometryElement;
+
+        if (typeof shape.getTotalLength !== "function") return;
+
+        const length = shape.getTotalLength();
+        if (!length) return;
+
+        gsap.set(shape, {
+          strokeDasharray: length,
+          strokeDashoffset: length,
+          opacity: 1,
+        });
+      });
+
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: rootRef.current,
+          trigger: root,
           start: "top 75%",
           toggleActions: "play none none reverse",
         },
       });
 
-     // Scribble: from hidden -> visible (timeline owns both states)
-    tl.fromTo(
-      scribbleRef.current,
-      {
+      // reveal svg wrapper
+      tl.to(svgWrapper, {
         opacity: 1,
-        clipPath: "inset(0 0 100% 0)",
-        transformOrigin: "50% 50%",
-        scale: 0.98,
-      },
-      {
         clipPath: "inset(0 0 0% 0)",
         scale: 1,
-        duration: 1.5,
+        duration: 1.2,
         ease: "power2.out",
-      }
-    );
+      });
 
-       // Then: title from bottom to place
-      tl.to(titleRef.current, {
-        y: 0,
-        opacity: 1,
-        duration:1,
-        ease: "power2.out",
-      }, "-=0.5");
-
-      // Then: description (if exists)
-      if (descRef.current) {
+      // draw inner strokes if possible
+      if (drawableElements.length > 0) {
         tl.to(
-          descRef.current,
-          { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" },
-          "-=.75"
+          drawableElements,
+          {
+            strokeDashoffset: 0,
+            duration: 1.4,
+            ease: "power2.out",
+            stagger: 0.06,
+          },
+          0.1
+        );
+      }
+
+      // title
+      tl.to(
+        titleEl,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: "power2.out",
+        },
+        "-=0.7"
+      );
+
+      // description
+      if (descEl) {
+        tl.to(
+          descEl,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          "-=0.55"
         );
       }
     },
@@ -89,18 +135,30 @@ export function SectionHeader({ title, description }: SectionHeaderProps) {
   );
 
   return (
-    <div ref={rootRef} className="relative min-h-[100svh] flex justify-center items-center">
-      <div ref={scribbleRef} className="will-change-transform [will-change:clip-path">
-        <OurScribble className="text-secondary" />
+    <div
+      ref={rootRef}
+      className= {`relative flex min-h-[100svh] items-center justify-center ${className}`} 
+    >
+      <div
+        ref={svgWrapperRef}
+        className= "will-change-transform [will-change:clip-path]"
+      >
+        {Svg}
       </div>
 
-      <h3 ref={titleRef} className="absolute text-primary text-[155px] bottom-[30%] font-bold">
-        {title}
+      <h3
+        ref={titleRef}
+        className={`absolute bottom-[30%] text-[155px] font-bold text-primary ${title.className}`}
+      >
+        {title.name}
       </h3>
 
       {description && (
-        <p ref={descRef} className="absolute bottom-20 text-primary text-xl">
-          {description}
+        <p 
+          ref={descRef} 
+          className= {`absolute bottom-20 font-semibold text-black text-[32px] ${description.className}`}
+        >
+          {description.name}
         </p>
       )}
     </div>
