@@ -33,13 +33,15 @@ export function CaseStudiesPageClient({ items }: Props) {
 
       setActiveSlug(hash);
 
-      requestAnimationFrame(() => {
-        document.getElementById("case-study-details")?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      });
-    };
+      setTimeout(() => {
+        const el = document.getElementById("case-study-details");
+          if (!el) return;
+          el.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            });
+        }, 300);
+      };
 
     // initial load (Home -> /case-studies#slug)
     applyHash();
