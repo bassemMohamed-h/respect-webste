@@ -66,36 +66,40 @@ export function Services({ services, activeSlug, onSelect, baseHref = "/services
                       // smooth scroll to details section
                       document.getElementById("service-details")?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className={ `service-card block`}>
+                    className={ `service-card block `}>
               <div
                 key={service.title}
-                className={`relative min-h-[100svh] overflow-hidden rounded-br-[150px]  transition-transform duration-300  hover:scale-[1.03] ease-out   
-                ${activeSlug === service.slug ? "bg-primary/60" : "bg-primary"}`}
+                className={`relative min-h-[100svh] overflow-hidden rounded-br-[150px]  
+                          transition-transform duration-300  
+                          ${index % 2 === 0 ? "bg-primary" : "bg-primary/60" }
+                          `
+                        }
               >
-                {/* image */}
-                <div className="absolute top-0 left-10 bg-cover bg-center w-full">
-                  <img
-                    src={service.heroImg}
-                    alt={service.title}
-                    className="object-cover"
-                  />
-                </div>
-                {/* number */}
-                <div className="absolute bottom-5 right-6 text-9xl font-bold text-third/90">
-                  {index + 1}
-                </div>
+                <div className={`${activeSlug === service.slug ? "border-secondary/60 border-4 min-h-[100svh]" :"hover:scale-[1.03] ease-out min-h-[100svh]"}`}>
+                  {/* image */}
+                  <div className="absolute top-0 left-10 bg-cover bg-center w-full">
+                    <img
+                      src={service.heroImg}
+                      alt={service.title}
+                      className="object-cover"
+                    />
+                  </div>
+                  {/* number */}
+                  <div className="absolute bottom-5 right-6 text-9xl font-bold text-third">
+                    {index + 1}
+                  </div>
 
-                {/* vertical label */}
-                <div className="absolute inset-0">
-                  <div className="absolute bottom-5 left-0 origin-bottom-left -rotate-90">
-                    <p className="translate-y-full text-[56px] md:text-[72px] lg:text-[60px] font-bold leading-none text-third whitespace-nowrap">
-                      {service.title}
-                    </p>
+                  {/* vertical label */}
+                  <div className="absolute inset-0">
+                    <div className="absolute bottom-5 left-2 origin-bottom-left -rotate-90">
+                      <p className="translate-y-full text-[56px] md:text-[72px] lg:text-[60px] font-bold leading-none text-third whitespace-nowrap">
+                        {service.title}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </Link>
-            
           ))}
         </div>
     </section>

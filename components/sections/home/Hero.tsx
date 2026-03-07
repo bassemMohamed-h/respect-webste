@@ -1,5 +1,6 @@
 "use client";
 import { RespectComesFirst } from "@/components/brand/RespectComesFirst";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 export function Hero() {
@@ -37,23 +38,22 @@ export function Hero() {
       {/* Blur overlay (with mask hole) */}
       <div
         ref={overlayRef}
-        className="absolute inset-0 backdrop-blur-xl bg-third"
-        style={{
-          // default mask center (before moving mouse)
-          WebkitMaskImage:
-            "radial-gradient(140px at 50% 50%, transparent 0%, transparent 60%, black 75%)",
-          maskImage:
-            "radial-gradient(140px at 50% 50%, transparent 0%, transparent 60%, black 75%)",
-        }}
-      />
+        className="absolute inset-0 backdrop-blur-xl bg-third"/>
       <div className="relative z-10">
         <RespectComesFirst/>
         {/* Right: Paragraph */}
-        <div className="mt-10 max-w-xl ml-auto mb-10">
-          <p className="text-xl leading-6 text-black/70 ">
+        <div className=" max-w-3xl ml-auto mb-10 font-semibold flex-col flex items-end">
+          <p className="text-3xl text-black text-center leading-8 -translate-y-full">
             We are a strategy and digital marketing agency.
             We build brands that clearly grow, are fully functional.
           </p>
+          <Link
+            href="/contact"
+            className=" rounded-br-[50px] bg-primary px-12 py-6 text-third text-2xl"
+          >
+            Let's talk about your project
+          </Link>
+
         </div>
       </div>
     </section>

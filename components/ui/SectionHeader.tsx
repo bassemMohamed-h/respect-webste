@@ -77,7 +77,7 @@ export function SectionHeader({
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: root,
-          start: "top 75%",
+          start: "top 30%",
           toggleActions: "play none none reverse",
         },
       });
@@ -148,7 +148,7 @@ export function SectionHeader({
 
       <h3
         ref={titleRef}
-        className={`absolute bottom-[30%] text-[155px] font-bold text-primary ${title.className}`}
+        className={`absolute bottom-[35%] text-9xl font-bold text-primary ${title.className}`}
       >
         {title.name}
       </h3>

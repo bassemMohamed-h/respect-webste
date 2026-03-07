@@ -39,7 +39,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
         if (!sloganTitle || !sloganDesc) return;
 
         // how much scroll space for slogan animation (px)
-        const sloganLen = 500;
+        const sloganLen = 2000;
 
         // prepare
         gsap.set(sloganDesc, { clipPath: "inset(0 100% 0 0)" });
@@ -61,7 +61,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
             const reveal = header.getBoundingClientRect().height;
 
             // scroll snap
-            const paraLen = 200; // keep same as your tl.to(sloganDesc,...duration:200)
+            const paraLen = 10000; // keep same as your tl.to(sloganDesc,...duration:200)
             const phase2Start = sloganLen + paraLen + reveal; // where horizontal starts (in px timeline units)
             const totalLen = phase2Start + scrollLength;
 
@@ -111,12 +111,12 @@ export function LatestWork({ projects }: LatestWorkProps) {
             tl.fromTo(
             sloganTitle,
             { xPercent: 0},
-            { xPercent: -50, ease: "none", duration: sloganLen }
+            { xPercent: -35, ease: "none", duration: sloganLen }
             );
 
             tl.to(
             sloganDesc,
-            { clipPath: "inset(0 0% 0 0)", ease: "power2.out", duration: 200 },
+            { clipPath: "inset(0 0% 0 0)", ease: "power2.out", duration: paraLen },
             ">" // after title
             );
 

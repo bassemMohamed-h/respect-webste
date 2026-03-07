@@ -1,7 +1,11 @@
 export function SloganMark() {
   return (
-<svg viewBox="0 0 1391 333" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_1275_2925" maskUnits="userSpaceOnUse" x="0" y="0" width="1391" height="333">
+<svg 
+  viewBox="0 0 1391 333" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+<mask id="mask0_1275_2925" maskUnits="userSpaceOnUse" x="0" y="0" width="100%">
 <rect width="1391" height="332.488" fill="#ffffff"/>
 </mask>
 <g mask="url(#mask0_1275_2925)">

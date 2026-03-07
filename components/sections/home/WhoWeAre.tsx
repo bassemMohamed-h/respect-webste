@@ -6,7 +6,7 @@ export function WhoWeAre() {
   const blockRef = useTextMaskRevealGroup<HTMLDivElement>();
   return (
     <section className="Slogan min-h-[100svh] bg-primary  text-third">
-      <div className="mx-auto flex min-h-[calc(100svh-var(--nav-h))] max-w-6xl flex-col justify-center px-6">
+      <div className="mx-auto flex min-h-[calc(100svh-var(--nav-h))] container-80 flex-col justify-center px-6">
         
         {/* SEO heading (hidden visually) */}
         <h2 className="sr-only">
@@ -24,10 +24,10 @@ export function WhoWeAre() {
           </p>
 
           {/* Description */}
-          <p  className=" text-xl text-third">
+          <p  className=" text-2xl text-third">
             RESPECT is a Brand Strategy & Digital Marketing agency. 
           </p>
-          <p  className="font-thin tracking-widest">   
+          <p  className="font-thin tracking-widest text-xl">   
             It operates as a system, not as separate campaigns.We help medium and large companies
             build clear, authentic, and sustainable brands for the long term through strategy, design, and smart implementation.
           </p>
