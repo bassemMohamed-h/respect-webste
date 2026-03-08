@@ -43,7 +43,7 @@ export default function AboutPage() {
                 title={{
                     name:"Story", className:""
                 }} 
-                Svg={<OurScribble className="text-third" />}
+                Svg={<OurScribble className="text-secondary" />}
             />
             <Story/>
             <SectionHeader 

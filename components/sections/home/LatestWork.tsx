@@ -111,7 +111,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
             tl.fromTo(
             sloganTitle,
             { xPercent: 0},
-            { xPercent: -35, ease: "none", duration: sloganLen }
+            { xPercent: -50, ease: "none", duration: sloganLen }
             );
 
             tl.to(
@@ -133,7 +133,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
 
         return () => {
             ScrollTrigger.removeEventListener("refreshInit", build);
-            tl?.scrollTrigger?.kill();
+            // tl?.scrollTrigger?.kill();
             tl?.kill();
         };
     }, []);
@@ -144,7 +144,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
             <Slogan 
                 className="bg-primary text-secondary"
                 animated={false}
-                title={{ text: "Design is not decoration It is a way of thinking", className: "text-center" }}
+                title={{ text: "Design is not decoration It is a way of thinking"}}
                 description={{ text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", className: "text-center text-third" }}
             />
         </div>

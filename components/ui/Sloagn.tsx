@@ -35,8 +35,9 @@ export function Slogan({ title, description, className, animated }: SloganProps)
         const tl = gsap.timeline({
         scrollTrigger: {
             trigger: section,
-            start: "top 50%",
-            end: "bottom 30%",
+            start: "top top",
+            end: () => `+=${titleEl.scrollWidth + descEl.scrollWidth}`,
+            pin:true,
             scrub: true,
         },
         });
@@ -48,7 +49,7 @@ export function Slogan({ title, description, className, animated }: SloganProps)
         )
         .to(
             descEl,
-            { clipPath: "inset(0 0% 0 0)", ease: "power2.out" },
+            { clipPath: "inset(0 0.13% 0 0)", ease: "power2.out" },
             ".35" // start AFTER previous finishes
         );
     },
@@ -57,15 +58,16 @@ export function Slogan({ title, description, className, animated }: SloganProps)
     }
    
     return (
-        <section ref={sectionRef} className={`Slogan min-h-[100svh] flex items-center  ${className}`}>
+        <section ref={sectionRef} className={`Slogan min-h-[100svh] flex items-start justify-center  flex-col pl-3 ${className}`}>
             <div>
-                <h2 ref={titleRef} className={`text-[136px] font-bold mb-20 text-nowrap ${title.className}`}>
+                <h2 ref={titleRef} className={`text-9xl font-bold mb-20 text-nowrap ${title.className}`}>
                    {title.text}
                 </h2>
-               <p ref={descRef} className={`text-[26px] leading-relaxed w-[50%] will-change-[clip-path] ${description.className}`}>
+               
+            </div>
+            <p ref={descRef} className={` text-2xl will-change-[clip-path] ${description.className}`}>
                    {description.text}
                 </p>
-            </div>
         </section>
     )
 }

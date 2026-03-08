@@ -49,7 +49,7 @@ export function Hero() {
           </p>
           <Link
             href="/contact"
-            className=" rounded-br-[50px] bg-primary px-12 py-6 text-third text-2xl"
+            className=" rounded-br-[50px] bg-primary px-12 py-6 text-third text-2xl -translate-y-1/2"
           >
             Let's talk about your project
           </Link>
