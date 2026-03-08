@@ -28,7 +28,7 @@ export function Hero() {
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
   return (
-    <section className="Hero container-80 min-h-[calc(100svh-var(--nav-h))] mt-[var(--nav-h)]">
+    <section className="Hero container-80 min-h-[calc(100svh-var(--nav-h))] mt-[var(--nav-h)] mb-10">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -38,20 +38,21 @@ export function Hero() {
       {/* Blur overlay (with mask hole) */}
       <div
         ref={overlayRef}
-        className="absolute inset-0 backdrop-blur-xl bg-third"/>
+        className="absolute inset-0 backdrop-blur-xl bg-third"
+      />
       <div className="relative z-10">
         <RespectComesFirst/>
         {/* Right: Paragraph */}
-        <div className=" max-w-3xl ml-auto mb-10 font-semibold flex-col flex items-end">
-          <p className="text-3xl text-black text-center leading-8 -translate-y-full">
+        <div className=" max-w-3xl ml-auto font-semibold  flex items-end absolute bottom-0 right-0 z-20 ">
+          <p className="text-3xl text-black text-center leading-8 ">
             We are a strategy and digital marketing agency.
             We build brands that clearly grow, are fully functional.
           </p>
           <Link
             href="/contact"
-            className=" rounded-br-[50px] bg-primary px-12 py-6 text-third text-2xl -translate-y-1/2"
+            className=" rounded-br-[50px] bg-primary px-12 py-6 text-third text-2xl "
           >
-            Let's talk about your project
+            Let's talk
           </Link>
 
         </div>

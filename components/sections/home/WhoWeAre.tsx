@@ -19,7 +19,7 @@ export function WhoWeAre() {
         </div>
         <div ref={blockRef}>
           {/* Label */}
-          <p className="mb-4 text-3xl font-bold tracking-widest text-secondary">
+          <p className="mb-4 text-3xl font-bold text-secondary">
             WHO WE ARE
           </p>
 
@@ -27,7 +27,7 @@ export function WhoWeAre() {
           <p  className=" text-2xl text-third">
             RESPECT is a Brand Strategy & Digital Marketing agency. 
           </p>
-          <p  className="font-thin tracking-widest text-xl">   
+          <p  className="font-thin text-xl">   
             It operates as a system, not as separate campaigns.We help medium and large companies
             build clear, authentic, and sustainable brands for the long term through strategy, design, and smart implementation.
           </p>

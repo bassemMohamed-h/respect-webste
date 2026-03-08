@@ -133,7 +133,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
 
         return () => {
             ScrollTrigger.removeEventListener("refreshInit", build);
-            // tl?.scrollTrigger?.kill();
+            tl?.scrollTrigger?.kill();
             tl?.kill();
         };
     }, []);
