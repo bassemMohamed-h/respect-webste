@@ -50,7 +50,7 @@ export function Slogan({ title, description, className, animated }: SloganProps)
         .to(
             descEl,
             { clipPath: "inset(0 0.13% 0 0)", ease: "power2.out" },
-            ".35" // start AFTER previous finishes
+            ".35" // start Before previous finishes
         );
     },
     { scope: sectionRef }
@@ -65,7 +65,7 @@ export function Slogan({ title, description, className, animated }: SloganProps)
                 </h2>
                
             </div>
-            <p ref={descRef} className={` text-2xl will-change-[clip-path] ${description.className}`}>
+            <p ref={descRef} className={` text-2xl will-change-[clip-path mx-auto ${description.className}`}>
                    {description.text}
                 </p>
         </section>

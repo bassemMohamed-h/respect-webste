@@ -145,7 +145,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
                 className="bg-primary text-secondary"
                 animated={false}
                 title={{ text: "Design is not decoration It is a way of thinking"}}
-                description={{ text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", className: "text-center text-third" }}
+                description={{ text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", className:  "text-third" }}
             />
         </div>
         {/* stage moves up to cover header */}
@@ -158,7 +158,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
                             className="min-w-0 flex-[0_0_100vw]"
                             >
                             <Link href={`/case-studies#${p.slug}`} className="block">
-                                <div className="relative aspect-square overflow-hidden h-[100svh] w-full  rounded-br-[205px] rounded-t-[6px] rounded-bl-[6px]">
+                                <div className="relative aspect-square overflow-hidden h-[100svh] w-full  rounded-t-[6px] rounded-bl-[6px]">
                                     <Image
                                         src={p.coverImage}
                                         alt={p.title}

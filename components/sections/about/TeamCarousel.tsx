@@ -35,7 +35,7 @@ export function TeamCarousel({ items }: Props) {
               key={index}
                className="flex-[0_0_80%] sm:flex-[0_0_45%] md:flex-[0_0_28%] lg:flex-[0_0_22%] pr-10"
             >
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
                 <Image
                   src={m.imageSrc}
                   alt="name"
