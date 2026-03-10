@@ -32,7 +32,7 @@ export function Hero() {
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
   return (
-    <section className="Hero container-80 min-h-[calc(100svh-var(--nav-h))] mt-[var(--nav-h)] mb-10">
+    <section className="Hero flex items-center justify-center container-80 min-h-[calc(100svh-var(--nav-h))] mt-[var(--nav-h)] mb-10">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -44,19 +44,18 @@ export function Hero() {
         ref={overlayRef}
         className="absolute inset-0 backdrop-blur-xl bg-third"
       />
-      <div className="relative z-10">
+      <div className="relative z-1 w-full">
         <RespectComesFirst/>
         {/* Right: Paragraph */}
-        <div className=" max-w-3xl ml-auto font-semibold  flex items-end absolute bottom-0 right-0 z-20 ">
-          <p className="text-3xl text-black text-center leading-8 ">
-            We are a strategy and digital marketing agency.
-            We build brands that clearly grow, are fully functional.
+        <div className=" max-w-[60%] font-semibold  flex flex-row gap-12 absolute bottom-0 right-0 z-1 text-nowrap  overflow-hidden">
+          <p className="text-2xl  leading-8 text-[#575757] font-bold basis-3/4">
+           A strategy and digital marketing agency <br/>building brands that grow.
           </p>
           <Link
             href="/contact"
-            className=" rounded-br-[50px] bg-primary px-12 py-6 text-third text-2xl "
+            className=" rounded-br-[75px] bg-primary px-8 py-4 text-third text-xl basis-1/4"
           >
-            {"Let's talk"}
+           Start Your Project
           </Link>
 
         </div>
