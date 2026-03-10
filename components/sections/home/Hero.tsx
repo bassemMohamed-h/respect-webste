@@ -3,6 +3,10 @@ import { RespectComesFirst } from "@/components/brand/RespectComesFirst";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
+type MaskedStyle = CSSStyleDeclaration & {
+  webkitMaskImage: string;
+};
+
 export function Hero() {
     const overlayRef = useRef<HTMLDivElement | null>(null);
 
@@ -20,8 +24,8 @@ export function Hero() {
 
       // Mask that reveals a circle around the cursor
       const mask = `radial-gradient(${r}px at ${x}px ${y}px, transparent 0%, transparent 60%, black 75%)`;
-      (overlay.style as any).maskImage = mask;
-      (overlay.style as any).webkitMaskImage = mask;
+      overlay.style.maskImage = mask;
+      (overlay.style as MaskedStyle).webkitMaskImage = mask;
     };
 
     window.addEventListener("mousemove", onMove);
@@ -52,7 +56,7 @@ export function Hero() {
             href="/contact"
             className=" rounded-br-[50px] bg-primary px-12 py-6 text-third text-2xl "
           >
-            Let's talk
+            {"Let's talk"}
           </Link>
 
         </div>

@@ -22,9 +22,9 @@ export function Slogan({ title, description, className, animated }: SloganProps)
     const descRef = useRef<HTMLParagraphElement>(null);
 
     gsap.registerPlugin(ScrollTrigger);
-    if(animated){
         useGSAP(
     () => {
+        if (!animated) return;
         const section = sectionRef.current;
         const titleEl = titleRef.current;
         const descEl = descRef.current;
@@ -55,7 +55,7 @@ export function Slogan({ title, description, className, animated }: SloganProps)
     },
     { scope: sectionRef }
     );
-    }
+
    
     return (
         <section ref={sectionRef} className={`Slogan min-h-[100svh] flex items-start justify-center  flex-col pl-3 ${className}`}>
