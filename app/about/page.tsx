@@ -16,7 +16,7 @@ export default function AboutPage() {
                 }} 
                 description={{
                     name:"We don’t just market brands we build measurable growth through strategy,creativity, and data driven decisions that deliver real, lasting business impact. ",
-                    className:"text-black text-[26px] container-80 text-center"
+                    className:"text-black text-[23px] container-80 text-center"
                 }}
                 Svg={<Five />}
             />
@@ -34,10 +34,10 @@ export default function AboutPage() {
                 animated = {true}
                 className="bg-third text-primary overflow-hidden"
                 title={{ 
-                    text: "Design is not decoration It is a way of thinking", className: "text-center" }}
+                    text: "Design is how we think and solve.", className: "text-center" }}
                 description={{ 
                     text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", 
-                    className: "text-center text-black text-[27px] font-semibold" }}
+                    className: "text-center text-black text-[27px] font-semibold w-[60%]" }}
             />
             <SectionHeader 
                 title={{

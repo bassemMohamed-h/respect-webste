@@ -30,13 +30,13 @@ export function Slogan({ title, description, className, animated }: SloganProps)
         const descEl = descRef.current;
         if (!section || !titleEl || !descEl) return;
 
-        gsap.set(descEl, { clipPath: "inset(0 100% 0 0)" });
+        gsap.set(descEl, { clipPath: "inset(0 0 100% 0)" });
 
         const tl = gsap.timeline({
         scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: () => `+=${titleEl.scrollWidth + descEl.scrollWidth}`,
+            end: () => `+=${titleEl.scrollWidth}`,
             pin:true,
             scrub: true,
         },
@@ -49,8 +49,8 @@ export function Slogan({ title, description, className, animated }: SloganProps)
         )
         .to(
             descEl,
-            { clipPath: "inset(0 0.13% 0 0)", ease: "power2.out" },
-            ".35" // start Before previous finishes
+            { clipPath: "inset(0 0 0% 0)", ease: "power2.out", duration:1},
+            ".70" // start Before previous finishes
         );
     },
     { scope: sectionRef }

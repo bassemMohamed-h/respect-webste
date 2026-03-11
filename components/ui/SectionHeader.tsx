@@ -156,7 +156,7 @@ export function SectionHeader({
       {description && (
         <p 
           ref={descRef} 
-          className= {`absolute bottom-20 font-semibold text-black text-[32px] ${description.className}`}
+          className= {`absolute bottom-20 font-semibold text-black ${description.className}`}
         >
           {description.name}
         </p>
