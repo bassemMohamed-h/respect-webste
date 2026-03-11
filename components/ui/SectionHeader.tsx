@@ -30,17 +30,15 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const svgWrapperRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const descRef = useRef<HTMLParagraphElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       const root = rootRef.current;
       const svgWrapper = svgWrapperRef.current;
-      const titleEl = titleRef.current;
-      const descEl = descRef.current;
+      const text = textRef.current;
 
-      if (!root || !svgWrapper || !titleEl) return;
+      if (!root || !svgWrapper || !text) return;
 
       // initial states
       gsap.set(svgWrapper, {
@@ -50,11 +48,7 @@ export function SectionHeader({
         transformOrigin: "50% 50%",
       });
 
-      gsap.set(titleEl, { y: 40, opacity: 0 });
-
-      if (descEl) {
-        gsap.set(descEl, { y: 20, opacity: 0 });
-      }
+      gsap.set(text, { y: 40, opacity: 0 });
 
       // optional inner stroke draw animation
       const drawableElements = svgWrapper.querySelectorAll(drawSelector);
@@ -107,7 +101,7 @@ export function SectionHeader({
 
       // title
       tl.to(
-        titleEl,
+        text,
         {
           y: 0,
           opacity: 1,
@@ -116,51 +110,40 @@ export function SectionHeader({
         },
         "-=0.7"
       );
-
-      // description
-      if (descEl) {
-        tl.to(
-          descEl,
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            ease: "power2.out",
-          },
-          "-=0.55"
-        );
-      }
     },
     { scope: rootRef }
   );
 
   return (
-    <div
-      ref={rootRef}
-      className= {`relative flex min-h-[100svh] items-center justify-center ${className}`} 
-    >
+   <div
+  ref={rootRef}
+  className={`relative min-h-[100svh] ${className}`}
+>
+  <div className="flex min-h-[100svh] items-center justify-center">
+    <div className="relative flex flex-col items-center">
       <div
         ref={svgWrapperRef}
-        className= "will-change-transform [will-change:clip-path]"
+        className="will-change-transform [will-change:clip-path]"
       >
         {Svg}
       </div>
 
-      <h3
-        ref={titleRef}
-        className={`absolute bottom-[35%] text-9xl font-bold text-primary ${title.className}`}
+      <div
+        ref={textRef}
+        className="relative  flex flex-col items-center text-center "
       >
-        {title.name}
-      </h3>
+        <h3 className={`text-9xl font-bold text-primary -translate-y-1/2 ${title.className}`}>
+          {title.name}
+        </h3>
 
-      {description && (
-        <p 
-          ref={descRef} 
-          className= {`absolute bottom-20 font-semibold text-black ${description.className}`}
-        >
-          {description.name}
-        </p>
-      )}
+        {description && (
+          <p className={`font-semibold text-black ${description.className}`}>
+            {description.name}
+          </p>
+        )}
+      </div>
     </div>
+  </div>
+</div>
   );
 }

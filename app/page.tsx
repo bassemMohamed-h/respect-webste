@@ -25,19 +25,19 @@ export default function HomePage() {
       <LatestWork projects={projects} />
       <SectionHeader 
         title={{
-          name:"Services", className:""
+          name:"SERVICES", className:""
         }}
         Svg={<OurScribble className="text-secondary" />}
       />
       <Services services={allServices.sort((a,b)=>(a.order??999)-(b.order??999)).slice(0,5)}/>
       <SectionHeader 
         title={{
-          name:"Clients", className:""
+          name:"CLIENTS", className:""
         }}
         Svg={<OurScribble className="text-secondary" />}
         />
       <Clients/>
-      <LetsConnectHeader title="Connect"/>
+      <LetsConnectHeader title="CONNECT"/>
       <Contact/>
     </>
 

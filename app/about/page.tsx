@@ -6,49 +6,88 @@ import { Team } from "@/components/sections/about/Team";
 import { Truth } from "@/components/sections/about/Truth";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { OurScribble } from "@/components/brand/OurScribble";
+import { ValuesPinnedSection } from "@/components/sections/about/ValuesPinnedSection";
+import { Peace } from "@/components/brand/Peace";
+import { Humanity } from "@/components/brand/Humanity";
+import { Forgiveness } from "@/components/brand/Forgiveness";
+import { Humility } from "@/components/brand/Humility";
+
+const values = [
+  {
+    id: "value-1",
+    title: "LOVE",
+    description:
+      "Design with heart and mind",
+    Svg: <Heart />,
+    drawSelector: "path",
+  },
+  {
+    id: "value-2",
+    title: "PEACE",
+    description:
+      "Calm strength with direction",
+    Svg: <Peace />,
+    drawSelector: "path",
+  },
+  {
+    id: "value-3",
+    title: "HUMANITY",
+    description:
+      "People before profit ",
+    Svg: <Humanity />,
+    drawSelector: "path",
+  },
+   {
+    id: "value-4",
+    title: "HUMILITY",
+    description:
+      "Simplicity that creates impact ",
+    Svg: <Humility />,
+    drawSelector: "path",
+  },
+   {
+    id: "value-5",
+    title: "FORGIVENESS",
+    description:
+      "PeoCollaboration over competition ",
+    Svg: <Forgiveness />,
+    drawSelector: "path",
+  },
+]
 
 export default function AboutPage() {
     return(
         <main>
             <SectionHeader 
                 title={{
-                    name:"Values", className:""
+                    name:"VALUES"
                 }} 
                 description={{
                     name:"We don’t just market brands we build measurable growth through strategy,creativity, and data driven decisions that deliver real, lasting business impact. ",
-                    className:"text-black text-[23px] container-80 text-center"
+                    className:"text-black text-[26px] container-80 text-center"
                 }}
                 Svg={<Five />}
             />
-            <SectionHeader 
-                className="bg-primary"
-                title={{
-                    name:"Love", className:"text-third"
-                }}
-                description={{
-                    name:"Design with heart and mind", className:"text-third text-[40px]"
-                }}
-                Svg={<Heart />}
-            />
+            <ValuesPinnedSection values={values}/>
             <Slogan 
                 animated = {true}
                 className="bg-third text-primary overflow-hidden"
                 title={{ 
-                    text: "Design is how we think and solve.", className: "text-center" }}
+                    text: "DESIGN IS HOW WE THINK AND SOLVE", className: "text-center" }}
                 description={{ 
                     text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", 
                     className: "text-center text-black text-[27px] font-semibold w-[60%]" }}
             />
             <SectionHeader 
                 title={{
-                    name:"Story", className:""
+                    name:"STORY",
                 }} 
                 Svg={<OurScribble className="text-secondary" />}
             />
             <Story/>
             <SectionHeader 
                 title={{
-                    name:"Philosophy", className:""
+                    name:"PHILOSOPHY"
                 }}
                 Svg={<OurScribble className="text-secondary" />}
             />
@@ -60,12 +99,7 @@ export default function AboutPage() {
                 Svg={<OurScribble className="text-secondary" />}
             />
             <Team/>
-             <SectionHeader 
-                title={{
-                    name:"Thanks", className:""
-                }} 
-                Svg={<OurScribble className="text-secondary" />}
-                />
+            <div className="w-full h-[400px] bg-third"></div>
         </main>
     )
 }

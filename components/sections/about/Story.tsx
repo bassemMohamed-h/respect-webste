@@ -47,18 +47,18 @@ export function Story() {
       ref={sectionRef}
       className="Story min-h-[100svh] bg-primary text-third flex items-center justify-center"
     >
-      <div className="container-80 flex items-center justify-center gap-12">
+      <div className="container-80 flex items-center gap-12">
         <div ref={brandRef} className="brand flex-1 will-change-transform">
           <RespectBrand />
         </div>
 
         <div ref={blockRef} className="desc flex-1 text-2xl">
           <p>
-            started from a simple belief: Most brands don’t fail because of
+            Started from a simple belief: Most brands don’t fail because of
             execution, but because of lack of
           </p>
-          <span className="mr-2 block text-end text-3xl text-secondary">
-            clarity..
+          <span className="mr-2 block text-end text-3xl text-secondary font-bold">
+            CLARITY..
           </span>
         </div>
       </div>

@@ -6,16 +6,14 @@ import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
 const clientLogos = [
-  "/images/clients/adri.png",
-  "/images/clients/alhazem.png",
-  "/images/clients/amas.png",
-  "/images/clients/adri.png",
-  "/images/clients/adri.png",
-   "/images/clients/adri.png",
-  "/images/clients/alhazem.png",
-  "/images/clients/amas.png",
-  "/images/clients/adri.png",
-  "/images/clients/adri.png",
+  "/images/clients/360.png",
+  "/images/clients/adri-loka.png",
+  "/images/clients/known.png",
+  "/images/clients/known1.png",
+  "/images/clients/mosaad1.png",
+   "/images/clients/primeshield.png",
+  "/images/clients/soun.png",
+  "/images/clients/civilia.png",
   // add more...
 ];
 
