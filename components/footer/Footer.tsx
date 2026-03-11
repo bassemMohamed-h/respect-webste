@@ -22,25 +22,20 @@ export default function Footer() {
             <div className="w-[75%]">
               <SloganMark />
             </div>
-
-            <p className="max-w-xs text-sm text-primary-foreground/80">
-              Asperiores numquam quae. Blanditiis corrupti quisquam cumque qui
-              totam qui vel sit
-            </p>
           </div>
 
           {/* Contacts */}
           <div className="space-y-4">
-            <p className="text-lg font-semibold">Contacts</p>
+            <p className="text-lg font-bold">Contacts</p>
 
             <div className="space-y-3 text-sm text-primary-foreground/90">
               <div>
-                <p className="font-semibold">Landline</p>
+                <p className="font-bold">Landline</p>
                 <p className="text-primary-foreground/80">+20237913266</p>
               </div>
 
               <div>
-                <p className="font-semibold">Mobile</p>
+                <p className="font-bold">Mobile</p>
                 <p className="text-primary-foreground/80">+20 111 106 7066</p>
                 <p className="text-primary-foreground/80">+20 111 106 7066</p>
                 <p className="text-primary-foreground/80">+966 54 155 0380</p>
@@ -50,7 +45,7 @@ export default function Footer() {
 
           {/* Links */}
           <div className="space-y-4">
-            <p className="text-lg font-semibold">Links </p>
+            <p className="text-lg font-bold">Links </p>
 
             <nav className="flex flex-col gap-2 text-sm text-primary-foreground/80">
               <Link href="/">Home</Link>
@@ -63,7 +58,7 @@ export default function Footer() {
 
           {/* Social */}
           <div className="space-y-4">
-            <p className="text-lg font-semibold">Social media</p>
+            <p className="text-lg font-bold">Social media</p>
 
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/80">
               <a  href="https://www.facebook.com/share/1DDmj1Rqw3/"
@@ -104,7 +99,7 @@ export default function Footer() {
         </div>
 
         {/* bottom */}
-        <div className="mt-14 border-t border-primary-foreground/20 pt-6 text-center text-sm text-primary-foreground/80">
+        <div className="mt-5 border-t pt-5 text-center text-lg text-third font-bold">
           Copy right Respect sorespectl 2026
         </div>
       </div>

@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 type ServiceItem = {
   slug: string;
@@ -19,8 +20,8 @@ type Props = {
   onSelect?: (slug: string) => void;
   baseHref?: string; // default "/services"
 };
-
 gsap.registerPlugin(ScrollTrigger);
+
 export function Services({ services, activeSlug, onSelect, baseHref = "/services" }: Props) {
   const gridRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
@@ -66,22 +67,25 @@ export function Services({ services, activeSlug, onSelect, baseHref = "/services
                       // smooth scroll to details section
                       document.getElementById("service-details")?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className={ `service-card block `}>
+                    className={ `service-card block group`}>
               <div
                 key={service.title}
                 className={`relative min-h-[100svh] overflow-hidden rounded-br-[150px]  
                           transition-transform duration-300  
-                          ${index % 2 === 0 ? "bg-primary" : "bg-primary/60" }
+                          ${index % 2 === 0 ? "bg-primary" : "bg-[#5DA047]" }
                           `
                         }
               >
-                <div className={`${activeSlug === service.slug ? "border-secondary/60 border-4 min-h-[100svh]" :"hover:scale-[1.03] ease-out min-h-[100svh]"}`}>
                   {/* image */}
-                  <div className="absolute top-0 left-10 bg-cover bg-center w-full">
-                    <img
-                      src={service.heroImg}
+                  <div className="absolute top-5 left-5 w-full h-full">
+                    <Image
+                      src={`${service.heroImg}`}
                       alt={service.title}
-                      className="object-cover"
+                      width={1200}
+                      height={800}
+                      className= {`h-[50%] w-full object-cover transition-opacity duration-100 group-hover:opacity-100  
+                                  ${activeSlug === service.slug ?" opacity-100":"opacity-50"}`}
+                      
                     />
                   </div>
                   {/* number */}
@@ -97,7 +101,6 @@ export function Services({ services, activeSlug, onSelect, baseHref = "/services
                       </p>
                     </div>
                   </div>
-                </div>
               </div>
             </Link>
           ))}
