@@ -51,7 +51,7 @@ export default function ServicesPage(){
                 animated = {true}
                 className="bg-primary text-primary overflow-hidden"
                 title={{ 
-                    text: "Design is not decoration It is a way of thinking", className: "text-center text-secondary" }}
+                    text: "DESIGN IS A STRATEGY, NOT DECORATION.", className: "text-center text-secondary" }}
                 description={{ 
                     text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", 
                     className: "text-center text-third text-[27px] font-semibold" }}
