@@ -17,9 +17,11 @@ export function WhoWeAre() {
         <div className="mb-16 mt-[var(--nav-h)]">
           <SloganSlideIn />
         </div>
-        <div ref={blockRef}>
+        <div ref={blockRef} className="text-center mb-5 lg:text-start">
           {/* Label */}
-          <p className="mb-4 text-3xl font-bold text-secondary">
+          <p className="mb-4 text-3xl font-bold text-secondary text-center
+          lg:text-start"
+          >
             WHO WE ARE
           </p>
 

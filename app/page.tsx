@@ -4,11 +4,11 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getFeaturedCaseStudies } from "@/components/lib/case-studies";
 import { Services } from "@/components/sections/home/Services";
 import { Clients } from "@/components/sections/home/Clients";
-import { LetsConnectHeader } from "@/components/ui/LetsConnectHeader";
 import { Contact } from "@/components/sections/home/Contact";
 import { LatestWork } from "@/components/sections/home/LatestWork";
 import { allServices } from "contentlayer/generated";
 import { OurScribble } from "@/components/brand/OurScribble";
+import { LetsScribble } from "@/components/brand/LetsScribble";
 
 const projects = getFeaturedCaseStudies(5);
 export default function HomePage() {
@@ -37,7 +37,12 @@ export default function HomePage() {
         Svg={<OurScribble className="text-secondary" />}
         />
       <Clients/>
-      <LetsConnectHeader title="CONNECT"/>
+      <SectionHeader 
+        title={{
+          name:"CONNECT", className:""
+        }}
+        Svg={<LetsScribble className="text-secondary" />}
+        />
       <Contact/>
     </>
 

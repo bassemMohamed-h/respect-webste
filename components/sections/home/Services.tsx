@@ -50,7 +50,9 @@ export function Services({ services, activeSlug, onSelect, baseHref = "/services
   if (!services?.length) return null;
   return (
     <section className="flex items-end">
-        <div ref={gridRef} className="grid w-full grid-cols-5 overflow-hidden">
+        <div ref={gridRef} className="grid w-full grid-cols-1 overflow-hidden
+        lg:grid-cols-5"
+        >
           {services.map((service, index) => (
             <Link   key={index}
                     href={service.href ?? `${baseHref}#${service.slug}`}

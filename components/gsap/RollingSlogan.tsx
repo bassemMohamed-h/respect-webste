@@ -5,6 +5,7 @@ import { SloganMark } from "@/components/brand/RespectWordmark";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { RespectThePastMob } from "../brand/RespectThePastMob";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,8 +43,11 @@ useGSAP(() => {
 
   return (
     <section ref={rootRef} className="overflow-hidden">
-      <div ref={svgWrapRef} className="mx-auto w-full px-6">
+      <div ref={svgWrapRef} className="mx-auto w-full px-6 hidden lg:block">
         <SloganMark />
+      </div>
+       <div ref={svgWrapRef} className="mx-auto w-full px-6 lg:hidden">
+        <RespectThePastMob />
       </div>
     </section>
   );

@@ -1,6 +1,8 @@
-export function LetsScribble(){
+import { SVGProps } from "react";
+export function LetsScribble(props: SVGProps<SVGSVGElement>){
     return(
        <svg 
+            {...props}
             width="100%"
             id="Layer_2" 
             data-name="Layer 2" 

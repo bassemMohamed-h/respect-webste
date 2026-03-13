@@ -16,27 +16,29 @@ const rightLinks: NavLink[] = [
 
 export default function Navbar() {
   return (
-    <nav className=" container-80 h-[var(--nav-h)] flex items-center justify-center group ">
-      <div className="flex items-center justify-between w-full relative gap-8">
+    <nav className=" container-80 h-[var(--nav-h)] flex items-center ">
+      <div className="flex items-center justify-between w-full relative bg-[#5da047] rounded-br-[128px] rounded-tr-[8px] rounded-l-[8px]
+                      lg:bg-transparent"
+      >
         {/* Left */}
-        <div className="flex-1 overflow-hidden">
-            <div className="  md:flex items-center justify-center gap-30 py-3 rounded-bl-[128px] bg-[#5da047] text-third ">
-              {leftLinks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="text-primary-foreground font-semibold tracking-wide hover:opacity-80 transition"
-                >
-                  {l.label}
-                </Link>
-              ))}
-            </div>
-          {/* </div> */}
-        </div>
-        
+         <div className="flex-1 hidden 
+                          lg:flex items-center justify-center gap-30 py-3 rounded-bl-[128px] bg-[#5da047] text-third "
+         >
+            {leftLinks.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-primary-foreground font-semibold tracking-wide hover:opacity-80 transition"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
 
         {/* Center Logo */}
-        <div className="absolute bottom-[-3px] left-1/2 -translate-x-1/2 bg-third rounded-[50%] p-4 z-1">
+        <div className="p-4 
+                        lg:absolute bottom-[-3px] left-1/2 z-1 lg:-translate-x-1/2 lg:bg-third lg:rounded-[50%]"
+        >
           <Link href="/" aria-label="Home">
             <Image
               src="/images/Vector.png"
@@ -50,38 +52,24 @@ export default function Navbar() {
         </div>
 
         {/* Right */}
-        <div className="flex-1 overflow-hidden ">
-          {/* <div className="translate-x-[0%]
-                          transition-transform
-                          duration-1000
-                          delay-200
-                          ease-out
-                          group-hover:translate-x-0
-                          md:translate-x-[-100%]"> */}
-            <div className="r md:flex items-center justify-center gap-30 py-3 rounded-br-[128px] bg-[#5da047] text-third">{/** border-y-4 border-r-4 border-secondary  py-6 */}
-              {rightLinks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  prefetch={l.prefetch}
-                  className="text-primary-foreground font-semibold tracking-wide hover:opacity-80 transition"
-                >
-                  {l.label}
-                </Link>
-              ))}
-            </div>
-          {/* </div> */}
+        <div className="flex-1 hidden 
+                        lg:flex items-center justify-center gap-30 py-3 rounded-br-[128px] bg-[#5da047] text-third"
+        >
+          {rightLinks.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              prefetch={l.prefetch}
+              className="text-primary-foreground font-semibold tracking-wide hover:opacity-80 transition"
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
-        
 
-        {/* Mobile (simple) */}
-        <div className="md:hidden">
-          <Link
-            href="/contact"
-            className="border-2 border-secondary text-primary font-semibold px-4 py-2 rounded-full"
-          >
-            Contact
-          </Link>
+        {/*Tab Bottun */}
+        <div className="lg:hidden text-third mr-10">
+          Menu
         </div>
       </div>
     </nav>

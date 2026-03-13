@@ -38,7 +38,7 @@ export function Clients() {
             {clientLogos.map((src, i) => (
               <div
                 key={`${src}-${i}`}
-                className="flex-[0_0_80%] px-4 sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_20%]"
+                className="flex-[0_0_65%] px-4 sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_20%]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-primary/40 bg-background">
                   <Image

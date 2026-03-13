@@ -10,16 +10,16 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-third">
-      <div className="mx-auto w-full max-w-7xl px-6 pt-16 pb-6">
-        <div className="grid gap-12 md:grid-cols-5">
+    <footer className="bg-primary text-third min-h-[100svh]">
+      <div className="mx-auto w-full px-6 pt-16 pb-6 container-80">
+        <div className="grid gap-6 lg:gap-12 grid-cols-1 lg:grid-cols-5 text-center">
           {/* Brand */}
-          <div className="space-y-6 col-span-2">
-            <div className="w-3/4">
+          <div className="space-y-6 lg:col-span-2 mx-auto">
+            <div className="w-3/4 mx-auto">
              <RespectBrand/>
             </div>
 
-            <div className="w-[75%]">
+            <div className="w-[75%] mx-auto">
               <SloganMark />
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function Footer() {
           <div className="space-y-4">
             <p className="text-lg font-bold">Social media</p>
 
-            <div className="flex flex-col gap-3 text-sm text-primary-foreground/80">
+            <div className="flex flex-row justify-center lg:flex-col gap-3 text-sm text-primary-foreground/80">
               <a  href="https://www.facebook.com/share/1DDmj1Rqw3/"
                   target="_blank" 
                   rel="noopener noreferrer"
