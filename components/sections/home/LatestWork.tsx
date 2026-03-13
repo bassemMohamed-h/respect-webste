@@ -26,6 +26,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
     const stageRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
+        // console.log("[LatestWork] useGSAP mount");
         const block = blockRef.current;
         const header = headerRef.current;
         const stage = stageRef.current;
@@ -48,80 +49,102 @@ export function LatestWork({ projects }: LatestWorkProps) {
         let tl: gsap.core.Timeline | null = null;
 
         const build = () => {
-            tl?.scrollTrigger?.kill();
-            tl?.kill();
-            tl = null;
+          // console.log("[LatestWork] build start");
+          tl?.scrollTrigger?.kill();
+          tl?.kill();
+          tl = null;
 
-            const trackHeight = track.scrollHeight;
-            const scrollLength = trackHeight - window.innerHeight;
-            if (scrollLength <= 0) return;
+          const trackHeight = track.scrollHeight;
+          const scrollLength = trackHeight - window.innerHeight;
+          const reveal = header.getBoundingClientRect().height;
+          //   console.log("[LatestWork build]", {
+          //   trackHeight,
+          //   windowHeight: window.innerHeight,
+          //   scrollLength,
+          //   headerHeight: reveal,
+          //   projectsLength: projects.length,
+          //   trackChildren: track.children.length,
+          // });
 
-            const reveal = header.getBoundingClientRect().height;
+          if (scrollLength <= 0) {
+            console.warn("[LatestWork] scrollLength <= 0");
+            return};
 
-            const paraLen = 500;
-            const phase2Start = sloganLen + paraLen + reveal;
-            const totalLen = phase2Start + scrollLength;
+          const paraLen = 500;
+          const phase2Start = sloganLen + paraLen + reveal;
+          const totalLen = phase2Start + scrollLength;
+          const step = window.innerHeight;
+          const maxIndex = projects.length - 1;
+          
 
-            const step = window.innerHeight;
-            const maxIndex = projects.length - 1;
+          gsap.set(track, { y: 0 });
+          gsap.set(stage, { y: 0 });
 
-            gsap.set(track, { y: 0 });
-            gsap.set(stage, { y: 0 });
+          tl = gsap.timeline({
+              scrollTrigger: {
+              trigger: block,
+              start: "top top",
+              end: () => `+=${totalLen}`,
+              pin: true,
+              scrub: 1,
+              invalidateOnRefresh: true,
+              anticipatePin: 1,
+              // onRefreshInit: () => console.log("[LatestWork trigger] onRefreshInit"),
+              // onRefresh: (self) =>
+              //   console.log("[LatestWork trigger] onRefresh", {
+              //     start: self.start,
+              //     end: self.end,
+              //     progress: self.progress,
+              //   }),
+              snap: {
+                  snapTo: (value) => {
+                  const scroll = value * totalLen;
 
-            tl = gsap.timeline({
-                scrollTrigger: {
-                trigger: block,
-                start: "top top",
-                end: () => `+=${totalLen}`,
-                pin: true,
-                scrub: 1,
-                invalidateOnRefresh: true,
-                anticipatePin: 1,
-                snap: {
-                    snapTo: (value) => {
-                    const scroll = value * totalLen;
+                  if (scroll < phase2Start) return value;
 
-                    if (scroll < phase2Start) return value;
+                  const inside = scroll - phase2Start;
+                  const rawIndex = inside / step;
+                  const snappedIndex = Math.max(
+                      0,
+                      Math.min(maxIndex, Math.round(rawIndex))
+                  );
 
-                    const inside = scroll - phase2Start;
-                    const rawIndex = inside / step;
-                    const snappedIndex = Math.max(
-                        0,
-                        Math.min(maxIndex, Math.round(rawIndex))
-                    );
-
-                    const snappedScroll = phase2Start + snappedIndex * step;
-                    return snappedScroll / totalLen;
-                    },
-                    duration: 0.35,
-                    ease: "power2.out",
-                },
-                },
-            });
-
-            tl.fromTo(
-                sloganTitle,
-                { xPercent: 0 },
-                { xPercent: -50, ease: "none", duration: sloganLen }
-            );
-
-            tl.to(
-                sloganDesc,
-                { clipPath: "inset(0 0 0% 0)", ease: "power2.out", duration: paraLen },
-                ">"
-            );
-            tl.to(stage, { y: -reveal, ease: "none", duration: reveal });
-            tl.to(track, { y: -scrollLength, ease: "none", duration: scrollLength });
+                  const snappedScroll = phase2Start + snappedIndex * step;
+                  return snappedScroll / totalLen;
+                  },
+                  duration: 0.35,
+                  ease: "power2.out",
+              },
+            },
+          });
+          tl.fromTo(
+              sloganTitle,
+              { xPercent: 0 },
+              { xPercent: -50, ease: "none", duration: sloganLen }
+          );
+          tl.to(
+              sloganDesc,
+              { clipPath: "inset(0 0 0% 0)", ease: "power2.out", duration: paraLen },
+              ">"
+          );
+          tl.to(stage, { y: -reveal, ease: "none", duration: reveal });
+          tl.to(track, { y: -scrollLength, ease: "none", duration: scrollLength });
+          // console.log("[LatestWork] build end");
         };
+        // const onGlobalRefreshInit = () => console.log("[ScrollTrigger] global refreshInit");
+        // const onGlobalRefresh = () => console.log("[ScrollTrigger] global refresh");
+        // ScrollTrigger.addEventListener("refreshInit", onGlobalRefreshInit);
+        // ScrollTrigger.addEventListener("refresh", onGlobalRefresh);
 
         build();
-        ScrollTrigger.addEventListener("refreshInit", build);
         ScrollTrigger.refresh();
 
         return () => {
-            ScrollTrigger.removeEventListener("refreshInit", build);
-            tl?.scrollTrigger?.kill();
-            tl?.kill();
+          // console.log("[LatestWork] cleanup");
+          // ScrollTrigger.removeEventListener("refreshInit", onGlobalRefreshInit);
+          // ScrollTrigger.removeEventListener("refresh", onGlobalRefresh);
+          tl?.scrollTrigger?.kill();
+          tl?.kill();
         };
     }, []);
 

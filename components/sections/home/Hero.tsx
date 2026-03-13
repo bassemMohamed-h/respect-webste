@@ -47,13 +47,13 @@ export function Hero() {
       <div className="relative z-1 w-full">
         <RespectComesFirst/>
         {/* Right: Paragraph */}
-        <div className=" max-w-[60%] font-semibold  flex flex-row gap-12 absolute bottom-0 right-0 z-1 text-nowrap  overflow-hidden">
-          <p className="text-2xl  leading-8 text-[#575757] font-bold basis-3/4">
-           A strategy and digital marketing agency <br/>building brands that grow.
+        <div className=" max-w-[60%] font-semibold  flex flex-row lg:gap-12 md:gap-4 absolute bottom-0 right-0 z-1 items-center ">
+          <p className="lg:text-2xl  md:text-lg leading-8 text-[#575757] font-bold basis-3/4 text-center">
+           A strategy and digital marketing agency building brands that grow.
           </p>
           <Link
             href="/contact"
-            className=" rounded-br-[75px] bg-primary px-8 py-4 text-third text-xl basis-1/4"
+            className=" rounded-br-[75px] bg-primary lg:px-8 md:px-4 lg:py-4 md:py-3 text-third lg:text-xl md:text-l basis-1/4  text-nowrap"
           >
            Start Your Project
           </Link>
