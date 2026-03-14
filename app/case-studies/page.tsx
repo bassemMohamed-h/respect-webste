@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getAllCaseStudies } from "@/components/lib/case-studies";
 import { CaseStudiesPageClient } from "@/components/sections/case-studies/CaseStudiesPageClient";
 import { OurScribble } from "@/components/brand/OurScribble";
+import { SloganSlideIn } from "@/components/gsap/RollingSlogan";
 
 export default function CaseStudies() {
   const items = getAllCaseStudies().map((cs) => ({
@@ -25,14 +26,14 @@ export default function CaseStudies() {
         }}
         description={{
           name:"Selected work shaped by strategy, values, and thoughtful execution.",
-          className:""
+          className:"text-3xl"
         }}
         Svg={<OurScribble className="text-secondary"/>}
       />
 
       <div className="min-h-[100svh] flex items-center justify-center bg-primary">
         <div className="container-80 text-secondary">
-          <SloganMark />
+          <SloganSlideIn />
         </div>
       </div>
 

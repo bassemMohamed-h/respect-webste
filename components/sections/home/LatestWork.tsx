@@ -118,9 +118,17 @@ export function LatestWork({ projects }: LatestWorkProps) {
             },
           });
           tl.fromTo(
-              sloganTitle,
-              { xPercent: 0 },
-              { xPercent: -50, ease: "none", duration: sloganLen }
+            sloganTitle,
+            { x: 0 },
+            {
+              x: () => {
+                const titleWidth = sloganTitle.scrollWidth;
+                const parentWidth = sloganTitle.parentElement?.clientWidth ?? 0;
+                return -Math.max(0, titleWidth - parentWidth);
+              },
+              ease: "none",
+              duration: sloganLen,
+            }
           );
           tl.to(
               sloganDesc,

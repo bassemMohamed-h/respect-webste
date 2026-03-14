@@ -79,15 +79,26 @@ export function Services({ services, activeSlug, onSelect, baseHref = "/services
                         }
               >
                   {/* image */}
-                  <div className="absolute top-5 left-5 w-full h-full">
+                  <div className="absolute top-5 right-5
+                                  lg:right-0 lg:w-full lg:h-full"
+                    >
                     <Image
                       src={`${service.heroImg}`}
                       alt={service.title}
                       width={1200}
                       height={800}
-                      className= {`h-[50%] w-full object-cover transition-opacity duration-100 group-hover:opacity-100  
-                                  ${activeSlug === service.slug ?" opacity-100":"opacity-50"}`}
-                      
+                      className={`h-[auto] w-auto max-w-full transition-opacity duration-100 group-hover:opacity-100
+                                  ${activeSlug === service.slug ? "opacity-100" : "opacity-30"}
+                                  lg:h-[40%] lg:w-full lg:object-cover`
+                                }
+                    />
+                    {/* Overlay image */}
+                    <div
+                      className={`absolute inset-0 pointer-events-none transition-opacity duration-100
+                        ${index % 2 === 0 ? "bg-primary/30" : "bg-[#5DA047]/30"}
+                        group-hover:opacity-0
+                        ${activeSlug === service.slug ? "opacity-0" : "opacity-100"}
+                      `}
                     />
                   </div>
                   {/* number */}

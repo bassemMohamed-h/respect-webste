@@ -35,13 +35,13 @@ export function TeamCarousel({ items }: Props) {
               key={index}
                className="flex-[0_0_80%] sm:flex-[0_0_45%] md:flex-[0_0_28%] lg:flex-[0_0_22%] pr-10"
             >
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+              <div className=" overflow-hidden">
                 <Image
                   src={m.imageSrc}
                   alt="name"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 220px, 260px"
+                  width={1200}
+                  height={800}
+                  className=" h-auto w-auto"
                   priority={false}
                 />
               </div>

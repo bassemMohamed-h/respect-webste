@@ -20,6 +20,7 @@ export function Slogan({ title, description, className, animated }: SloganProps)
     const sectionRef = useRef<HTMLElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const descRef = useRef<HTMLParagraphElement>(null);
+    const titleViewportRef = useRef<HTMLDivElement>(null);
 
     gsap.registerPlugin(ScrollTrigger);
         useGSAP(
@@ -28,7 +29,8 @@ export function Slogan({ title, description, className, animated }: SloganProps)
         const section = sectionRef.current;
         const titleEl = titleRef.current;
         const descEl = descRef.current;
-        if (!section || !titleEl || !descEl) return;
+        const viewport = titleViewportRef.current;
+        if (!section || !titleEl || !descEl ||!viewport) return;
 
         gsap.set(descEl, { clipPath: "inset(0 0 100% 0)" });
 
@@ -42,10 +44,13 @@ export function Slogan({ title, description, className, animated }: SloganProps)
         },
         });
 
-        tl.fromTo(
-        titleEl,
-        { xPercent: 0   },
-        { xPercent: -50, ease: "none" }
+       tl.fromTo(
+            titleEl,
+            { x: 0 },
+            {
+                x: () => -Math.max(0, titleEl.scrollWidth - viewport.clientWidth),
+                ease: "none",
+            }
         )
         .to(
             descEl,
@@ -59,13 +64,12 @@ export function Slogan({ title, description, className, animated }: SloganProps)
    
     return (
         <section ref={sectionRef} className={`Slogan min-h-[100svh] flex items-start justify-center  flex-col pl-3 ${className}`}>
-            <div>
-                <h2 ref={titleRef} className={`text-9xl font-bold mb-20 text-nowrap ${title.className}`}>
-                   {title.text}
+            <div ref={titleViewportRef} className="w-full overflow-hidden">
+                <h2 ref={titleRef} className={`text-[clamp(3rem,9vw,8rem)] font-bold mb-20 whitespace-nowrap ${title.className}`}>
+                    {title.text}
                 </h2>
-               
             </div>
-            <p ref={descRef} className={` text-2xl will-change-[clip-path mx-auto ${description.className}`}>
+            <p ref={descRef} className={` text-2xl will-change-[clip-path] mx-auto ${description.className}`}>
                    {description.text}
                 </p>
         </section>

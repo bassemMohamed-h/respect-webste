@@ -10,30 +10,28 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-third min-h-[100svh]">
-      <div className="mx-auto w-full px-6 pt-16 pb-6 container-80">
-        <div className="grid gap-6 lg:gap-12 grid-cols-1 lg:grid-cols-5 text-center">
+    <footer className="bg-primary text-third">
+      <div className="mx-auto px-6 pt-16 pb-6 width-80 lg:width-full">
+        <div className="grid gap-6 lg:gap-12 grid-cols-1 lg:grid-cols-5 text-center ">
           {/* Brand */}
-          <div className="space-y-6 lg:col-span-2 mx-auto">
-            <div className="w-3/4 mx-auto">
+          <div className="space-y-6 lg:col-span-2 mx-auto flex flex-col justify-between">
+            <div className="w-100 mx-auto">
              <RespectBrand/>
             </div>
 
-            <div className="w-[75%] mx-auto">
+            <div className="w-100 mx-auto">
               <SloganMark />
             </div>
           </div>
 
           {/* Contacts */}
-          <div className="space-y-4">
-            <p className="text-lg font-bold">Contacts</p>
-
-            <div className="space-y-3 text-sm text-primary-foreground/90">
+          <div className="space-y-4 text-xl">
+            <p className="font-bold">Contacts</p>
+            <div className="space-y-3 text-lg text-primary-foreground/90">
               <div>
                 <p className="font-bold">Landline</p>
                 <p className="text-primary-foreground/80">+20237913266</p>
               </div>
-
               <div>
                 <p className="font-bold">Mobile</p>
                 <p className="text-primary-foreground/80">+20 111 106 7066</p>
@@ -44,10 +42,10 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div className="space-y-4">
-            <p className="text-lg font-bold">Links </p>
+          <div className="space-y-4 text-xl">
+            <p className="font-bold">Links </p>
 
-            <nav className="flex flex-col gap-2 text-sm text-primary-foreground/80">
+            <nav className="flex flex-col gap-2 text-lg text-primary-foreground/80">
               <Link href="/">Home</Link>
               <Link href="/about">About Us</Link>
               <Link href="/services">Services</Link>
@@ -58,9 +56,8 @@ export default function Footer() {
 
           {/* Social */}
           <div className="space-y-4">
-            <p className="text-lg font-bold">Social media</p>
-
-            <div className="flex flex-row justify-center lg:flex-col gap-3 text-sm text-primary-foreground/80">
+            <p className="text-xl font-bold">Social media</p>
+            <div className="flex flex-row justify-center items-center lg:flex-col gap-3 text-sm text-primary-foreground/80">
               <a  href="https://www.facebook.com/share/1DDmj1Rqw3/"
                   target="_blank" 
                   rel="noopener noreferrer"
