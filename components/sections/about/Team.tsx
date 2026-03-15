@@ -27,7 +27,7 @@ export function Team(){
     return(
         <section className="Team min-h-[100svh] bg-primary text-third flex items-center justify-center  flex-col">
             <div ref={blockRef} className="w-full max-w-6xl px-4">
-                <p className="text-3xl mb-12  text-third text-center">
+                <p className="lg:text-3xl text-md mb-12  text-third text-center">
                     A multidisciplinary team of strategists, designers, and marketers working through structured systems and measurable outcomes.
                 </p>
             </div>

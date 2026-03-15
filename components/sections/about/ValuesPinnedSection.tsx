@@ -202,7 +202,7 @@ export function ValuesPinnedSection({
 
               <div className="relative -translate-y-8 text-center text-third">
                 <div className="overflow-hidden">
-                  <h2 className="value-title text-7xl font-bold md:text-8xl lg:text-9xl">
+                  <h2 className="value-title text-4xl font-bold md:text-8xl lg:text-9xl">
                     {item.title}
                   </h2>
                 </div>
