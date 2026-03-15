@@ -14,12 +14,12 @@ export default function Footer() {
       <div className="mx-auto px-6 pt-16 pb-6 width-80 lg:width-full">
         <div className="grid gap-6 lg:gap-12 grid-cols-1 lg:grid-cols-5 text-center ">
           {/* Brand */}
-          <div className="space-y-6 lg:col-span-2 mx-auto flex flex-col justify-between">
-            <div className="w-100 mx-auto">
+          <div className="space-y-6 lg:col-span-2 mx-auto flex flex-col justify-between ">
+            <div className="w-[100%] mx-auto">
              <RespectBrand/>
             </div>
 
-            <div className="w-100 mx-auto">
+            <div className="w-[100%] mx-auto">
               <SloganMark />
             </div>
           </div>
@@ -57,12 +57,12 @@ export default function Footer() {
           {/* Social */}
           <div className="space-y-4">
             <p className="text-xl font-bold">Social media</p>
-            <div className="flex flex-row justify-center items-center lg:flex-col gap-3 text-sm text-primary-foreground/80">
+            <div className="flex flex-row justify-center items-center lg:flex-col lg:gap-3 gap-2 text-sm text-primary-foreground/80">
               <a  href="https://www.facebook.com/share/1DDmj1Rqw3/"
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2">
-                <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15" >
+                  className="flex items-center lg:gap-2">
+                <span className="inline-block rounded bg-primary-foreground/15" >
                   <div className="relative h-full">
                     <FontAwesomeIcon icon={faFacebookF} />
                   </div>
@@ -72,8 +72,8 @@ export default function Footer() {
               <a  href="https://www.instagram.com/respect.agency.eg"
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2">
-                <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15">
+                  className="flex items-center lg:gap-2">
+                <span className="inline-block rounded bg-primary-foreground/15">
                   <div className="relative h-full">
                   <FontAwesomeIcon icon={faInstagram} />
                   </div>
@@ -83,8 +83,8 @@ export default function Footer() {
               <a  href="https://www.linkedin.com/company/respect-marketing-agency/"
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2">
-                <span className="inline-block h-5 w-5 rounded bg-primary-foreground/15">
+                  className="flex items-center lg:gap-2">
+                <span className="inline-block rounded bg-primary-foreground/15">
                   <div className="relative h-full">
                     <FontAwesomeIcon icon={faLinkedinIn} />
                   </div>

@@ -58,13 +58,15 @@ export function Clients() {
         <div className="flex items-center gap-6">
           <button
             onClick={prev}
-            className="rounded-bl-[50px] bg-primary/70 px-10 py-4 font-medium text-primary-foreground hover:bg-primary min-w-[150px]"
+            className="rounded-bl-[50px] bg-primary/70  py-5 px-2 font-medium text-primary-foreground hover:bg-primary  min-w-[100px]
+                        lg:min-w-[150px] lg:px-10 lg:py-4"
           >
             Previous
           </button>
           <button
             onClick={next}
-            className="rounded-br-[50px] bg-primary/70 px-10 py-4 font-medium text-primary-foreground hover:bg-primary min-w-[150px]"
+            className="rounded-br-[50px] bg-primary/70  py-5 px-2 font-medium text-primary-foreground hover:bg-primary lg:min-w-[150px] 
+                        min-w-[100px] lg:px-10 lg:py-4"
           >
             Next
           </button>

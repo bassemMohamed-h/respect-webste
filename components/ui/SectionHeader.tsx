@@ -132,7 +132,7 @@ export function SectionHeader({
         ref={textRef}
         className="relative  flex flex-col items-center text-center "
       >
-        <h3 className={`text-7xl lg:text-9xl font-bold text-primary -translate-y-1/2 ${title.className}`}>
+        <h3 className={`text-5xl lg:text-9xl font-bold text-primary -translate-y-1/2 ${title.className}`}>
           {title.name}
         </h3>
 

@@ -163,7 +163,7 @@ export function LatestWork({ projects }: LatestWorkProps) {
                 className="bg-primary text-secondary"
                 animated={false}
                 title={{ text: "Design is thinking, solving, and building."}}
-                description={{ text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", className:  "text-third max-w-[50%] text-center" }}
+                description={{ text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", className:  "text-third lg:max-w-[50%] max-w-[80%] text-center" }}
             />
         </div>
         {/* stage moves up to cover header */}

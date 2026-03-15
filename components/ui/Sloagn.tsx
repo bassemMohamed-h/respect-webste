@@ -69,7 +69,7 @@ export function Slogan({ title, description, className, animated }: SloganProps)
                     {title.text}
                 </h2>
             </div>
-            <p ref={descRef} className={` text-2xl will-change-[clip-path] mx-auto ${description.className}`}>
+            <p ref={descRef} className={` lg:text-2xl text-md will-change-[clip-path] mx-auto ${description.className}`}>
                    {description.text}
                 </p>
         </section>

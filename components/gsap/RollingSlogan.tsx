@@ -57,11 +57,11 @@ export function SloganSlideIn() {
 
   return (
     <section ref={rootRef} className="overflow-hidden">
-      <div ref={desktopWrapRef} className="mx-auto w-full px-6 hidden lg:block">
+      <div ref={desktopWrapRef} className="mx-auto w-full  hidden lg:block">
         <SloganMark />
       </div>
 
-      <div ref={mobileWrapRef} className="mx-auto w-full px-6 lg:hidden">
+      <div ref={mobileWrapRef} className="mx-auto w-full  lg:hidden">
         <RespectThePastMob />
       </div>
     </section>
