@@ -73,7 +73,7 @@ export default function AboutPage() {
                 animated = {true}
                 className="bg-third text-primary overflow-hidden"
                 title={{ 
-                    text: "DESIGN IS HOW WE THINK AND SOLVE", className: "text-center" }}
+                    text: "DESIGN IS HOW WE THINK AND SOLVE.", className: "text-center" }}
                 description={{ 
                     text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", 
                     className: "text-center text-black lg:text-[27px] text-md font-semibold lg:w-[60%] w-[80%]" }}
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 Svg={<OurScribble className="text-secondary" />}
             />
             <Team/>
-            <div className="w-full h-[400px] bg-third"></div>
+            <div className="w-full lg:h-[400px] h-[200px] bg-third"></div>
         </main>
     )
 }

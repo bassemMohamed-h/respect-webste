@@ -1,5 +1,7 @@
 "use client";
 
+// @refresh reset
+
 import { ReactNode, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -33,7 +35,6 @@ export function ValuesPinnedSection({
 
       const slides = gsap.utils.toArray<HTMLElement>(".value-slide", root);
 
-      // initial states
       slides.forEach((slide, index) => {
         const svgWrap = slide.querySelector<HTMLElement>(".value-svg");
         const title = slide.querySelector<HTMLElement>(".value-title");
@@ -41,28 +42,16 @@ export function ValuesPinnedSection({
         const drawSelector = slide.dataset.drawSelector || "path";
         const drawableElements = slide.querySelectorAll(drawSelector);
 
-        gsap.set(slide, {
-          autoAlpha: index === 0 ? 1 : 0,
-        });
-
+        gsap.set(slide, { autoAlpha: index === 0 ? 1 : 0 });
         gsap.set(svgWrap, {
           xPercent: index === 0 ? 0 : 18,
-          opacity: index === 0 ? 1 : 0,
+          autoAlpha: index === 0 ? 1 : 0,
         });
-
-        gsap.set(title, {
-          yPercent: 100,
-          opacity: 1,
-        });
-
-        gsap.set(desc, {
-          yPercent: 100,
-          opacity: 1,
-        });
+        gsap.set(title, { yPercent: 100 });
+        gsap.set(desc, { yPercent: 100 });
 
         drawableElements.forEach((el) => {
           const shape = el as SVGGeometryElement;
-
           if (typeof shape.getTotalLength !== "function") return;
 
           const length = shape.getTotalLength();
@@ -71,7 +60,6 @@ export function ValuesPinnedSection({
           gsap.set(shape, {
             strokeDasharray: length,
             strokeDashoffset: length,
-            opacity: 1,
           });
         });
       });
@@ -95,98 +83,73 @@ export function ValuesPinnedSection({
         const drawSelector = slide.dataset.drawSelector || "path";
         const drawableElements = slide.querySelectorAll(drawSelector);
 
-        // incoming slide
-        if (index !== 0) {
-          tl.set(slide, { autoAlpha: 1 });
+        if (index !== 0) tl.set(slide, { autoAlpha: 1 });
+
+        tl.to(svgWrap, {
+          xPercent: 0,
+          autoAlpha: 1,
+          duration: 0.45,
+          ease: "power2.out",
+        });
+
+        if (drawableElements.length) {
+          tl.to(drawableElements, {
+            strokeDashoffset: 0,
+            duration: 0.9,
+            ease: "none",
+            stagger: 0.05,
+          });
         }
 
-        tl.to(
-          svgWrap,
-          {
-            xPercent: 0,
-            opacity: 1,
-            duration: 0.45,
-            ease: "power2.out",
-          },
-          ">"
-        );
+        tl.to(title, {
+          yPercent: 0,
+          duration: 0.35,
+          ease: "power2.out",
+        }, ">-0.05");
 
-        if (drawableElements.length > 0) {
-          tl.to(
-            drawableElements,
-            {
-              strokeDashoffset: 0,
-              duration: 0.9,
-              ease: "none",
-              stagger: 0.05,
-            },
-            ">"
-          );
-        }
+        tl.to(desc, {
+          yPercent: 0,
+          duration: 0.3,
+          ease: "power2.out",
+        }, "-=0.18");
 
-        tl.to(
-          title,
-          {
-            yPercent: 0,
-            duration: 0.35,
-            ease: "power2.out",
-          },
-          ">-0.05"
-        );
-
-        tl.to(
-          desc,
-          {
-            yPercent: 0,
-            duration: 0.3,
-            ease: "power2.out",
-          },
-          "-=0.18"
-        );
-
-        // small hold
         tl.to({}, { duration: 1 });
 
-        // outgoing slide except last one
         if (index < slides.length - 1) {
-          tl.to(
-            [title, desc],
-            {
-              yPercent: -110,
-              duration: 0.28,
-              ease: "power2.in",
-              stagger: 0.04,
-            },
-            ">"
-          );
+          tl.to([title, desc], {
+            yPercent: -110,
+            duration: 0.28,
+            ease: "power2.in",
+            stagger: 0.04,
+          });
 
-          tl.to(
-            svgWrap,
-            {
-              xPercent: -16,
-              opacity: 0,
-              duration: 0.35,
-              ease: "power2.inOut",
-            },
-            "-=0.15"
-          );
+          tl.to(svgWrap, {
+            xPercent: -16,
+            autoAlpha: 0,
+            duration: 0.35,
+            ease: "power2.inOut",
+          }, "-=0.15");
 
           tl.set(slide, { autoAlpha: 0 });
         }
       });
 
+      requestAnimationFrame(() => ScrollTrigger.refresh());
+
       return () => {
-        tl.scrollTrigger?.kill();
         tl.kill();
       };
     },
-    { scope: rootRef, dependencies: [values] }
+    {
+      scope: rootRef,
+      revertOnUpdate: true,
+    }
   );
 
   return (
     <section
       ref={rootRef}
-      className={`relative min-h-screen overflow-hidden  ${className}`}
+      className={`relative min-h-screen overflow-hidden ${className}`}
     >
       <div className="relative h-screen w-full bg-primary">
         {values.map((item) => (
@@ -207,7 +170,7 @@ export function ValuesPinnedSection({
                   </h2>
                 </div>
 
-                <div className="mt-10 overflow-hidden ">
+                <div className="mt-10 overflow-hidden">
                   <p className="value-desc mx-auto max-w-4xl text-base font-semibold leading-relaxed md:text-lg lg:text-[26px]">
                     {item.description}
                   </p>

@@ -8,6 +8,7 @@ import NavbarShell from "@/components/navbar/NavbarShell";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import GsapProvider from "@/components/gsap/GsapProvider";
+import ScrollManager from "@/components/providers/ScrollManager";
 
 config.autoAddCss = false;
 
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
 
       <body className={`${roobertPro.variable} ${roobertTrial.variable} ${geistMono.variable} antialiased ` }>
+        <ScrollManager />
        <NavbarShell>
         <Navbar />
       </NavbarShell>

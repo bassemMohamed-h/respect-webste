@@ -48,11 +48,11 @@ export function Story() {
       className="Story min-h-[100svh] bg-primary text-third flex flex-col items-center justify-center"
     >
       <div className="container-80 flex flex-col lg:flex-row items-center gap-12 ">
-        <div ref={brandRef} className="brand will-change-transform">
+        <div ref={brandRef} className="brand will-change-transform lg:flex-1">
           <RespectBrand />
         </div>
 
-        <div ref={blockRef} className="desc lg:text-2xl text-md">
+        <div ref={blockRef} className="desc lg:text-2xl text-md lg:flex-1">
           <p>
             Started from a simple belief: Most brands don’t fail because of
             execution, but because of lack of

@@ -28,12 +28,13 @@ export function TeamCarousel({ items }: Props) {
   return (
     <section className="w-full min-w-0">
       <div className="overflow-hidden w-full select-none touch-pan-y cursor-grab active:cursor-grabbing"
-            ref={emblaRef}>
-        <div className="flex">
+            ref={emblaRef}
+           >
+        <div className="flex ">
           {items.map((m,index) => (
             <div
               key={index}
-               className="flex-[0_0_80%] sm:flex-[0_0_45%] md:flex-[0_0_28%] lg:flex-[0_0_22%] lg:pr-5 pr-2"
+               className="flex-[0_0_50%] sm:flex-[0_0_45%] md:flex-[0_0_28%] lg:flex-[0_0_22%]"
             >
               <div className=" overflow-hidden">
                 <Image
@@ -41,7 +42,7 @@ export function TeamCarousel({ items }: Props) {
                   alt="name"
                   width={1200}
                   height={800}
-                  className=" h-auto w-auto"
+                  className=" h-auto w-auto mx-auto"
                   priority={false}
                 />
               </div>
