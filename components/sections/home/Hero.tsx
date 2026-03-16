@@ -56,7 +56,7 @@ export function Hero() {
            A strategy and digital marketing agency building brands that grow.
           </p>
           <Link
-            href="/contact"
+            href="/connect"
             className=" xl:basis-1/4 rounded-br-[75px] bg-primary px-8 py-4 text-third text-xl text-nowrap"
           >
            Start Your Project
