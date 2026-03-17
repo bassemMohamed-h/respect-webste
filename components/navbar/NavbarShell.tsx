@@ -6,9 +6,10 @@ type Props = {
   children: React.ReactNode;
   /** px from top before we start hiding (avoids jitter near 0) */
   threshold?: number;
+  onHide?:()=> void
 };
 
-export default function NavbarShell({ children, threshold = 8 }: Props) {
+export default function NavbarShell({ children, threshold = 8, onHide }: Props) {
   const [hidden, setHidden] = useState(false);
 
   const lastYRef = useRef(0);
@@ -25,11 +26,18 @@ export default function NavbarShell({ children, threshold = 8 }: Props) {
         const y = window.scrollY;
         const lastY = lastYRef.current;
         const delta = y - lastY;
+        
 
         // ignore tiny scroll changes (trackpads)
         if (Math.abs(delta) > 2) {
           const scrollingDown = delta > 0;
           const pastTop = y > threshold;
+          const nextHidden = scrollingDown && pastTop;
+          setHidden(nextHidden);
+
+          if (nextHidden) {
+            onHide?.();
+          }
 
           // hide only if scrolling down AND not near top
           setHidden(scrollingDown && pastTop);
@@ -38,6 +46,7 @@ export default function NavbarShell({ children, threshold = 8 }: Props) {
         lastYRef.current = y;
         tickingRef.current = false;
       });
+      
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });

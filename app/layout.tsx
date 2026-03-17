@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-import NavbarShell from "@/components/navbar/NavbarShell";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import GsapProvider from "@/components/gsap/GsapProvider";
 import ScrollManager from "@/components/providers/ScrollManager";
+import { NavbarController } from "@/components/navbar/NavbarController";
 
 config.autoAddCss = false;
 
@@ -50,9 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <body className={`${roobertPro.variable} ${roobertTrial.variable} ${geistMono.variable} antialiased ` }>
         <ScrollManager />
-       <NavbarShell>
-        <Navbar />
-      </NavbarShell>
+        <NavbarController/>
          <GsapProvider>{children}</GsapProvider>
         <Footer/>
       </body>

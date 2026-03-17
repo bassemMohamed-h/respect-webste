@@ -270,12 +270,10 @@ export function Services({
                 href={service.href ?? `${baseHref}#${service.slug}`}
                 scroll={false}
                 onClick={handleClick(service.slug)}
-                className="mobile-service-card block w-[50vw] shrink-0"
+                className="mobile-service-card block w-[50vw] shrink-0 "
               >
                 <article
-                  className={`relative h-[70vh] w-full overflow-hidden rounded-t-[7px] rounded-bl-[7px] rounded-br-[150px] ${
-                    index % 2 === 0 ? "bg-primary" : "bg-[#5DA047]"
-                  }`}
+                  className={`relative h-[70vh] w-full overflow-hidden rounded-t-[7px] rounded-bl-[7px] rounded-br-[150px] bg-primary`}
                 >
                   <div className="absolute top-5 right-[-5px]">
                     <Image
@@ -289,8 +287,6 @@ export function Services({
                     />
                     <div
                       className={`absolute inset-0 pointer-events-none transition-opacity duration-100 ${
-                        index % 2 === 0 ? "bg-primary/30" : "bg-[#5DA047]/30"
-                      } ${
                         activeSlug === service.slug ? "opacity-0" : "opacity-100"
                       }`}
                     />

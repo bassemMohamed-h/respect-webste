@@ -21,12 +21,15 @@ const rightLinks: NavLink[] = [
 ];
 
 const mobileLinks = [...leftLinks, ...rightLinks];
+type NavbarProps = {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navbar(props:NavbarProps) {
 
-  const toggleMenu = () => setIsOpen((prev) => !prev);
-  const closeMenu = () => setIsOpen(false);
+  const toggleMenu = () => props.setIsOpen((prev) => !prev);
+  const closeMenu = () => props.setIsOpen(false);
 
   return (
     <nav className="container-80 h-[var(--nav-h)] flex items-center">
@@ -102,24 +105,24 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleMenu}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
+            aria-label={props.isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={props.isOpen}
             className="ml-auto flex items-center gap-3 text-third lg:hidden mr-10 cursor-pointer"
           >
             <span className="flex flex-col gap-1">
               <span
                 className={`block h-[2px] w-5 bg-third transition ${
-                  isOpen ? "translate-y-[6px] rotate-45" : ""
+                  props.isOpen ? "translate-y-[6px] rotate-45" : ""
                 }`}
               />
               <span
                 className={`block h-[2px] w-5 bg-third transition ${
-                  isOpen ? "opacity-0" : ""
+                  props.isOpen ? "opacity-0" : ""
                 }`}
               />
               <span
                 className={`block h-[2px] w-5 bg-third transition ${
-                  isOpen ? "-translate-y-[6px] -rotate-45" : ""
+                  props.isOpen ? "-translate-y-[6px] -rotate-45" : ""
                 }`}
               />
             </span>
@@ -131,7 +134,7 @@ export default function Navbar() {
           className={`
             absolute right-0  z-50 mt-3 overflow-hidden
             rounded-[16px] bg-[#5da047] transition-all duration-300 lg:hidden
-            ${isOpen ? "max-h-[400px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"}
+            ${props.isOpen ? "max-h-[400px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"}
           `}
         >
           <div className="flex flex-col">

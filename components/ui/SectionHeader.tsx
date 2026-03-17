@@ -123,7 +123,7 @@ export function SectionHeader({
     <div className="relative flex flex-col items-center">
       <div
         ref={svgWrapperRef}
-        className="will-change-transform [will-change:clip-path]"
+        className="will-change-transform [will-change:clip-path] w-[80%] lg:w-[100%]"
       >
         {Svg}
       </div>
@@ -132,7 +132,7 @@ export function SectionHeader({
         ref={textRef}
         className="relative  flex flex-col items-center text-center "
       >
-        <h3 className={`text-5xl lg:text-9xl font-bold text-primary -translate-y-1/2 ${title.className}`}>
+        <h3 className={`text-5xl lg:text-8xl font-bold text-primary -translate-y-1/2 ${title.className}`}>
           {title.name}
         </h3>
 
