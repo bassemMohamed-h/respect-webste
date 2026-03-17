@@ -54,7 +54,7 @@ export default function ServicesPage(){
                     text: "DESIGN IS A STRATEGY, NOT DECORATION.", className: "text-center text-secondary" }}
                 description={{ 
                     text: "Respect was founded to build brands that are clearly understood, earn trust, and operate through structured systems.", 
-                    className: "text-center text-third text-[27px] font-semibold" }}
+                    className: "text-center text-third lg:text-[27px] text-lg font-semibold container-80" }}
             />
             <Services services={sortedServices}
             activeSlug={activeSlug}

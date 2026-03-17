@@ -128,7 +128,7 @@ export function Services({
 
           return Math.max(0, lastRightInsideTrack - visibleWidth);
         };
-
+        const scrollFactor = 1.25;
         const tween = gsap.to(track, {
           x: () => -getScrollDistance(),
           ease: "none",
@@ -136,7 +136,12 @@ export function Services({
             trigger: section,
             pin,
             start: "top top",
-            end: () => `+=${Math.max(window.innerHeight * (services.length - 1), getScrollDistance())}`,
+            end: () => {
+              const baseDistance = Math.max(
+                window.innerHeight * (services.length - 1),
+                getScrollDistance());
+                return `+=${baseDistance * scrollFactor}`
+              },
             scrub: 1,
             invalidateOnRefresh: true,
             snap: {
