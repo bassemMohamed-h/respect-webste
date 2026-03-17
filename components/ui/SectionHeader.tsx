@@ -117,7 +117,7 @@ export function SectionHeader({
   return (
    <div
   ref={rootRef}
-  className={`relative min-h-[100svh] ${className}`}
+  className={`relative min-h-[100svh] container-80 ${className}`}
 >
   <div className="flex min-h-[100svh] items-center justify-center">
     <div className="relative flex flex-col items-center">

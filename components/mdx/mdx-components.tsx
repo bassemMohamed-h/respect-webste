@@ -2,12 +2,12 @@ export const mdxComponents = {
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       {...props}
-      className="mt-12 mb-4 text-primary text-[44px] font-bold leading-none"
+      className="mt-12 mb-4 text-primary lg:text-[44px] text-3xl font-bold leading-none"
     />
   ),
 
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p {...props} className="mt-3 text-[18px] leading-relaxed text-black/70" />
+    <p {...props} className="mt-3 lg:text-[18px] text-[16px] leading-relaxed text-black/70" />
   ),
 
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
@@ -15,6 +15,6 @@ export const mdxComponents = {
   ),
 
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
-    <li {...props} className="text-[18px] leading-relaxed" />
+    <li {...props} className="lg:text-[18px] text-[16px] leading-relaxed" />
   ),
 };

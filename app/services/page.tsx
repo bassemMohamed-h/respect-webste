@@ -43,7 +43,7 @@ export default function ServicesPage(){
             }} 
             description={{
                 name:"We offer integrated solutions that cover the brand's journey from the inside out.",
-                className:"text-black text-[32px]"
+                className:"text-black lg:text-[32px] text-lg"
             }}
             Svg={<OurScribble className="text-secondary" />}
             />

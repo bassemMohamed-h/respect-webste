@@ -41,23 +41,23 @@ export function ServicesDetails({ services, activeSlug }: Props) {
     return (
         <section  ref={contentRef} id="service-details" className="ServiceDetails min-h-[100svh]  flex items-center justify-center bg-third flex-col">
             <div className="container-80 mt-[var(--nav-h)]">
-                <div className="flex gap-12">
-                    <div className="w-1/4 relative h-[220px] md:h-[260px] shrink-0 mb-8 ">
+                <div className="flex flex-col lg:flex-row gap-12">
+                    <div className="w-full lg:w-1/4 relative shrink-0 ">
 
                         {active.heroImg && (
                         <Image
                             src={active.heroImg}
                             alt={active.title}
-                            fill
-                            sizes="(max-width: 768px) 220px, 260px"
-                            className="object-contain text-primary"
+                            width={1200}
+                            height={800}
+                            className="w-auto h-auto objext-contain"
                         />
                         )}
                     </div>
-                    <div className="w-3/4 mb-8">
-                        <h2 className="text-[48px] font-bold mb-4">{active.title}</h2>
-                        <p className="text-[24px] text-black">{active.description}</p>
-                        <p className="text-[20px] text-black">{active.moreDesc}</p>
+                    <div className="lg:w-3/4 mb-8">
+                        <h2 className="lg:text-[48px] text-3xl font-bold mb-4">{active.title}</h2>
+                        <p className="lg:text-[24px] text-xl text-black">{active.description}</p>
+                        <p className="lg:text-[20px] text-lg text-black">{active.moreDesc}</p>
                     </div>
                 </div>
                 <article >
