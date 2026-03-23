@@ -133,7 +133,6 @@ export function Services({
           ease: "none",
           scrollTrigger: {
             trigger: section,
-            markers:true,
             pin,
             start: "top top",
             end: () => `+=${track.scrollWidth - pin.clientWidth}`,
