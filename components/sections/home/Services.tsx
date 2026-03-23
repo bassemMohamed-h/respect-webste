@@ -128,21 +128,16 @@ export function Services({
 
           return Math.max(0, lastRightInsideTrack - visibleWidth);
         };
-        const scrollFactor = 1.25;
         const tween = gsap.to(track, {
           x: () => -getScrollDistance(),
           ease: "none",
           scrollTrigger: {
             trigger: section,
+            markers:true,
             pin,
             start: "top top",
-            end: () => {
-              const baseDistance = Math.max(
-                window.innerHeight * (services.length - 1),
-                getScrollDistance());
-                return `+=${baseDistance * scrollFactor}`
-              },
-            scrub: 1,
+            end: () => `+=${track.scrollWidth - pin.clientWidth}`,
+            scrub: .5,
             invalidateOnRefresh: true,
             snap: {
               snapTo: (value) => {
@@ -166,7 +161,7 @@ export function Services({
 
       return () => mm.revert();
     },
-    { scope: mobileSectionRef, dependencies: [services.length] }
+    { scope: mobileSectionRef }
   );
 
   useGSAP(() => {
@@ -259,7 +254,7 @@ export function Services({
       <section
         ref={mobileSectionRef}
         className="relative lg:hidden"
-        style={{ height: `${services.length * 100}svh` }}
+        
       >
         <div
           ref={mobilePinRef}

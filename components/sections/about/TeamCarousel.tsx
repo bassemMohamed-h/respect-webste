@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
 type TeamMember = {
-  imageSrc: string; // e.g. "/team/ahmed.png"
+  imageSrc: string; 
 };
 
 type Props = {
@@ -30,11 +30,11 @@ export function TeamCarousel({ items }: Props) {
       <div className="overflow-hidden w-full select-none touch-pan-y cursor-grab active:cursor-grabbing"
             ref={emblaRef}
            >
-        <div className="flex ">
+        <div className="flex gap-8 px-8">
           {items.map((m,index) => (
             <div
               key={index}
-               className="flex-[0_0_50%] sm:flex-[0_0_45%] md:flex-[0_0_28%] lg:flex-[0_0_22%]"
+               className="flex-[0_0_50%] sm:flex-[0_0_45%] md:flex-[0_0_28%] lg:flex-[0_0_25%]"
             >
               <div className=" overflow-hidden">
                 <Image

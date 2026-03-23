@@ -18,7 +18,7 @@ export default function HomePage() {
       <WhoWeAre/>
       <SectionHeader 
         title={{
-          name:"LATEST WORK", className:"text-4xl!"
+          name:"LATEST WORK", className:"text-4xl! lg:text-7xl!"
         }}
         Svg={<OurScribble className="text-secondary" />}
       />

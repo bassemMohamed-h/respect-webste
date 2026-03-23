@@ -117,10 +117,9 @@ export function SectionHeader({
   return (
    <div
   ref={rootRef}
-  className={`relative min-h-[100svh] container-80 ${className}`}
->
-  <div className="flex min-h-[100svh] items-center justify-center">
-    <div className="relative flex flex-col items-center">
+  className={`flex items-center justify-center flex-col min-h-[100svh] container-80 ${className}`}
+  >
+    <div className=" flex flex-col items-center">
       <div
         ref={svgWrapperRef}
         className="will-change-transform [will-change:clip-path] w-[80%] lg:w-[100%]"
@@ -130,20 +129,18 @@ export function SectionHeader({
 
       <div
         ref={textRef}
-        className="relative  flex flex-col items-center text-center "
+        className="text-center"
       >
         <h3 className={`text-5xl lg:text-8xl font-bold text-primary -translate-y-1/2 ${title.className}`}>
           {title.name}
         </h3>
-
-        {description && (
-          <p className={`font-semibold text-black ${description.className}`}>
+      </div>
+    </div>
+    {description && (
+          <p className={`font-semibold text-black text-center ${description.className}`}>
             {description.name}
           </p>
         )}
-      </div>
-    </div>
-  </div>
 </div>
   );
 }

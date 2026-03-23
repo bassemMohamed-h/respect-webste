@@ -12,7 +12,7 @@ export default function ConnectPage() {
       const blockRef = useTextMaskRevealGroup<HTMLDivElement>();
     
     return(
-        <section className="ConnectPage mt-[var(--nav-h)]">
+        <section className="ConnectPage">
             {/* Section Header lg Screen */}
             <SectionHeader 
                 title={{
@@ -22,10 +22,10 @@ export default function ConnectPage() {
                             className:"text-2xl container-80"
                 }}
                 Svg={<LetsScribble className="text-secondary" />}
-                className="hidden lg:block"
+                className="hidden lg:flex"
             />
             {/* Section Header mob Screen */}
-            <div ref={blockRef} className="contactHeaderMob container-80 lg:hidden">
+            <div ref={blockRef} className="contactHeaderMob container-80 lg:hidden mt-[var(--nav-h)]">
                 <h1 className="text-primary font-bold text-5xl">Let’s talk, calmly.</h1>
                 <p className="text-black mt-5 text-xl">We believe good work starts with an honest conversation. If you have a project, a question, or just an idea you’d like to explore, we’re here to listen.</p>
             </div>
@@ -43,7 +43,7 @@ export default function ConnectPage() {
                             </a>
                             <div className="">
                                 <h5 className="text-primary text-[24px]">Gmail</h5>
-                                <p>respect.ownerr@gmail.com</p>
+                                <p className="text-sm">respect.ownerr@gmail.com</p>
                             </div>
                             
                         </div>
@@ -71,7 +71,7 @@ export default function ConnectPage() {
                             </a>
                             <div className="">
                                 <h5 className="text-primary text-[24px]">Phone</h5>
-                                <p>respect.ownerr@gmail.com</p>
+                                <p >+20111265664</p>
                             </div>
                             
                         </div>
