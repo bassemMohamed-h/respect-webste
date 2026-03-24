@@ -65,7 +65,7 @@ export function Slogan({ title, description, className, animated }: SloganProps)
     return (
         <section ref={sectionRef} className={`Slogan min-h-[100svh] flex items-start justify-center  flex-col pl-3 ${className}`}>
             <div ref={titleViewportRef} className="w-full overflow-hidden">
-                <h2 ref={titleRef} className={`text-[clamp(3rem,9vw,8rem)] font-bold mb-20 whitespace-nowrap ${title.className}`}>
+                <h2 ref={titleRef} className={`text-[clamp(3rem,9vw,8rem)] font-bold mb-20 whitespace-nowrap uppercase ${title.className}`}>
                     {title.text}
                 </h2>
             </div>
