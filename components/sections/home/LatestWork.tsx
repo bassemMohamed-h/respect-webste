@@ -168,33 +168,33 @@ export function LatestWork({ projects }: LatestWorkProps) {
         </div>
         {/* stage moves up to cover header */}
         <div ref={stageRef} className="relative z-10 overflow-hidden min-h-[100svh] flex items-center">
-  <div className="overflow-hidden w-full h-[100svh]">
-    <div ref={trackRef} className="flex flex-col flex-nowrap will-change-transform">
-      {projects.map((p) => (
-        <article
-          key={p.slug}
-          className="min-h-0 flex-[0_0_100svh]"
-        >
-          <Link href={`/case-studies#${p.slug}`} className="block">
-            <div className="relative overflow-hidden h-[100svh] w-full rounded-t-[6px] rounded-bl-[6px]">
-              <Image
-                src={p.coverImage}
-                alt={p.title}
-                fill
-                className="object-cover"
-                priority={false}
-              />
-              <div className="absolute bottom-20 left-10 z-10 text-white">
-                <h3 className="mt-5 text-4xl font-bold">{p.title}</h3>
-                <p className="mt-2 text-xl line-clamp-3 font-semibold">{p.description}</p>
-              </div>
+          <div className="overflow-hidden w-full h-[100svh]">
+            <div ref={trackRef} className="flex flex-col flex-nowrap will-change-transform">
+              {projects.map((p) => (
+                <article
+                  key={p.slug}
+                  className="min-h-0 flex-[0_0_100svh]"
+                >
+                  <Link href={`/case-studies#${p.slug}`} className="block">
+                    <div className="relative overflow-hidden h-[100svh] w-full rounded-t-[6px] rounded-bl-[6px]">
+                      <Image
+                        src={p.coverImage}
+                        alt={p.title}
+                        fill
+                        className="object-cover"
+                        priority={false}
+                      />
+                      <div className="absolute bottom-20 left-10 z-10 text-white">
+                        <h3 className="mt-5 text-4xl font-bold">{p.title}</h3>
+                        <p className="mt-2 text-xl line-clamp-3 font-semibold">{p.description}</p>
+                      </div>
+                    </div>
+                  </Link>
+                </article>
+              ))}
             </div>
-          </Link>
-        </article>
-      ))}
-    </div>
-  </div>
-</div>
+          </div>
+        </div>
     </section>
   );
 }

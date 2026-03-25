@@ -34,7 +34,7 @@ export function TeamCarousel({ items }: Props) {
           {items.map((m,index) => (
             <div
               key={index}
-               className="flex-[0_0_50%] sm:flex-[0_0_45%] md:flex-[0_0_28%] lg:flex-[0_0_25%]"
+               className="flex-[0_0_80%] sm:flex-[0_0_75%] md:flex-[0_0_45%] lg:flex-[0_0_22%]"
             >
               <div className=" overflow-hidden">
                 <Image
@@ -42,7 +42,7 @@ export function TeamCarousel({ items }: Props) {
                   alt="name"
                   width={1200}
                   height={800}
-                  className=" h-auto w-auto mx-auto"
+                  className="h-auto max-w-full"
                   priority={false}
                 />
               </div>

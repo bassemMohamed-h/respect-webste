@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CaseStudiesCarousel } from "@/components/sections/case-studies/CaseStudiesCarousel";
 import { CaseStudiesDetails } from "@/components/sections/case-studies/CaseStudiesDetails";
+import { CaseStudies } from "@/components/sections/case-studies/CaseStudies";
 
 type CaseStudyMeta = {
   title: string;
@@ -61,13 +62,14 @@ export function CaseStudiesPageClient({ items }: Props) {
   return (
     <>
       <div className="">
-        <CaseStudiesCarousel
+        {/* <CaseStudiesCarousel
           items={items}
           baseHref="/case-studies"
           onSelect={(slug) => {
             setActiveSlug(slug);
           }}
-        />
+        /> */}
+        <CaseStudies/>
       </div>
 
       <CaseStudiesDetails item={activeItem} />
