@@ -1,12 +1,12 @@
-"use client";
-import { SloganMark } from "@/components/brand/RespectWordmark";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getAllCaseStudies } from "@/components/lib/case-studies";
 import { CaseStudiesPageClient } from "@/components/sections/case-studies/CaseStudiesPageClient";
 import { OurScribble } from "@/components/brand/OurScribble";
 import { SloganSlideIn } from "@/components/gsap/RollingSlogan";
+import { getProjectBySlug } from "@/components/lib/projects";
+import Image from "next/image";
 
-export default function CaseStudies() {
+export default async function CaseStudies() {
   const items = getAllCaseStudies().map((cs) => ({
     title: cs.title,
     description: cs.description,
@@ -17,6 +17,13 @@ export default function CaseStudies() {
     studyType: cs.studyType,
     year: cs.year,
   }));
+  const project = await getProjectBySlug("mps");
+
+  console.log("project test:", project);
+
+  if (!project) {
+    return <div>Project not found</div>;
+  }
 
   return (
     <main>
@@ -37,7 +44,21 @@ export default function CaseStudies() {
         </div>
       </div>
 
-      <CaseStudiesPageClient items={items} />
+      {/* <CaseStudiesPageClient items={items} /> */}
+     {project.mobileImages.map((image, index)=>(
+      <div key={index} className="relative w-content">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={1200}
+          height={800}
+          className="object-contain w-auto"
+        />
+      </div>
+        
+     ))}
+      
+
     </main>
   );
 }
