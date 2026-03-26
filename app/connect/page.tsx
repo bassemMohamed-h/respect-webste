@@ -33,11 +33,11 @@ export default function ConnectPage() {
                 <div className="Left flex-1">
                     <h4 className="text-primary font-bold text-[32px]"> Reach Out Directly</h4>
                     <div className="py-16 flex flex-col gap-12">
-                        <div className="Gmail border border-primary rounded-br-[132px] flex gap-6 py-6 px-3">
+                        <div className="Gmail border border-primary rounded-br-[132px] flex gap-4 py-6 px-3">
                             <a
                             href="mailto:respect.ownerr@gmail.com"
                             target="_blank"
-                            className="link-button inline-flex items-center justify-center"
+                            className=" inline-flex items-center justify-center"
                             >
                                 <FontAwesomeIcon icon={faEnvelope} size="2xl"/>
                             </a>
@@ -51,7 +51,7 @@ export default function ConnectPage() {
                             <a
                             href="https://wa.me/20111265664"
                             target="_blank"
-                            className="link-button inline-flex items-center justify-center"
+                            className=" inline-flex items-center justify-center"
                             >
                                 <FontAwesomeIcon icon={faWhatsapp} size="2xl"/>
                             </a>
@@ -65,7 +65,7 @@ export default function ConnectPage() {
                             <a
                             href="tel:+201234567890"
                             target="_blank"
-                            className="link-button inline-flex items-center justify-center"
+                            className=" inline-flex items-center justify-center"
                             >
                                 <FontAwesomeIcon icon={faPhone} size="2xl"/>
                             </a>
