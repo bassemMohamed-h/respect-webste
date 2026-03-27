@@ -5,8 +5,9 @@ import { OurScribble } from "@/components/brand/OurScribble";
 import { SloganSlideIn } from "@/components/gsap/RollingSlogan";
 import { getProjectBySlug } from "@/components/lib/projects";
 import Image from "next/image";
+import { CaseStudies } from "@/components/sections/case-studies/CaseStudies";
 
-export default async function CaseStudies() {
+export default async function CaseStudiesPage() {
   const items = getAllCaseStudies().map((cs) => ({
     title: cs.title,
     description: cs.description,
@@ -18,12 +19,6 @@ export default async function CaseStudies() {
     year: cs.year,
   }));
   const project = await getProjectBySlug("mps");
-
-  console.log("project test:", project);
-
-  if (!project) {
-    return <div>Project not found</div>;
-  }
 
   return (
     <main>
@@ -43,16 +38,16 @@ export default async function CaseStudies() {
           <SloganSlideIn />
         </div>
       </div>
-
+      <CaseStudies/>
       {/* <CaseStudiesPageClient items={items} /> */}
-     {project.mobileImages.map((image, index)=>(
+     {project && project.desktopImages.map((image, index)=>(
       <div key={index} className="relative w-content">
         <Image
           src={image.src}
           alt={image.alt}
           width={1200}
           height={800}
-          className="object-contain w-auto"
+          className="object-contain w-full"
         />
       </div>
         
