@@ -1,6 +1,6 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { getAllCaseStudies } from "@/components/lib/case-studies";
-import { CaseStudiesPageClient } from "@/components/sections/case-studies/CaseStudiesPageClient";
+// import { getAllCaseStudies } from "@/components/lib/case-studies";
+// import { CaseStudiesPageClient } from "@/components/sections/case-studies/CaseStudiesPageClient";
 import { OurScribble } from "@/components/brand/OurScribble";
 import { SloganSlideIn } from "@/components/gsap/RollingSlogan";
 import { getProjectBySlug } from "@/components/lib/projects";
@@ -8,16 +8,16 @@ import Image from "next/image";
 import { CaseStudies } from "@/components/sections/case-studies/CaseStudies";
 
 export default async function CaseStudiesPage() {
-  const items = getAllCaseStudies().map((cs) => ({
-    title: cs.title,
-    description: cs.description,
-    coverImage: cs.coverImage,
-    slug: cs.slug,
-    client: cs.client,
-    service: cs.service,
-    studyType: cs.studyType,
-    year: cs.year,
-  }));
+  // const items = getAllCaseStudies().map((cs) => ({
+  //   title: cs.title,
+  //   description: cs.description,
+  //   coverImage: cs.coverImage,
+  //   slug: cs.slug,
+  //   client: cs.client,
+  //   service: cs.service,
+  //   studyType: cs.studyType,
+  //   year: cs.year,
+  // }));
   const project = await getProjectBySlug("mps");
 
   return (

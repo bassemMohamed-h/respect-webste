@@ -14,6 +14,8 @@
 
   --third: #FFF8E9;
 
+  --forth: #5DA047;
+
 
   /* Navbar */
    --nav-h: 150px;
@@ -26,6 +28,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-third: var(--third);
+  --color-forth: var(--forth);
 
   --font-sans: var(--font-roobert-trial);
   --font-display: var(--font-roobert-trial);
