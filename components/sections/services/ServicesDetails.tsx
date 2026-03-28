@@ -65,7 +65,7 @@ export function ServicesDetails({ services, activeSlug }: Props) {
                 </article>
                 <div className="mt-8 flex justify-end">
                     <Link
-                        href="/contact"
+                        href="/connect"
                         className="mt-8 inline-flex w-[200px] items-center justify-center rounded-br-[50px] bg-primary px-8 py-4 text-white"
                     >
                         Start Your Project

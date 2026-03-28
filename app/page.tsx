@@ -9,9 +9,11 @@ import { LatestWork } from "@/components/sections/home/LatestWork";
 import { allServices } from "contentlayer/generated";
 import { OurScribble } from "@/components/brand/OurScribble";
 import { LetsScribble } from "@/components/brand/LetsScribble";
+import { getProjectsManifest } from "@/components/data/projects";
 
-const projects = getFeaturedCaseStudies(5);
+// const projects = getFeaturedCaseStudies(5);
 export default function HomePage() {
+  const projects = getProjectsManifest()  
   return (
     <>
       <Hero/>

@@ -7,19 +7,15 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Slogan } from "../../ui/Sloagn";
+import { ProjectManifestItem } from "@/components/data/projects";
 
-type LatestWorkProps = {
-  projects: {
-    title: string;
-    description: string;
-    coverImage: string;
-    slug: string;
-  }[];
-};
+  type props = {
+    projects:ProjectManifestItem[]
+  }
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function LatestWork({ projects }: LatestWorkProps) {
+export function LatestWork({projects} : props) {
     const blockRef = useRef<HTMLElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const headerRef = useRef<HTMLDivElement>(null);
@@ -155,7 +151,8 @@ export function LatestWork({ projects }: LatestWorkProps) {
           tl?.kill();
         };
     }, []);
-
+    console.log(projects);
+    
   return (
     <section ref={blockRef} className="LatestWork bg-third text-third overflow-hidden h-[100svh] flex flex-col">
         <div ref={headerRef} >
@@ -184,10 +181,10 @@ export function LatestWork({ projects }: LatestWorkProps) {
                         className="object-cover"
                         priority={false}
                       />
-                      <div className="absolute bottom-20 left-10 z-10 text-white">
+                      {/* <div className="absolute bottom-20 left-10 z-10 text-white">
                         <h3 className="mt-5 text-4xl font-bold">{p.title}</h3>
                         <p className="mt-2 text-xl line-clamp-3 font-semibold">{p.description}</p>
-                      </div>
+                      </div> */}
                     </div>
                   </Link>
                 </article>

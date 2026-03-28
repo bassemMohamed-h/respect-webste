@@ -297,7 +297,7 @@ export function Services({
 
                   <div className="absolute inset-0">
                     <div className="absolute bottom-5 left-2 origin-bottom-left -rotate-90">
-                      <p className="translate-y-full whitespace-nowrap text-5xl font-bold leading-none text-third">
+                      <p className="translate-y-full whitespace-nowrap text-4xl font-bold leading-none text-third">
                         {service.title}
                       </p>
                     </div>

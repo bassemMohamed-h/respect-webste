@@ -22,7 +22,7 @@ import {
 export function ContactSoical() {
   return (
     <>
-      <div className="links-container min-h-[100svh] mt-[var(--nav-h)] container-80">
+      <div className="links-container min-h-[100svh]  container-80">
         <a
           href="https://www.facebook.com/share/1DDmj1Rqw3/"
           target="_blank"
