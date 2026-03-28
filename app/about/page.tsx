@@ -3,7 +3,7 @@ import { Heart } from "@/components/brand/Heart";
 import { Slogan } from "@/components/ui/Sloagn";
 import { Story } from "@/components/sections/about/Story";
 import { Team } from "@/components/sections/about/Team";
-import { Truth } from "@/components/sections/about/Truth";
+import { Philosophy } from "@/components/sections/about/Philosophy";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { OurScribble } from "@/components/brand/OurScribble";
 import { ValuesPinnedSection } from "@/components/sections/about/ValuesPinnedSection";
@@ -91,7 +91,7 @@ export default function AboutPage() {
                 }}
                 Svg={<OurScribble className="text-secondary" />}
             />
-            <Truth/>
+            <Philosophy/>
             <SectionHeader 
                 title={{
                     name:"Team", className:""

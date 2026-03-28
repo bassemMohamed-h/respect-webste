@@ -150,9 +150,7 @@ export function LatestWork({projects} : props) {
           tl?.scrollTrigger?.kill();
           tl?.kill();
         };
-    }, []);
-    console.log(projects);
-    
+    }, []);    
   return (
     <section ref={blockRef} className="LatestWork bg-third text-third overflow-hidden h-[100svh] flex flex-col">
         <div ref={headerRef} >

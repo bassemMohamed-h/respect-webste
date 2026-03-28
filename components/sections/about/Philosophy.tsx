@@ -1,7 +1,9 @@
 "use client";
+import { Truth } from "@/components/brand/Truth";
 import { useTextMaskRevealGroup } from "@/components/gsap/useTextMaskReveal";
 
-export function Truth(){
+export function Philosophy(){
+
     const blockRef = useTextMaskRevealGroup<HTMLDivElement>({
         duration: 2,
         stagger: 0.2,
@@ -9,10 +11,15 @@ export function Truth(){
     });
     return(
         <section className="Truth min-h-[100svh] bg-primary text-third flex items-center justify-center ">
-            <div ref={blockRef} className="flex items-center justify-center container-80  gap-4 flex-col ">
-                <h2 className="lg:text-[200px] text-4xl text-secondary mb-8 font-semibold ">Truth</h2>
+            <div className="">
+                <div ref={blockRef} className="flex items-center justify-center container-80  gap-4 flex-col ">
+                {/* <h2 className="lg:text-[200px] text-4xl text-secondary mb-8 font-semibold ">Truth</h2> */}
+                 <Truth/>
                 <p className="lg:text-[48px] text-md text-center">We solve complexity through strategy and translate meaning into working systems.</p>
             </div>
+            </div>
+            
+           
         </section>
     )
             
