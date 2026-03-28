@@ -1,34 +1,57 @@
-
 import Image from "next/image";
 
+// type CaseStudyMeta = {
+//   title: string;
+//   description: string;
+//   coverImage: string;
+//   slug: string;
+//   client?: string;
+//   service?: string;
+//   studyType?: string;
+//   year?: number;
+// };
+type ProjectImage ={
+  src:string,
+  alt:string
+}
 type CaseStudyMeta = {
-  title: string;
-  description: string;
-  coverImage: string;
-  slug: string;
-  client?: string;
-  service?: string;
-  studyType?: string;
-  year?: number;
-};
+  title:string,
+  slug:string,
+  bgColor:string
+  desktopImages:ProjectImage[],
+  mobileImages:ProjectImage[]
+}
 
 type Props = {
   item: CaseStudyMeta | null;
 };
 export function CaseStudiesDetails({ item }: Props) {
   if (!item) return null;
-
+  console.log("bgcolor:",item.bgColor);
+  
   return (
     <section
       id="case-study-details"
-      className="CaseStudiesDetails min-h-[100svh] bg-third text-black text-lg scroll-mt-[var(--nav-h)]"
+      className={`CaseStudiesDetails`}
+       style={{ backgroundColor: item.bgColor }}
     >
-      <div className="container-80 mt-[var(--nav-h)]">
+      <div className="min-h-[100svh] py-[var(--nav-h)] container-80">
+        {item.desktopImages.map((image,index)=>(
+         <Image 
+         key={index}
+        src={image.src}
+        alt={image.alt}
+        width={1200}
+        height={800}
+        className="h-auto w-full object-contain"
+      />
+      ))}
+      </div>
+      {/* <div className="container-80 mt-[var(--nav-h)]">
         <div className="Description flex gap-8 mb-30">
           <div className="projectHeader flex-1">
             <h2 className="text-primary text-4xl mb-4">{item.title}</h2>
 
-            {/* fallback if studyType missing */}
             <h3 className="text-primary text-xl">
               {item.studyType ?? "Case Study"}
               {item.year ? ` • ${item.year}` : ""}
@@ -50,7 +73,6 @@ export function CaseStudiesDetails({ item }: Props) {
           </div>
         </div>
 
-        {/* keep the rest as-is for now */}
         <div className="OurRole mb-12">
           <h3 className="text-primary text-4xl mb-4">Our Role</h3>
           <p className="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -97,7 +119,8 @@ export function CaseStudiesDetails({ item }: Props) {
           </ul>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
-      </div>
+      </div> */}
+      
     </section>
   );
 }

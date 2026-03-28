@@ -28,32 +28,38 @@ const categories = [
     }
 ]
 const projects = getProjectsManifest();
-console.log(projects);
 
-export function CaseStudies(){
+type props = {
+    activeSlug:string
+    onSelect: (slug: string) => void;
+}
+
+export function CaseStudies({activeSlug, onSelect}:props){
     const sectionRef =  useRef<HTMLElement>(null);
     const trackRef =      useRef<HTMLDivElement>(null)
+    const baseHref = "/case-studies"
     const [isReady, setIsReady] = useState(false);
     const [activeCategory, setActiveCategory] = useState("ALL");
+
     const handleCategoryClick = (categoryTitle: string) => {
-  if (categoryTitle === activeCategory) return;
+        if (categoryTitle === activeCategory) return;
 
-  const st = ScrollTrigger.getById("case-studies-pin");
+        const st = ScrollTrigger.getById("case-studies-pin");
 
-  if (!st) {
-    setActiveCategory(categoryTitle);
-    return;
-  }
+        if (!st) {
+            setActiveCategory(categoryTitle);
+            return;
+        }
 
-  window.scrollTo({
-    top: st.start,
-    behavior: "smooth",
-  });
+        window.scrollTo({
+            top: st.start,
+            behavior: "smooth",
+        });
 
-  window.setTimeout(() => {
-    setActiveCategory(categoryTitle);
-  }, 500);
-};
+        window.setTimeout(() => {
+            setActiveCategory(categoryTitle);
+        }, 1000);
+    };
 
     const filteredProjects = activeCategory === "ALL"? projects: projects.filter((project)=>project.category===activeCategory)
 
@@ -90,7 +96,6 @@ export function CaseStudies(){
         gsap.set(track, { x: 0 });
         const distance = ()=> Math.max(0, track.scrollWidth - section.clientWidth )
 
-        console.log("scroll Width = ", distance())
         const tween = gsap.to(track,{
             x:()=> -distance(),
             ease: "none",
@@ -125,6 +130,7 @@ export function CaseStudies(){
         dependencies:[isReady,activeCategory],
         revertOnUpdate: true,
     })
+    console.log(activeSlug,);
     
     return(
         <section ref={sectionRef} className="min-h-screen ">
@@ -157,21 +163,28 @@ export function CaseStudies(){
             <div className="overflow-hidden" >
                 <div ref={trackRef} className="flex gap-4 ">
                     {filteredProjects.map((project, index)=>{
-                        console.log("filtered projects:",project," activeCategory:",activeCategory)
                         return(
-                            // <Link 
-                        //     key={index}
-
-                        // >
-                            <Image
+                            <Link
                                 key={index}
-                                src={project.coverImage}
-                                alt={project.title}
-                                width={1200}
-                                height={800}
-                                className="w-auto h-auto rounded-br-[96px] shrink-0"
-                            />
-                        // </Link>
+                                href={`${baseHref}#${project.slug}`}
+                                onClick={(e) => {
+                                e.preventDefault();
+                                onSelect(project.slug)
+                                window.history.pushState(null, "", `#${project.slug}`);
+                                document.getElementById("case-study-details")?.scrollIntoView({ behavior: "smooth" });
+                                }}
+                                className="contents"
+                            >
+                                <Image
+                                   
+                                    src={project.coverImage}
+                                    alt={project.title}
+                                    width={1200}
+                                    height={800}
+                                    className={`w-auto h-auto rounded-br-[96px]  rounded-t-[28px] 
+                                                ${project.slug===activeSlug?" border border-secondary border-4":""}`}
+                                />
+                            </Link>
                         )
                     }
                     )}

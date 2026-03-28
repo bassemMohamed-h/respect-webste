@@ -1,11 +1,11 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
-// import { getAllCaseStudies } from "@/components/lib/case-studies";
-// import { CaseStudiesPageClient } from "@/components/sections/case-studies/CaseStudiesPageClient";
+import { getAllCaseStudies } from "@/components/lib/case-studies";
+import { CaseStudiesPageClient } from "@/components/sections/case-studies/CaseStudiesPageClient";
 import { OurScribble } from "@/components/brand/OurScribble";
 import { SloganSlideIn } from "@/components/gsap/RollingSlogan";
+import { getProjectsManifest } from "@/components/data/projects";
 import { getProjectBySlug } from "@/components/lib/projects";
-import Image from "next/image";
-import { CaseStudies } from "@/components/sections/case-studies/CaseStudies";
+
 
 export default async function CaseStudiesPage() {
   // const items = getAllCaseStudies().map((cs) => ({
@@ -18,8 +18,24 @@ export default async function CaseStudiesPage() {
   //   studyType: cs.studyType,
   //   year: cs.year,
   // }));
-  const project = await getProjectBySlug("mps");
 
+  const projects = await Promise.all(
+    getProjectsManifest().map(async (project)=>{
+      const fullProjects = await getProjectBySlug(project.slug)
+      if(!fullProjects) {
+        throw new Error (`Project Not Found For Slug: ${project.slug}`)
+      }
+      return fullProjects
+    })
+  )
+  const items = projects.map((project)=>({
+    title:project.title,
+    slug:project.slug,
+    bgColor:project.bgColor,
+    desktopImages:project.desktopImages,
+    mobileImages: project.mobileImages,
+    
+  }))  
   return (
     <main>
       <SectionHeader
@@ -38,20 +54,7 @@ export default async function CaseStudiesPage() {
           <SloganSlideIn />
         </div>
       </div>
-      <CaseStudies/>
-      {/* <CaseStudiesPageClient items={items} /> */}
-     {project && project.desktopImages.map((image, index)=>(
-      <div key={index} className="relative w-content">
-        <Image
-          src={image.src}
-          alt={image.alt}
-          width={1200}
-          height={800}
-          className="object-contain w-full"
-        />
-      </div>
-        
-     ))}
+      <CaseStudiesPageClient items={items} />
       
 
     </main>

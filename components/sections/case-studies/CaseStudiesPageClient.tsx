@@ -5,17 +5,24 @@ import { CaseStudiesCarousel } from "@/components/sections/case-studies/CaseStud
 import { CaseStudiesDetails } from "@/components/sections/case-studies/CaseStudiesDetails";
 import { CaseStudies } from "@/components/sections/case-studies/CaseStudies";
 
+// type CaseStudyMeta = {
+//   title: string;
+//   description: string;
+//   coverImage: string;
+//   slug: string;
+//   client?: string;
+//   service?: string;
+//   studyType?: string;
+//   year?: number;
+// };
 type CaseStudyMeta = {
-  title: string;
-  description: string;
-  coverImage: string;
-  slug: string;
-  client?: string;
-  service?: string;
-  studyType?: string;
-  year?: number;
-};
+  title:string;
+  slug:string;
+  bgColor:string;
+  desktopImages:any[];
+  mobileImages:any[];
 
+}
 type Props = {
   items: CaseStudyMeta[];
 };
@@ -69,9 +76,13 @@ export function CaseStudiesPageClient({ items }: Props) {
             setActiveSlug(slug);
           }}
         /> */}
-        <CaseStudies/>
       </div>
-
+      <CaseStudies 
+        activeSlug={activeSlug}
+        onSelect={(slug)=>{
+          setActiveSlug(slug);
+        }}
+      />
       <CaseStudiesDetails item={activeItem} />
     </>
   );
