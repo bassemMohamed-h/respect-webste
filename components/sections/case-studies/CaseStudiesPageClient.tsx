@@ -48,7 +48,7 @@ export function CaseStudiesPageClient({ items }: Props) {
             behavior: "smooth",
             block: "start",
             });
-        }, 300);
+        }, 500);
       };
 
     // initial load (Home -> /case-studies#slug)

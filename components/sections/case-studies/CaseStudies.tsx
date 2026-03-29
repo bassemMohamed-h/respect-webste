@@ -130,7 +130,6 @@ export function CaseStudies({activeSlug, onSelect}:props){
         dependencies:[isReady,activeCategory],
         revertOnUpdate: true,
     })
-    console.log(activeSlug,);
     
     return(
         <section ref={sectionRef} className="min-h-screen ">
