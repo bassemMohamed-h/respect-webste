@@ -171,7 +171,14 @@ export function CaseStudies({activeSlug, onSelect}:props){
                                 e.preventDefault();
                                 onSelect(project.slug)
                                 window.history.pushState(null, "", `#${project.slug}`);
-                                document.getElementById("case-study-details")?.scrollIntoView({ behavior: "smooth" });
+                                 requestAnimationFrame(() => {
+                                    requestAnimationFrame(() => {
+                                        document.getElementById(project.slug)?.scrollIntoView({
+                                            behavior: "smooth",
+                                            block: "start",
+                                        });
+                                    });
+                                });
                                 }}
                                 className="contents"
                             >

@@ -27,11 +27,10 @@ type Props = {
 };
 export function CaseStudiesDetails({ item }: Props) {
   if (!item) return null;
-  console.log("bgcolor:",item.bgColor);
   
   return (
     <section
-      id="case-study-details"
+      id={item.slug}
       className={`CaseStudiesDetails`}
        style={{ backgroundColor: item.bgColor }}
     >

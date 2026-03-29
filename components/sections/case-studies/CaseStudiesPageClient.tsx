@@ -42,7 +42,7 @@ export function CaseStudiesPageClient({ items }: Props) {
       setActiveSlug(hash);
 
       setTimeout(() => {
-        const el = document.getElementById("case-study-details");
+        const el = document.getElementById(hash);
           if (!el) return;
           el.scrollIntoView({
             behavior: "smooth",
