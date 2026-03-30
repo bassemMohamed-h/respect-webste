@@ -29,52 +29,56 @@ export default function ConnectPage() {
                 <h1 className="text-primary font-bold text-5xl">Let’s talk, calmly.</h1>
                 <p className="text-black mt-5 text-xl">We believe good work starts with an honest conversation. If you have a project, a question, or just an idea you’d like to explore, we’re here to listen.</p>
             </div>
+
             <div className="container-80 mx-auto flex flex-col lg:flex-row gap-12 mt-20">
                 <div className="Left flex-1">
                     <h4 className="text-primary font-bold text-[32px]"> Reach Out Directly</h4>
                     <div className="py-16 flex flex-col gap-12">
-                        <div className="Gmail border border-primary rounded-br-[132px] flex gap-4 py-6 px-3">
-                            <a
+                        <a
                             href="mailto:respect.ownerr@gmail.com"
                             target="_blank"
-                            className=" inline-flex items-center justify-center"
-                            >
-                                <FontAwesomeIcon icon={faEnvelope} size="2xl"/>
-                            </a>
-                            <div className="">
-                                <h5 className="text-primary text-[24px]">Gmail</h5>
-                                <p className="text-sm">respect.ownerr@gmail.com</p>
+                            className=""
+                        >
+                            <div className="Gmail border border-primary rounded-br-[132px] flex gap-4 py-6 px-3 hover:bg-forth hover:text-third group">
+                                <div className="flex items-center justify-center">
+                                    <FontAwesomeIcon icon={faEnvelope} size="2xl"/>
+                                </div>
+                                <div className="">
+                                    <h5 className="text-primary text-[24px] group-hover:text-third">Gmail</h5>
+                                    <p className="text-sm">respect.ownerr@gmail.com</p>
+                                </div>
+                                
                             </div>
-                            
-                        </div>
-                        <div className="Whatsapp border border-primary rounded-br-[132px] flex gap-6 py-6 px-3">
-                            <a
+                        </a>
+                         <a
                             href="https://wa.me/20111265664"
                             target="_blank"
-                            className=" inline-flex items-center justify-center"
+                            className=""
                             >
-                                <FontAwesomeIcon icon={faWhatsapp} size="2xl"/>
-                            </a>
-                            <div className="">
-                                <h5 className="text-primary text-[24px]">Whats App</h5>
-                                <p>+20111265664</p>
+                            <div className="Whatsapp border border-primary rounded-br-[132px] flex gap-4 py-6 px-3 hover:bg-forth hover:text-third group">
+                                <div className="flex items-center justify-center">
+                                    <FontAwesomeIcon icon={faWhatsapp} size="2xl"/>
+                                </div> 
+                                <div className="">
+                                    <h5 className="text-primary text-[24px] group-hover:text-third">Whats App</h5>
+                                    <p>+20111265664</p>
+                                </div>
                             </div>
-                            
-                        </div>
-                        <div className="Gmail border border-primary rounded-br-[132px] flex gap-6 py-6 px-3">
-                            <a
+                        </a>
+                         <a
                             href="tel:+201234567890"
                             target="_blank"
-                            className=" inline-flex items-center justify-center"
-                            >
-                                <FontAwesomeIcon icon={faPhone} size="2xl"/>
-                            </a>
-                            <div className="">
-                                <h5 className="text-primary text-[24px]">Phone</h5>
-                                <p >+20111265664</p>
+                            className="">
+                            <div className="Phone border border-primary rounded-br-[132px] flex gap-4 py-6 px-3 hover:bg-forth hover:text-third group">
+                            <div className="flex items-center justify-center">
+                                    <FontAwesomeIcon icon={faPhone} size="2xl"/>
                             </div>
-                            
-                        </div>
+                                <div className="">
+                                    <h5 className="text-primary text-[24px] group-hover:text-third">Phone</h5>
+                                    <p >+20111265664</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
 
                 </div>
