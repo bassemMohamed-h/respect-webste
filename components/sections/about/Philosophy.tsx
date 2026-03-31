@@ -17,17 +17,17 @@ export function Philosophy() {
   const philosophyContent = [
     {
       title:
-        "We solve complexity through strategy and translate meaning into working systems.",
+        "We build long-term relationships based on transparency, reliability, and consistent results.",
       svg: <Truth />,
     },
     {
       title:
-        "We solve complexity through strategy and translate meaning into working systems.",
+        "We simplify complexity to create clear and effective digital experiences.",
       svg: <Simplicity />,
     },
     {
       title:
-        "We solve complexity through strategy and translate meaning into working systems.",
+        "We focus on creating real impact that drives growth and delivers meaningful results.",
       svg: <Impact />,
     },
   ];
