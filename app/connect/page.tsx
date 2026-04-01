@@ -4,7 +4,7 @@ import { useTextMaskRevealGroup } from "@/components/gsap/useTextMaskReveal";
 import { Contact } from "@/components/sections/home/Contact";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faChevronLeft, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -35,7 +35,7 @@ export default function ConnectPage() {
                     <h4 className="text-primary font-bold text-[32px]"> Reach Out Directly</h4>
                     <div className="py-16 flex flex-col gap-12">
                         <a
-                            href="mailto:respect.ownerr@gmail.com"
+                            href="mailto:info.respect-solutions.com"
                             target="_blank"
                             className=""
                         >
@@ -44,8 +44,8 @@ export default function ConnectPage() {
                                     <FontAwesomeIcon icon={faEnvelope} size="2xl"/>
                                 </div>
                                 <div className="">
-                                    <h5 className="text-primary text-[24px] group-hover:text-third">Gmail</h5>
-                                    <p className="text-sm">respect.ownerr@gmail.com</p>
+                                    <h5 className="text-primary text-[24px] group-hover:text-third">Email</h5>
+                                    <p className="text-sm">info.respect-solutions.com</p>
                                 </div>
                                 
                             </div>

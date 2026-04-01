@@ -16,6 +16,7 @@ const team = [
     { imageSrc: "/images/team/omar.png" },
     { imageSrc: "/images/team/radwa.png" },
     { imageSrc: "/images/team/toha.png" },
+      { imageSrc: "/images/team/shreif.png" },
     { imageSrc: "/images/team/yousef.png" },
   // ...
 ];
