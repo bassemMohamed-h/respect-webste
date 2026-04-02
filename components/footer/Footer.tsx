@@ -30,13 +30,18 @@ export default function Footer() {
             <div className="space-y-3 text-lg text-primary-foreground/90">
               <div>
                 <p className="font-bold">Landline</p>
-                <p className="text-primary-foreground/80">+20237913266</p>
+                <a href="tel:+20237913266" target="_blank">
+                  <p className="text-primary-foreground/80">+20237913266</p>
+                </a>
               </div>
               <div>
                 <p className="font-bold">Mobile</p>
-                <p className="text-primary-foreground/80">+20 111 106 7066</p>
-                <p className="text-primary-foreground/80">+20 111 106 7066</p>
-                <p className="text-primary-foreground/80">+966 54 155 0380</p>
+                <a href="tel:+201111067066" target="_blank">
+                  <p className="text-primary-foreground/80">+20 111 106 7066</p>
+                </a>
+                <a href="tel:+966541550380" target="_blank">
+                  <p className="text-primary-foreground/80">+966 54 155 0380</p>
+                </a>
               </div>
             </div>
           </div>

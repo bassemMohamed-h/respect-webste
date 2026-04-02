@@ -51,7 +51,7 @@ export default function ConnectPage() {
                             </div>
                         </a>
                          <a
-                            href="https://wa.me/20111265664"
+                            href="https://wa.me/201111067066"
                             target="_blank"
                             className=""
                             >
@@ -61,7 +61,7 @@ export default function ConnectPage() {
                                 </div> 
                                 <div className="">
                                     <h5 className="text-primary text-[24px] group-hover:text-third">Whats App</h5>
-                                    <p>+20111265664</p>
+                                    <p>+201111067066</p>
                                 </div>
                             </div>
                         </a>
@@ -75,7 +75,7 @@ export default function ConnectPage() {
                             </div>
                                 <div className="">
                                     <h5 className="text-primary text-[24px] group-hover:text-third">Phone</h5>
-                                    <p >+20111265664</p>
+                                    <p >+201111067066</p>
                                 </div>
                             </div>
                         </a>
