@@ -48,13 +48,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
 
       <body className={`${roobertPro.variable} ${roobertTrial.variable} ${geistMono.variable} antialiased ` }>
-        <ScrollManager />
-        <NavbarController/>
-         <AppLoaderProvider>
-          <GsapProvider>{children}</GsapProvider>
-         </AppLoaderProvider>
-         
-        <Footer/>
+        <GsapProvider>
+          <ScrollManager />
+          <NavbarController/>
+          <AppLoaderProvider>
+            {children}
+          </AppLoaderProvider>
+          <Footer/>
+        </GsapProvider>
       </body>
     </html>
   );

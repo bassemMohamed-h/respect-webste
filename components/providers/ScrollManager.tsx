@@ -2,27 +2,38 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function ScrollManager() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Disable browser auto-restoring old scroll positions
+    if (typeof window === "undefined") return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
 
-    // Clear GSAP's remembered scroll values
-    ScrollTrigger.clearScrollMemory("manual");
+    const rafId = requestAnimationFrame(() => {
+      try {
+        ScrollTrigger.clearScrollMemory("manual");
 
-    // On full reload / route render, start at the top
-    window.scrollTo(0, 0);
+        if (!window.location.hash) {
+          window.scrollTo(0, 0);
+        }
 
-    // After the DOM settles, force ScrollTrigger to recalculate
-    requestAnimationFrame(() => {
-      ScrollTrigger.refresh();
+        ScrollTrigger.refresh();
+      } catch (error) {
+        console.error("ScrollManager GSAP error:", error);
+      }
     });
+
+    return () => {
+      cancelAnimationFrame(rafId);
+    };
   }, [pathname]);
 
   return null;
